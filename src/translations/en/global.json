@@ -1,0 +1,44 @@
+{
+    "home" : {
+        "welcome" : {
+            "sub-title" : "Hello, I am",
+            "name" : "SON NGO",
+            "text" : "Beautiful design has the power to captivate audiences and drive business growth. Specializing in creating stunning designs that transform businesses worldwide."
+        },
+        
+        "buttons" : {
+            "download-CV" : "Download CV",
+            "discover" : "Discover portfolio"
+        }
+    },
+
+    "about" : {
+        "introduction" : {
+            "sub-title": "About me",
+            "title" : "Who am I?",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "strengths" : [
+            {
+                "title" : "Curiousity",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Responsibility",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Adaptability",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Creativity",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
+    }
+}

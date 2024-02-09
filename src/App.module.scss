@@ -1,0 +1,6 @@
+@use "/src/styles/abstracts" as *;
+
+.container {
+    padding: 2.5em;
+    padding-left: (18.75em + 2.5em);
+}

@@ -1,0 +1,82 @@
+@use "/src/styles/abstracts" as *;
+
+.home {
+    margin-top: 3em;
+
+    .leftPart {
+        margin-top: 6em;
+
+        h3 {
+            color: $black-800;
+            font-family: 'Raleway-ExtraBold';
+            font-size: 2.5em;
+        }
+
+        h1 {
+            font-family: 'Raleway-ExtraBold';
+            font-size: 5em;
+            line-height: 1em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+        .buttons {
+            margin-top: 1.875em;
+            position: relative;
+            left: -1em;
+        }
+    }
+
+    .rightPart {
+        height: 41.5em;
+
+        .overlay {
+            width: 100%;
+            height: 80%;
+            background-color: $primary;
+            position: relative;
+
+            .hole {
+                width: 15.75em;
+                height: 15.75em;
+                border-radius: 50%;
+                background-color: $background;
+                position: absolute;
+                top: 10em;
+            }
+
+            img {
+                width: 30em;
+                contain: content;
+                position: absolute;
+                bottom: -30px;
+
+                left: 50%;
+                transform: translateX(-53.5%);
+            }
+        }
+
+        .nameplate {
+            width: 100%;
+            height: 20%;
+            padding: 1em;
+            background-color: $black-800;
+            color: $white-800 !important;
+            position: relative;
+
+            h3 {
+                font-family: "Anisver";
+                font-size: 2.5em;
+                text-align: center;
+            }
+
+            p {
+                font-family: "Raleway";
+                font-size: 2.125em;
+                text-align: center;
+            }
+        }
+    }
+}

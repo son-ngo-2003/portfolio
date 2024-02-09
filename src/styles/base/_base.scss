@@ -1,0 +1,102 @@
+@use '../abstracts/colors' as *;
+
+// *::-webkit-scrollbar,
+// *::-webkit-scrollbar-thumb {
+//   width: 26px;
+//   border-radius: 13px;
+//   background-clip: padding-box;
+//   border: 10px solid transparent;
+// }
+
+// *::-webkit-scrollbar-thumb {        
+//   box-shadow: inset 0 0 0 10px;
+// }
+
+
+.scroll {
+    overflow-y: scroll;
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb {
+        width: 22px;
+        border-radius: 11px;
+        background-clip: padding-box;
+        border: 10px solid transparent;
+        color: $primary
+    }
+    &::-webkit-scrollbar-thumb {        
+        box-shadow: inset 0 0 0 10px;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-center {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.title {
+    font-family: 'Raleway-ExtraBold';
+    font-size: 4.2em;
+    line-height: 1em;
+
+    &.maj {
+        text-transform: uppercase;
+    }
+}
+
+.sub-title {
+    font-family: 'Quicksand-Medium';
+    font-size: 2em;
+}
+
+.text {
+    font-family: 'Quicksand';
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.light-theme {
+    .title {
+        color: $primary;
+    }
+
+    .text, .sub-title {
+        color: $black-800;
+    }
+
+    &.background,
+    .background {
+        background-color: $background;
+    }
+
+    .bg-component {
+        background-color: $component-background;
+    }
+}
+
+.dark-theme {
+    .title {
+        color: $dark-primary;
+    }
+
+    .text, .sub-title {
+        color: $white-700;
+    }
+
+    &.background,
+    .background {
+        background-color: $dark-background;
+    }
+
+    &.main-background {
+        background-color: $dark-background;
+    }
+}
+
+
+

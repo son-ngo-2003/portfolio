@@ -1,0 +1,100 @@
+@use "/src/styles/abstracts" as *;
+
+.sideBar {
+    height: 100vh;
+    width: 18.75rem;
+    background-color: $white-700;
+    position: fixed;
+
+    img {
+        width: 12.5em;
+        height: 12.5em;
+        background-color: $primary;
+        margin-top: 2.5em;
+        border-radius: 50%;
+    }
+
+    h2 {
+        color: $primary !important;
+        font-family: "Raleway-SemiBold";
+        font-size: 2em;
+        text-align: center;
+        margin-top: 0.5em;
+    }
+
+    p {
+        width: 100%;
+        text-align: center;
+    }
+
+    ul {
+        margin-top: 2em;
+        text-align: center;
+        width: 100%;
+
+        li {
+            position: relative; 
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: .4em;
+
+            button {
+                background: none;
+                border: none;
+                padding: 0;
+                outline: none;
+
+                display: table-cell;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 0.05em;
+
+                font-family: 'Quicksand-Medium';
+                font-size: .9em;
+                transition: font-family 300ms ease;
+                
+                display: inline-block;
+                position: relative;
+                color: $primary;
+
+                &::after{
+                    content: "";
+                    background: none repeat scroll 0 0 transparent;
+                    display: block;
+                    height: .2em;
+                    border-radius: 0.1em;
+                    background-color: $white-400;
+                    bottom: -7px;
+
+                    position: absolute;
+                    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                    width: 0;
+                    left: 50%;
+                }
+
+                &.underline::after { 
+                    width: 90%; 
+                    left: 4%; 
+                }
+
+                &.underline::after {
+                    background-color: $primary;
+                }
+            }
+
+            &:hover button{
+                font-family: 'Quicksand-SemiBold';
+
+                &::after {
+                    width: 90%; 
+                    left: 4%; 
+                }
+            }
+
+
+
+            
+        }
+    }
+}

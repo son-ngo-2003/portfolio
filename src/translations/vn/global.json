@@ -1,0 +1,44 @@
+{
+    "home" : {
+        "welcome" : {
+            "sub-title" : "Xin chào, mình là",
+            "name" : "Sơn Ngô",
+            "text" : "Beautiful design has the power to captivate audiences and drive business growth. Specializing in creating stunning designs that transform businesses worldwide."
+        },
+        
+        "buttons" : {
+            "download-CV" : "Tải xuống CV",
+            "discover" : "Khám phá projects"
+        }
+    },
+
+    "about" : {
+        "introduction" : {
+            "sub-title": "Về bản thân",
+            "title" : "Mình là ai?",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "strengths" : [
+            {
+                "title" : "Tò mò",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Trách nhiệm",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Thích ứng",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Sáng tạo",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
+    }
+}
