@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useContext, useEffect } from 'react'
 
 // css
 import "./styles/_main.scss"
@@ -10,14 +10,19 @@ import {SideBar} from "./components"
 //pages
 import {MainPage} from "./pages"
 
-//icons
+//context
+import {ThemeContext} from "/src/contexts/themeContext"
 
 function App() {
     const sectionsRef = useRef(null);
 
+    //theme: light-theme or dark-theme
+    const {theme, setTheme} = useContext(ThemeContext); 
+    useEffect(()=>{setTheme('dark-theme')},[]);
+    
     return (
-        <div className="light-theme background">
-            <div className={`grid wide light-theme`}>
+        <div className={`${theme} background`}>
+            <div className={`grid wide`}>
                 <SideBar
                     sectionsRef={sectionsRef}
                 />

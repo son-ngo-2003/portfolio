@@ -18,16 +18,12 @@ const About = forwardRef(( props, ref ) => {
     const [t, i18n] = useTranslation("global");
 
     const iconList = [<RiSearchEyeLine />, <BiTask />, <TbSettingsCode />, <HiOutlineLightBulb /> ]
-    const nbStrengths = 4;
-    const strengthsList = [];
-    for ( let i = 0; i < nbStrengths; i++) {
-        const posTranslation = `about.strengths.${i}`;
-        strengthsList[i] = {
-            title: t(`${posTranslation}.title`),
-            text: t(`${posTranslation}.text`),
-            icon: iconList[i] || <FaQuestion />
-        }
-    }
+    const strengthsList = t('about.strengths', {returnObjects: true})
+                            .map( ( value, key ) => ({
+                                title: value.title,
+                                text: value.text,
+                                icon: iconList[key] || <FaQuestion />
+                            }));
 
     return (
         <div ref={ref} className={`${styles.about} section`}>
@@ -39,7 +35,7 @@ const About = forwardRef(( props, ref ) => {
 
             <div className={`${styles.strengths} row`}>
                 {  strengthsList.map( (value, index) => (
-                        <div className="col l-3">
+                        <div key={index} className="col l-3">
                             <ExpandableBox
                                 icon = {value.icon}
                                 title = {value.title}

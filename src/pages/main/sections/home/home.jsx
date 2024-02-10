@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useContext } from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -15,11 +15,16 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 //images
 import { homeImage } from "/src/assets/images/image";
 
+//context
+import {ThemeContext} from "/src/contexts/themeContext"
+
 const Home = forwardRef(( props, ref ) => {
     const [t, i18n] = useTranslation("global");
+    const {theme} = useContext(ThemeContext);
+    console.log(styles);
 
     return (
-        <div ref={ref} className={`${styles.home} row`}>
+        <div ref={ref} className={`${styles.home} row section`}>
             <div className={`${styles.leftPart} col l-6`}>
                 <div className={`welcome`}>
                     <h3 className="sub-title">{t("home.welcome.sub-title")}</h3>
@@ -39,9 +44,9 @@ const Home = forwardRef(( props, ref ) => {
                 />
             </div>
 
-            <div className={`${styles.rightPart} col l-6`}>
+            <div className={`${styles.rightPart} ${styles[theme]} col l-6`}>
                 <div className={`${styles.overlay}`}>
-                    <div className={`${styles.hole} horizontal-center`}></div>
+                    <div className={`${styles.hole} horizontal-center background`}></div>
                     <img src={homeImage.src} alt="" />
                 </div>
 

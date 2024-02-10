@@ -40,5 +40,109 @@
                 "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
             }
         ]
+    },
+
+    "services" : {
+        "introduction" : {
+            "sub-title": "Tôi có thể làm gì",
+            "title" : "Dịch vụ của tôi",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "services" : [
+            {
+                "title" : "Thứ 1",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Thứ 2",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Thứ 3",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Thứ 4",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
+    },
+
+    "skills" : {
+        "introduction" : {
+            "sub-title": "???",
+            "title" : "Kĩ năng của mình",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "skills" : [
+            {
+                "title" : "Kĩ năng 1",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Kĩ năng 2",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Kĩ năng 3",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Kĩ năng 4",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+            
+            {
+                "title" : "Kĩ năng 5",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
+    },
+
+    "education" : {
+        "introduction" : {
+            "sub-title": "Hành trình học tập của tôi",
+            "title" : "Giáo dục"
+        },
+
+        "education" : [
+            {
+                "title" : "Trường 1",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Trường 2",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Trường 3",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Trường 4",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+            
+            {
+                "title" : "Trường 5",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
     }
 }

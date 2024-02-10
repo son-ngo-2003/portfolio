@@ -1,13 +1,11 @@
 @use "/src/styles/abstracts" as *;
 
 .home {
-    margin-top: 3em;
 
     .leftPart {
         margin-top: 6em;
 
         h3 {
-            color: $black-800;
             font-family: 'Raleway-ExtraBold';
             font-size: 2.5em;
         }
@@ -42,7 +40,6 @@
                 width: 15.75em;
                 height: 15.75em;
                 border-radius: 50%;
-                background-color: $background;
                 position: absolute;
                 top: 10em;
             }
@@ -77,6 +74,30 @@
                 font-size: 2.125em;
                 text-align: center;
             }
+        }
+    }
+}
+
+.dark-theme {
+    .overlay {
+        background-color: $black-600 !important;
+    }
+
+    .nameplate {
+        background-color: $black-700 !important;
+        color: $white-800 !important;
+        position: relative;
+
+        h3 {
+            font-family: "Anisver";
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Raleway";
+            font-size: 2.125em;
+            text-align: center;
         }
     }
 }

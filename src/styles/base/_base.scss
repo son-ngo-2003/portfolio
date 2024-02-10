@@ -1,18 +1,5 @@
 @use '../abstracts/colors' as *;
 
-// *::-webkit-scrollbar,
-// *::-webkit-scrollbar-thumb {
-//   width: 26px;
-//   border-radius: 13px;
-//   background-clip: padding-box;
-//   border: 10px solid transparent;
-// }
-
-// *::-webkit-scrollbar-thumb {        
-//   box-shadow: inset 0 0 0 10px;
-// }
-
-
 .scroll {
     overflow-y: scroll;
     &::-webkit-scrollbar,
@@ -41,8 +28,8 @@
 
 .title {
     font-family: 'Raleway-ExtraBold';
-    font-size: 4.2em;
-    line-height: 1em;
+    font-size: 3.5em;
+    line-height: 1.3em;
 
     &.maj {
         text-transform: uppercase;
@@ -51,7 +38,7 @@
 
 .sub-title {
     font-family: 'Quicksand-Medium';
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .text {
@@ -74,8 +61,16 @@
         background-color: $background;
     }
 
+    .border-as-bg { //border has same color as background
+        border-color: $background;
+    }
+
     .bg-component {
         background-color: $component-background;
+    }
+
+    .border-as-component { //border has same color as component
+        border-color: $component-background;
     }
 }
 
@@ -93,8 +88,16 @@
         background-color: $dark-background;
     }
 
-    &.main-background {
-        background-color: $dark-background;
+    .border-as-bg {
+        border-color:$dark-background;
+    }
+
+    .bg-component {
+        background-color: $dark-component-background;
+    }
+
+    .border-as-component { //border has same color as component
+        border-color: $dark-component-background;
     }
 }
 

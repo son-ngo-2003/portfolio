@@ -1,0 +1,10 @@
+@use "/src/styles/abstracts" as *;
+
+.skills {
+    padding-bottom: 15em !important;
+
+    .skillsList {
+        position: absolute;
+        margin-top: 2em;
+    }
+}

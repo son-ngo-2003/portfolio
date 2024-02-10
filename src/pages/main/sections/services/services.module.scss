@@ -1,0 +1,12 @@
+@use "/src/styles/abstracts" as *;
+
+.services {
+    .introductionText {
+        width: 90%;
+    }
+
+    .servicesList {
+        position: absolute;
+        float: right;
+    }
+}

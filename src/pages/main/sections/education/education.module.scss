@@ -1,0 +1,65 @@
+@use "/src/styles/abstracts" as *;
+
+.skills {
+    .educationList {
+        margin-top: 2em;
+        position: relative;
+
+        .line {
+            position: absolute;
+            width: 0.5em;
+            height: 95%;
+            margin-left: 2em;
+            border-radius: 0.25em;
+        }
+
+        .finalPoint {
+            display: block;
+            height: 1.5em;
+            width: 1.5em;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 4%;
+            margin-left: 1.5em;
+        }
+
+        .educationItem {
+            margin-bottom: 1em;
+            position: relative;
+        }
+
+        .linePoint {
+            $pointSize: 3.125em;
+
+            height: $pointSize;
+            width: $pointSize;
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            top: 10%;
+
+            &::after {
+                content: "";
+                display: block;
+                height: calc($pointSize * 0.7);
+                width: calc($pointSize * 0.7);
+                border-radius: 50%;
+                background-color: $primary;
+                position: absolute;
+                top: calc($pointSize * 0.15);
+                left: calc($pointSize * 0.15);
+
+                transition: background-color 300ms ease-in;
+            }
+        }
+
+        .educationBox {
+            float: right;
+
+            //when hovering, the ::after of the immediately next element 
+            &:hover+.linePoint::after { 
+                background-color: $secondary;
+            }
+        }
+    }
+}

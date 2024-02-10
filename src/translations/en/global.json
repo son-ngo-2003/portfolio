@@ -40,5 +40,109 @@
                 "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
             }
         ]
+    },
+
+    "services" : {
+        "introduction" : {
+            "sub-title": "What I can help you with",
+            "title" : "My Services",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "services" : [
+            {
+                "title" : "Text1",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text2",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text3",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text4",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
+    },
+
+    "skills" : {
+        "introduction" : {
+            "sub-title": "???",
+            "title" : "My Skills",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "skills" : [
+            {
+                "title" : "Text1",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text2",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text3",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text4",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+            
+            {
+                "title" : "Text5",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
+    },
+
+    "education" : {
+        "introduction" : {
+            "sub-title": "My learning journey",
+            "title" : "Education"
+        },
+
+        "education" : [
+            {
+                "title" : "Text1",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text2",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text3",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Text4",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+            
+            {
+                "title" : "Text5",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
     }
 }

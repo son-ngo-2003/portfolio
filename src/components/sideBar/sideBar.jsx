@@ -1,10 +1,15 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 
+//css
 import styles from './sideBar.module.scss';
+
+//context
+import {ThemeContext} from "/src/contexts/themeContext"
 
 const sideBar = ({sectionsRef}) => {
     const [currentSection, setCurrentSection] = useState('home');
     const sectionsPos = useRef(null);
+    const {theme} = useContext(ThemeContext)
 
     function scrollToSection( section ) {
         const node = sectionsRef.current.get( section );
@@ -16,10 +21,9 @@ const sideBar = ({sectionsRef}) => {
     }
 
     const handleSroll = (e) => {
-        const offset = 120 //offset seen by console.log the position of the section
+        const offset = 300 //offset seen by console.log the position of the section
         const currentPosY = window.scrollY;
         sectionsPos.current.forEach( (value, key) => {
-            console.log(currentPosY, value - offset)
             if ((value) && (currentPosY > value - offset))
                 setCurrentSection(key);
         })
@@ -33,8 +37,6 @@ const sideBar = ({sectionsRef}) => {
             sectionsPos.current.set(key,  rect.top - bodyRect.top);
         })
 
-        console.log(sectionsPos.current);
-
         window.addEventListener("scroll", handleSroll);
         //return window.removeEventListener("scroll", handleSroll);
     },[]);
@@ -47,7 +49,7 @@ const sideBar = ({sectionsRef}) => {
         </li>)
 
     return (
-        <div className={`${styles.sideBar}`}>
+        <div className={`${styles[theme]} ${styles.sideBar} `}> 
             <img  className="horizontal-center" alt="" />
             <h2   className='text'>NGO Truong Son</h2>
             <p    className='text'>3rd student at INSA</p>
