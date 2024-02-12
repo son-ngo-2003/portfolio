@@ -1,0 +1,40 @@
+{
+    "education" : {
+        "introduction" : {
+            "sub-title": "Hành trình học tập của tôi",
+            "title" : "Giáo dục"
+        },
+
+        "education" : [
+            {
+                "title" : "Trường 1",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Trường 2",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Trường 3",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+
+            {
+                "title" : "Trường 4",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            },
+            
+            {
+                "title" : "Trường 5",
+                "years" : "20xx-20yy",
+                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            }
+        ]
+    }
+}

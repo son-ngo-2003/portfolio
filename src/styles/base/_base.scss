@@ -61,16 +61,24 @@
         background-color: $background;
     }
 
-    .border-as-bg { //border has same color as background
-        border-color: $background;
-    }
-
     .bg-component {
         background-color: $component-background;
     }
 
+    .bg-component-darker {
+        background-color: $component-background-darker;
+    }
+
+    .border-as-bg { //border has same color as background
+        border-color: $background;
+    }
+
     .border-as-component { //border has same color as component
         border-color: $component-background;
+    }
+
+    .border-as-component-darker { //border has same color as component
+        border-color: $component-background-darker;
     }
 }
 
@@ -80,24 +88,32 @@
     }
 
     .text, .sub-title {
-        color: $white-700;
+        color: $white-600;
     }
 
     &.background,
     .background {
         background-color: $dark-background;
     }
+    
+    .bg-component {
+        background-color: $dark-component-background;
+    }
+
+    .bg-component-darker {
+        background-color: $dark-component-background-darker;
+    }
 
     .border-as-bg {
         border-color:$dark-background;
     }
 
-    .bg-component {
-        background-color: $dark-component-background;
-    }
-
     .border-as-component { //border has same color as component
         border-color: $dark-component-background;
+    }
+
+    .border-as-component-darker { //border has same color as component
+        border-color: $dark-component-background-darker;
     }
 }
 

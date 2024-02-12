@@ -15,7 +15,7 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import { FaQuestion } from "react-icons/fa6";
 
 const ServicesSection = forwardRef(( props, ref ) => {
-    const [t, i18n] = useTranslation("global");
+    const [t, i18n] = useTranslation("education");
 
     const iconList = [<RiSearchEyeLine />, <BiTask />, <TbSettingsCode />, <HiOutlineLightBulb /> ]
     const educationList = t('education.education', {returnObjects: true})
@@ -26,14 +26,14 @@ const ServicesSection = forwardRef(( props, ref ) => {
                             }));
 
     return (
-        <div ref={ref} className={`${styles.skills} section row`}>
+        <div ref={ref} className={`${styles.skills} section`}>
             <div className={`welcome`}>
                 <h3 className="sub-title">{t("education.introduction.sub-title")}</h3>
                 <h1 className="title maj">{t("education.introduction.title")}</h1>
             </div>
 
             <div className={`${styles.educationList} row`}>
-                <span className={`${styles.line} bg-component`}></span>
+                <span className={`${styles.line} bg-component-darker`}></span>
                 {  educationList.map( (value, index) => (
                         <div key={index} className={`${styles.educationItem} col l-12`}>
                             <TextBox
@@ -42,12 +42,12 @@ const ServicesSection = forwardRef(( props, ref ) => {
                                 subTitle = {value.years}
                                 text = {value.text}
                             />
-                            <span className={`${styles.linePoint} bg-component`}></span>
+                            <span className={`${styles.linePoint} bg-component-darker`}></span>
 
                         </div>
                     ))
                 }
-                <span className={`${styles.finalPoint} bg-component`}></span>
+                <span className={`${styles.finalPoint} bg-component-darker`}></span>
             </div>
 
         </div>

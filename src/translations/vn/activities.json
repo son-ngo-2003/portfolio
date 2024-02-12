@@ -1,0 +1,15 @@
+{
+    "activities" : {
+        "introduction" : {
+            "sub-title": "Đời sống cá nhân",
+            "title" : "Hoạt động - sở thích",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "activities" : {
+            "associations" : "Câu lạc bộ",
+            "sports" : "Thể thao",
+            "arts" : "Nghệ thuật"
+        }
+    }
+}

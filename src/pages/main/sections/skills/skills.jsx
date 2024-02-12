@@ -15,7 +15,7 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import { FaQuestion } from "react-icons/fa6";
 
 const ServicesSection = forwardRef(( props, ref ) => {
-    const [t, i18n] = useTranslation("global");
+    const [t, i18n] = useTranslation("skills");
 
     const iconList = [<RiSearchEyeLine />, <BiTask />, <TbSettingsCode />, <HiOutlineLightBulb /> ]
     const skillsList = t('skills.skills', {returnObjects: true})
@@ -41,30 +41,34 @@ const ServicesSection = forwardRef(( props, ref ) => {
             </div>
 
             <div className={`${styles.skillsList} row`}>
-                <div className={`leftPart col l-6`}>
-                    {  leftSkillsList.map( (value, index) => (
-                            <div key={index} className="">
-                                <Accordion
-                                    icon = {value.icon}
-                                    title = {value.title}
-                                    text = {value.text}
-                                />
-                            </div>
-                        ))
-                    }
+                <div className={`col l-6`}>
+                    <div className={`${styles.leftPart}`}>
+                        {  leftSkillsList.map( (value, index) => (
+                                <div key={index} className="">
+                                    <Accordion
+                                        icon = {value.icon}
+                                        title = {value.title}
+                                        text = {value.text}
+                                    />
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
 
-                <div className={`rightPart col l-6`}>
-                    {  rightSkillsLists.map( (value, index) => (
-                            <div key={index} className="">
-                                <Accordion
-                                    icon = {value.icon}
-                                    title = {value.title}
-                                    text = {value.text}
-                                />
-                            </div>
-                        ))
-                    }
+                <div className={`col l-6`}>
+                    <div className={`${styles.rightPart}`}>
+                        {  rightSkillsLists.map( (value, index) => (
+                                <div key={index} className="">
+                                    <Accordion
+                                        icon = {value.icon}
+                                        title = {value.title}
+                                        text = {value.text}
+                                    />
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
 

@@ -15,13 +15,13 @@ const sideBar = ({sectionsRef}) => {
         const node = sectionsRef.current.get( section );
         node.scrollIntoView({
             behavior: 'smooth',
-            block: 'nearest',
+            block: 'start',
             inline: 'center'
         });
     }
 
     const handleSroll = (e) => {
-        const offset = 300 //offset seen by console.log the position of the section
+        const offset = 100 //offset seen by console.log the position of the section
         const currentPosY = window.scrollY;
         sectionsPos.current.forEach( (value, key) => {
             if ((value) && (currentPosY > value - offset))

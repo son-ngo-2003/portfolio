@@ -1,13 +1,13 @@
 import styles from './button.module.scss';
 
-const Button = ({text='text', size='medium', icon={}, 
+const Button = ({text='text', size='medium', icon=false, 
                 onClick= () => {}, divClassName='' }) => {
     return (
-        <button className={`${styles.button} ${size} ${divClassName} flex`}
+        <button className={`${styles.button} ${styles[size]} ${divClassName}`}
                 onClick = {onClick}>
-            <div className="flex">
+            <div className={`${styles.overlay} bg-component ${icon? styles.withIcon : styles.noIcon}`}>
                 <p className='text'>{text}</p>
-                <span className={`${styles.icon}`}>{icon}</span>
+                <span className={`${styles.icon} text`}>{icon || ''}</span>
             </div>
         </button>
     )

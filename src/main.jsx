@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 
 //translations
-import { global_en, global_fr, global_vn } from './translations';
+import * as tr from './translations';
 import i18next from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
 
@@ -17,16 +17,39 @@ i18next
         lng: "en",
         resources: {
             en : {
-                global: global_en,
+                global: tr.global_en,
+                about: tr.about_en,
+                services: tr.services_en,
+                skills: tr.skills_en,
+                education: tr.education_en,
+                projects: tr.projects_en,
+                activities: tr.activities_en,
+                contact: tr.contact_en,
             },
             fr : {
-                global: global_fr,
+                global: tr.global_fr,
+                about: tr.about_fr,
+                services: tr.services_fr,
+                skills: tr.skills_fr,
+                education: tr.education_fr,
+                projects: tr.projects_fr,
+                activities: tr.activities_fr,
+                contact: tr.contact_fr,
             },
             vn : {
-                global: global_vn,
+                global: tr.global_vn,
+                about: tr.about_vn,
+                services: tr.services_vn,
+                skills: tr.skills_vn,
+                education: tr.education_vn,
+                projects: tr.projects_vn,
+                activities: tr.activities_vn,
+                contact: tr.contact_vn,
             },
         },
     })
+
+    console.log(tr);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

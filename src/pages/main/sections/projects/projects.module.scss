@@ -1,0 +1,13 @@
+@use "/src/styles/abstracts" as *;
+
+.projects {
+    padding-bottom: 8em !important;
+
+    .projectsList {
+        margin-top: 2em;
+
+        .projectItem {
+            margin-bottom: 1.5em;
+        }
+    }
+}

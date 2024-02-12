@@ -1,49 +1,104 @@
 @use "/src/styles/abstracts" as *;
 
+$medium-width: 21.25em;
+$large-width: 30em;
+$height: 4.5em;
+
 .button {
-    width: 21.25em;
-    height: 4.5em;
     background-color: transparent;
     border: none;
+    overflow: hidden;
+    padding: 0;
 
-    div {
-        width: 96%;
-        height: 96%;
-        background-color: $primary;
-        padding: 0 1rem 0 1rem;
-        justify-content: space-between;
-
-        transition: width 200ms ease-in, height 200ms ease-in;
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: relative;
         
-        p {
-            color: $white-900 !important;
-            font-size: 1.4em !important;
-            transition: font-size 200ms ease-in;
+        p {  
+            transition: color 200ms ease-in;
+            z-index: 2;
         }
 
         .icon {
-            font-size: 1.6em;
-            color: $white-900;
-            transition: font-size 200ms ease-in;
+            transition: color 200ms ease-in;
+            z-index: 2;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 0.3em;
+            height: 80%;
+            background-color: $primary;
+            left: 0.4em;
+            border-radius: 0.15em;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 10em;
+            height: 10em;
+            background-color: $primary;
+            left: -53%;
+            border-radius: 50%;
+            transition: width 400ms ease-in, height 400ms ease-in;
         }
     }
 
     div:hover{
-        width: 100%;
-        height: 100%;
+        p, .icon {
+            color: $white-900 !important;
+        }
 
-        p {
+        &:hover::after {
+            width: 50em;
+            height: 50em;
+        }
+    }
+}
+
+.medium {
+    width: $medium-width;
+    height: $height;
+    .overlay {        
+        p {  
             font-size: 1.5em !important;
         }
 
         .icon {
-            font-size: 1.8em;
+            font-size: 1.7em;
         }
-    }
-
-    div:active {
-        width: 96%;
-        height: 96%;
     }
 }
 
+.large {
+    width: $large-width;
+    height: $height;
+
+    .overlay {        
+        p {  
+            font-size: 1.8em !important;
+        }
+
+        .icon {
+            font-size: 2em;
+        }
+    }
+}
+
+.withIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 0 2rem;
+}
+
+.noIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

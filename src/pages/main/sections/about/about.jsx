@@ -15,7 +15,7 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import { FaQuestion } from "react-icons/fa6";
 
 const About = forwardRef(( props, ref ) => {
-    const [t, i18n] = useTranslation("global");
+    const [t, i18n] = useTranslation("about");
 
     const iconList = [<RiSearchEyeLine />, <BiTask />, <TbSettingsCode />, <HiOutlineLightBulb /> ]
     const strengthsList = t('about.strengths', {returnObjects: true})

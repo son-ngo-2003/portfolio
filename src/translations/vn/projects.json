@@ -1,0 +1,22 @@
+{
+    "projects" : {
+        "introduction" : {
+            "sub-title": "Tôi đã làm gì",
+            "title" : "Các dự án của tôi"
+        },
+
+        "projects" : [
+            {
+                "date":   "Ngày: 06/06/2015",
+                "title" : "Text1",
+                "role" :  "Vai trò: Developer"
+            },
+
+            {
+                "date":   "Ngày: 06/06/2015",
+                "title" : "Text2",
+                "role" :  "Vai trò: Developer"
+            }
+        ]
+    }
+}

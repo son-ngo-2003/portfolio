@@ -1,0 +1,13 @@
+@use "/src/styles/abstracts" as *;
+
+.activities {
+    
+    .buttons {
+        // position: absolute;
+        margin-top: 2em;
+
+        .btnInside {
+            margin-bottom: 1.2em;
+        }
+    }
+}

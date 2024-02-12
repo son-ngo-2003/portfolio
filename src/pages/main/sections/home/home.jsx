@@ -21,7 +21,6 @@ import {ThemeContext} from "/src/contexts/themeContext"
 const Home = forwardRef(( props, ref ) => {
     const [t, i18n] = useTranslation("global");
     const {theme} = useContext(ThemeContext);
-    console.log(styles);
 
     return (
         <div ref={ref} className={`${styles.home} row section`}>

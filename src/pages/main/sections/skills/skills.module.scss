@@ -2,9 +2,13 @@
 
 .skills {
     padding-bottom: 15em !important;
-
+    
     .skillsList {
-        position: absolute;
+        // position: absolute;
         margin-top: 2em;
+    }
+
+    .leftPart, .rightPart {
+        position: absolute;
     }
 }

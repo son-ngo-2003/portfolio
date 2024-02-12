@@ -1,7 +1,7 @@
 import { forwardRef, useRef, useImperativeHandle } from 'react'
 
 //sections
-import {Home, About, ServicesSection, Skills, Education} from "./sections";
+import {Home, About, ServicesSection, Skills, Education, Projects, Activities} from "./sections";
 
 const MainPage = forwardRef((props, ref) => {
     const sectionsRef = useRef(null);
@@ -30,6 +30,12 @@ const MainPage = forwardRef((props, ref) => {
             }/>
             <Education 
                 ref={(node) => {getSectionsRef().set('education', node);}
+            }/>
+            <Projects 
+                ref={(node) => {getSectionsRef().set('projects', node);}
+            }/>
+            <Activities 
+                ref={(node) => {getSectionsRef().set('activities', node);}
             }/>
         </>
     )

@@ -15,7 +15,7 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import { FaQuestion } from "react-icons/fa6";
 
 const ServicesSection = forwardRef(( props, ref ) => {
-    const [t, i18n] = useTranslation("global");
+    const [t, i18n] = useTranslation("services");
 
     const iconList = [<RiSearchEyeLine />, <BiTask />, <TbSettingsCode />, <HiOutlineLightBulb /> ]
     const servicesList = t('services.services', {returnObjects: true})
