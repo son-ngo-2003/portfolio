@@ -49,8 +49,6 @@ i18next
         },
     })
 
-    console.log(tr);
-
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <ThemeProvider>

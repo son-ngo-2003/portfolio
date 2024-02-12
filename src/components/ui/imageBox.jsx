@@ -11,7 +11,7 @@ const textBox = ({text='text', title = 'title', subTitle='',
                 ? <img src={image}></img>
                 : ''}
             </div>
-            <div className={`${styles.nameplate} bg-component-darker`}>
+            <div className={`${styles.nameplate} bg-component-primary`}>
                 <p className={`${styles.subTitle} text`}>{subTitle}</p>
                 <h3 className={`${styles.title}   sub-title`}>{title}</h3>
                 <p className={`${styles.text}     text`}>{text}</p>

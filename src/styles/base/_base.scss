@@ -69,6 +69,13 @@
         background-color: $component-background-darker;
     }
 
+    .bg-component-primary {
+        background-color: $primary;
+        .text, .sub-title, .title {
+            color: $white-800;
+        }
+    }
+
     .border-as-bg { //border has same color as background
         border-color: $background;
     }
@@ -101,6 +108,10 @@
     }
 
     .bg-component-darker {
+        background-color: $dark-component-background-darker;
+    }
+
+    .bg-component-primary {
         background-color: $dark-component-background-darker;
     }
 

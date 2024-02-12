@@ -3,4 +3,5 @@ export {Button,
         ExpandableBox,
         Accordion,
         TextBox,
-        ImageBox           } from './ui';
+        ImageBox,
+        Form             } from './ui';

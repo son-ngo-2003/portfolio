@@ -1,1 +1,26 @@
-{}
+{
+    "contact" : {
+        "introduction" : {
+            "sub-title": "Hãy giữ liên lạc với tôi",
+            "title" : "LIÊN HỆ",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "contact" : {
+            "info" : {
+                "title" : "Thông tin",
+                "email" : "Email",
+                "phone" : "Số điện thoại",
+                "address" : "Địa chỉ"
+            },
+            "form" : {
+                "title" : "Để lại lời nhắn",
+                "name" : "Tên của bạn",
+                "email" : "Email của bạn",
+                "subject" : "Chủ đề",
+                "message" : "Lời nhắn của bạn",
+                "button" : "Gửi lời nhắn"
+            }
+        }
+    }
+}

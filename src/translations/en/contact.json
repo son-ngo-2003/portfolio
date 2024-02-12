@@ -1,1 +1,26 @@
-{}
+{
+    "contact" : {
+        "introduction" : {
+            "sub-title": "Get in touch",
+            "title" : "CONTACT ME",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+
+        "contact" : {
+            "info" : {
+                "title" : "Contact Info",
+                "email" : "Email",
+                "phone" : "Phone Number",
+                "address" : "Address"
+            },
+            "form" : {
+                "title" : "Send me a message",
+                "name" : "Your Name",
+                "email" : "Your Email",
+                "subject" : "Subject",
+                "message" : "Your Message",
+                "button" : "Send Message"
+            }
+        }
+    }
+}

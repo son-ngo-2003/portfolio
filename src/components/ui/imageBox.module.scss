@@ -64,21 +64,4 @@
 
         }
     }
-
-}
-
-.light-theme {
-    .nameplate {
-        background-color: $primary;
-
-        .subTitle, .title, .text {
-        color: $white-800 !important;
-        }
-    }
-}
-
-.dark-theme {
-    .nameplate {
-        background-color: $black-500;
-    }
 }

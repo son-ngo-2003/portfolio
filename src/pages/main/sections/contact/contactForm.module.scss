@@ -1,0 +1,66 @@
+@use "/src/styles/abstracts" as *;
+
+.overlay {
+    width: 80%;
+    margin-left: 20%;
+    height: 35em;
+    position: relative;
+
+    .info {
+        position: absolute;
+        width: 60%;
+        height: 90%;
+        left: -25%;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 1.8em;
+
+        .title {
+            font-family: 'Raleway-Bold';
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 0.2em;
+        }
+
+        .subTitle {
+            font-family: 'Raleway-SemiBold';
+            margin-top: 1em;
+            font-size: 1.45em;
+        }
+
+        .detail {
+            font-size: 1.35em;
+        }
+
+        .divLine {
+            width: 80%;
+            height: 0.15em;
+            border-radius: 0.075em;
+            display: block;
+            background-color: $white-400;
+            margin: 2em auto 1.5em auto;
+        }
+
+        .socialMedia {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            font-size: 2.8em;
+            justify-content: space-between;
+
+            a {
+                color: inherit;
+            }
+        }
+    }
+
+    .formContact {
+        width: 65%;
+        float: right;
+        padding: 1.8em 2em 1em 2em;
+
+        .title {
+            font-family: 'Raleway-SemiBold';
+        }
+    }
+}

@@ -1,0 +1,131 @@
+@use "/src/styles/abstracts" as *;
+
+$fontSize: 1.3rem;
+$textareaNumlines: 4;
+$big-textareaNumlines: 8;
+
+.form {
+    * {
+        outline: none;
+        font-family: 'Quicksand';
+    }
+
+    .formRow{
+        display: flex;
+        margin: calc($fontSize * 2) 0;
+
+
+        //inputs
+        .inputData{
+            width: 100%;
+            height: calc(1.3 * $fontSize);
+            position: relative;
+
+            .date {
+                width: 300px; 
+            }
+
+            .date~.underline{
+                width: 300px; 
+            }
+        }
+
+        .textarea {
+            height: calc($textareaNumlines * ($fontSize * 1.3) + 0.5rem);
+
+            &.big {
+                height: calc($big-textareaNumlines * ($fontSize * 1.3) + 0.5rem);
+            }
+
+            textarea {
+                resize: none;
+                padding-top: 10px;
+            }
+        }
+
+        .inputData input,
+        .textarea textarea{
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-size: $fontSize;
+            border-bottom: 2px solid rgba(0,0,0, 0.12);
+            background-color: transparent;
+        }
+
+        // labels
+        .inputData input:focus ~ label, .textarea textarea:focus ~ label,
+        .inputData input:not(:placeholder-shown) ~ label, 
+        .textarea textarea:not(:placeholder-shown) ~ label,
+        .inputData input.date ~ label {
+            transform: translateY( calc(-0.1rem - $fontSize ) );
+            color: $secondary;
+            font-size: calc($fontSize - 0.2rem);
+        }
+
+        .textarea textarea:focus ~ label,
+        .textarea textarea:not(:placeholder-shown) ~ label {
+            transform: translateY( calc(-1.5rem - ($textareaNumlines - 1) * ($fontSize * 1.3)) );
+        }
+
+        .textarea.big textarea:focus ~ label,
+        .textarea.big textarea:not(:placeholder-shown) ~ label {
+            transform: translateY( calc(-1.5rem - ($big-textareaNumlines - 1) * ($fontSize * 1.3)) );
+        }
+
+        .inputData label,
+        .textarea label{
+            position: absolute;
+            pointer-events: none;
+            bottom: 10px;
+            font-size: $fontSize;
+            transition: all 0.3s ease;
+            text-transform: capitalize
+        }
+
+        //underline 
+        .inputData {
+            .underline{
+                position: absolute;
+                bottom: 0;
+                height: 2px;
+                width: 100%;
+                background-color: $white-400;
+            }
+
+            .underline:before {
+                position: absolute;
+                content: "";
+                height: 2px;
+                width: 100%;
+                background: $secondary;
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        .inputData input:focus ~ .underline:before,
+        .inputData input:not(:placeholder-shown) ~ .underline:before,
+        .textarea textarea:focus ~ .underline:before,
+        .textarea textarea:not(:placeholder-shown) ~ .underline:before{
+            transform: scale(1);
+        }
+    } 
+}
+
+@media (max-width: 700px) {
+    .container .text{
+        font-size: 30px;
+    }
+    .container form{
+        padding: 10px 0 0 0;
+    }
+    .container form .formRow{
+        display: block;
+    }
+    form .formRow .inputData{
+        margin: 35px 0!important;
+    }
+}
