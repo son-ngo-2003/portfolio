@@ -14,7 +14,7 @@ const Accordion = ({text='text', title = 'title', icon={},
             <div className={`${styles.overlay} background`}>
                 <span className={`${styles.iconCover} title`}>{icon}</span>
                 <h3 className='sub-title'>{title}</h3>
-                <span className={`${styles.iconPlus} flex`}>
+                <span className={`${styles.iconPlus} flex inverse-bg`}>
                     {/* Using before and after to make plus */}
                 </span>
             </div>

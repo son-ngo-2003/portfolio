@@ -12,14 +12,14 @@ const Activities = forwardRef(( props, ref ) => {
 
     return (
         <div ref={ref} className={`${styles.activities} section`}>
-            <div className={`welcome`}>
+            <div className={`${styles.welcome}`}>
                 <h3 className="sub-title">{t("activities.introduction.sub-title")}</h3>
                 <h1 className="title maj">{t("activities.introduction.title")}</h1>
                 <p className={`text`}>{t("activities.introduction.text")}</p>
             </div>
 
             <div className={`${styles.buttons} row`}>
-                <a className="col l-6">
+                <a className="col l-6 m-12 c-12 flex">
                     <Button
                         text={t("activities.activities.associations")}
                         size='large'
@@ -27,7 +27,7 @@ const Activities = forwardRef(( props, ref ) => {
                     />
                 </a>
 
-                <a className="col l-6">
+                <a className="col l-6 m-12 c-12 flex">
                     <Button
                         text={t("activities.activities.sports")}
                         size='large'
@@ -35,7 +35,7 @@ const Activities = forwardRef(( props, ref ) => {
                     />
                 </a>
 
-                <a className="col l-6">
+                <a className="col l-6 m-12 c-12 flex">
                     <Button
                         text={t("activities.activities.arts")}
                         size='large'

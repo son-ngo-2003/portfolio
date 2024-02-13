@@ -35,7 +35,7 @@ const About = forwardRef(( props, ref ) => {
 
             <div className={`${styles.strengths} row`}>
                 {  strengthsList.map( (value, index) => (
-                        <div key={index} className="col l-3">
+                        <div key={index} className={`${styles.strengthBox} flex col l-3 m-6 c-6`}>
                             <ExpandableBox
                                 icon = {value.icon}
                                 title = {value.title}

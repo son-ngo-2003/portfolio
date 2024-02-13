@@ -20,7 +20,7 @@
 }
 
 .flex {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
 }
@@ -80,6 +80,10 @@
         }
     }
 
+    .inverse-bg::after, .inverse-bg::before {
+        background-color: $black-800 !important;
+    }
+
     .border-as-bg { //border has same color as background
         border-color: $background;
     }
@@ -121,6 +125,10 @@
 
     .border-as-bg {
         border-color:$dark-background;
+    }
+
+    .inverse-bg::after, .inverse-bg::before {
+        background-color: $white-600 !important;
     }
 
     .border-as-component { //border has same color as component

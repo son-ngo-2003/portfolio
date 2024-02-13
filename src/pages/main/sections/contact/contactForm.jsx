@@ -45,6 +45,19 @@ const ContactForm = ({ divClassName='', contactContent }) => {
 
     return (
         <div className={`${styles.overlay} ${divClassName} bg-component`}>
+
+            <div className={`${styles.formContact}`}>
+                <h3 className={`${styles.title} sub-title`}>SEND ME A MESSAGE</h3>
+                <Form
+                    listInput = {listInput}
+                    submitButton = { (<Button
+                                        divClassName={styles.btnInside}
+                                        size="medium"
+                                        text={form.button}
+                                    ></Button>)}
+                ></Form>
+            </div>
+
             <div className={`${styles.info} bg-component-primary`}>
                 <div className={`${styles.mainDetails}`}>
                     <h3 className={`${styles.title} sub-title`}>{info.title}</h3>
@@ -65,17 +78,6 @@ const ContactForm = ({ divClassName='', contactContent }) => {
                     <a href={infoContact.facebook} className=""><AiOutlineFacebook /></a>
                     <a href={infoContact.twitter} className=""><LuTwitter /></a>
                 </div>
-            </div>
-
-            <div className={`${styles.formContact}`}>
-                <h3 className={`${styles.title} sub-title`}>SEND ME A MESSAGE</h3>
-                <Form
-                    listInput = {listInput}
-                    submitButton = { (<Button
-                                        size="medium"
-                                        text={form.button}
-                                    ></Button>)}
-                ></Form>
             </div>
         </div>
     )

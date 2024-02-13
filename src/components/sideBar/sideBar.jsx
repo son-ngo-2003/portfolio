@@ -6,7 +6,12 @@ import styles from './sideBar.module.scss';
 //context
 import {ThemeContext} from "/src/contexts/themeContext"
 
+import { RiMenu2Fill } from "react-icons/ri";
+import { MdMenuOpen } from "react-icons/md";
+
+
 const sideBar = ({sectionsRef}) => {
+    const [isShow, setIsShow] = useState(false);
     const [currentSection, setCurrentSection] = useState('home');
     const sectionsPos = useRef(null);
     const {theme} = useContext(ThemeContext)
@@ -49,22 +54,39 @@ const sideBar = ({sectionsRef}) => {
         </li>)
 
     return (
-        <div className={`${styles[theme]} ${styles.sideBar} `}> 
-            <img  className="horizontal-center" alt="" />
-            <h2   className='text'>NGO Truong Son</h2>
-            <p    className='text'>3rd student at INSA</p>
+        <>
+            <div className={`${styles[theme]} ${styles.sideBar} ${isShow && styles.open}`}> 
+                <img  className="horizontal-center" alt="" />
+                <h2   className='text'>NGO Truong Son</h2>
+                <p    className='text'>3rd student at INSA</p>
 
-            <ul className="text">
-                {getNavItem("home",         "Home")}
-                {getNavItem("about",        "About Me")}
-                {getNavItem("services",     "Services")}
-                {getNavItem("skills",       "Skills")}
-                {getNavItem("education",    "Education")}
-                {getNavItem("projects",     "Projects")}
-                {getNavItem("activities",   "Activities - Interests")}
-                {getNavItem("contact",      "Contact ")}
-            </ul>
-        </div>
+                <ul className="text">
+                    {getNavItem("home",         "Home")}
+                    {getNavItem("about",        "About Me")}
+                    {getNavItem("services",     "Services")}
+                    {getNavItem("skills",       "Skills")}
+                    {getNavItem("education",    "Education")}
+                    {getNavItem("projects",     "Projects")}
+                    {getNavItem("activities",   "Activities - Interests")}
+                    {getNavItem("contact",      "Contact ")}
+                </ul>
+
+                <button className={`${styles.openButton} flex text`}
+                        onClick={ () => { setIsShow(!isShow) } }
+                >
+                    {   isShow 
+                        ? <MdMenuOpen/>
+                        : <RiMenu2Fill />
+                    }
+                    
+                </button>
+
+                
+            </div>
+            <div className={`${styles.overlay}`}
+                onClick={ () => { setIsShow(!isShow) }}
+            ></div>
+        </>
     )
 }
 

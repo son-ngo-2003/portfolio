@@ -11,3 +11,18 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+    .projects {
+        padding-bottom: 2em !important;
+        .welcome {
+            text-align: center;
+        }
+
+        .projectsList {
+            display: flex;
+            margin-top: 2em;
+            justify-content: center;
+        }
+    }
+}

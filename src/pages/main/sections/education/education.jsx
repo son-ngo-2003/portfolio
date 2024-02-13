@@ -26,8 +26,8 @@ const ServicesSection = forwardRef(( props, ref ) => {
                             }));
 
     return (
-        <div ref={ref} className={`${styles.skills} section`}>
-            <div className={`welcome`}>
+        <div ref={ref} className={`${styles.education} section`}>
+            <div className={`${styles.welcome}`}>
                 <h3 className="sub-title">{t("education.introduction.sub-title")}</h3>
                 <h1 className="title maj">{t("education.introduction.title")}</h1>
             </div>
@@ -35,7 +35,7 @@ const ServicesSection = forwardRef(( props, ref ) => {
             <div className={`${styles.educationList} row`}>
                 <span className={`${styles.line} bg-component-darker`}></span>
                 {  educationList.map( (value, index) => (
-                        <div key={index} className={`${styles.educationItem} col l-12`}>
+                        <div key={index} className={`${styles.educationItem} col l-12 m-12 c-12`}>
                             <TextBox
                                 divClassName= {styles.educationBox}
                                 title = {value.title}

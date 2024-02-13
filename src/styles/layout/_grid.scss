@@ -14,8 +14,8 @@
 }
 
 .section {
-    padding-top: 6em !important;
-    padding-bottom: 6em !important;
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
 }
 
 .section-overlap {
@@ -294,6 +294,11 @@
 
 /* PC medium resolution > */
 @media (min-width: 1113px) {
+    .section {
+        padding-top: 6em !important;
+        padding-bottom: 6em !important;
+    }
+
     .row {
         margin-left: -12px;
         margin-right: -12px;
@@ -446,6 +451,10 @@
 
 /* Tablet - PC low resolution */
 @media (min-width: 740px) and (max-width: 1023px) {
+    .section {
+        padding-top: 4em !important;
+        padding-bottom: 4em !important;
+    }
     .wide {
         width: 644px;
     }
@@ -453,6 +462,11 @@
 
 /* > PC low resolution */
 @media (min-width: 1024px) and (max-width: 1239px) {
+    .section {
+        padding-top: 6em !important;
+        padding-bottom: 6em !important;
+    }
+
     .wide {
         width: 984px;
     }

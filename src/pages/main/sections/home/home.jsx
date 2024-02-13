@@ -24,26 +24,28 @@ const Home = forwardRef(( props, ref ) => {
 
     return (
         <div ref={ref} className={`${styles.home} row section`}>
-            <div className={`${styles.leftPart} col l-6`}>
+            <div className={`${styles.leftPart} col l-6 m-12 c-12`}>
                 <div className={`welcome`}>
                     <h3 className="sub-title">{t("home.welcome.sub-title")}</h3>
                     <h1 className="title">{t("home.welcome.name")}</h1>
                     <p className="text">{t("home.welcome.text")}</p>
                 </div>
-                <Button
-                    divClassName={styles.buttons}
-                    text={t("home.buttons.download-CV")}
-                    icon={<IoDownloadOutline />}
-                />
+                <div className={`${styles.buttonsContainer}`}>
+                    <Button
+                        divClassName={styles.button}
+                        text={t("home.buttons.download-CV")}
+                        icon={<IoDownloadOutline />}
+                    />
 
-                <Button
-                    divClassName={styles.buttons}
-                    text={t("home.buttons.discover")}
-                    icon={<MdOutlineWorkOutline />}
-                />
+                    <Button
+                        divClassName={styles.button}
+                        text={t("home.buttons.discover")}
+                        icon={<MdOutlineWorkOutline />}
+                    />
+                </div>
             </div>
 
-            <div className={`${styles.rightPart} ${styles[theme]} col l-6`}>
+            <div className={`${styles.rightPart} ${styles[theme]} col l-6 m-12 c-12`}>
                 <div className={`${styles.overlay}`}>
                     <div className={`${styles.hole} horizontal-center background`}></div>
                     <img src={homeImage.src} alt="" />

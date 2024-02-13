@@ -4,3 +4,9 @@
     padding: 2.5em;
     padding-left: (18.75em + 2.5em);
 }
+
+@media (max-width: 1240px) {
+    .container {
+        padding-left: 2.5em;
+    }
+}

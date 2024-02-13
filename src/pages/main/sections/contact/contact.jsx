@@ -13,7 +13,7 @@ const Contact = forwardRef(( props, ref ) => {
 
     return (
         <div ref={ref} className={`${styles.contact} section`}>
-            <div className={`welcome`}>
+            <div className={`${styles.welcome}`}>
                 <h3 className="sub-title">{t("contact.introduction.sub-title")}</h3>
                 <h1 className="title maj">{t("contact.introduction.title")}</h1>
                 <p className="text">{t("contact.introduction.text")}</p>

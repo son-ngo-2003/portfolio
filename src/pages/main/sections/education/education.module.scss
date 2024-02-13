@@ -1,6 +1,6 @@
 @use "/src/styles/abstracts" as *;
 
-.skills {
+.education {
     .educationList {
         margin-top: 2em;
         position: relative;
@@ -61,5 +61,53 @@
                 background-color: $secondary;
             }
         }
+    }
+}
+
+@media (max-width: 1024px) {
+    .education {
+        .welcome {
+            text-align: center;
+        }
+        
+        .educationList {
+
+            .line {
+                margin-left: 1.5em;
+            }
+    
+            .finalPoint {
+                margin-left: 1em;
+            }
+
+            .linePoint {
+                $pointSize: 2.5em;
+    
+                height: $pointSize;
+                width: $pointSize;
+    
+                &::after {
+                    height: calc($pointSize * 0.7);
+                    width: calc($pointSize * 0.7);
+                    top: calc($pointSize * 0.15);
+                    left: calc($pointSize * 0.15);
+                }
+            }
+
+            .educationItem {
+                margin-bottom: 1.25em;
+            }
+    
+        }
+    }
+}
+
+@media (max-width: 739px) {
+    .education {
+        .educationList {
+            .line {
+                margin-left: 1.25em;
+            }
+        }   
     }
 }

@@ -1,8 +1,8 @@
 @use "/src/styles/abstracts" as *;
 
 .box {
-    overflow: auto;
     width: 25em;
+    overflow: auto;
     border-bottom: 1px solid $black-300;
 
     .overlay {
@@ -30,12 +30,12 @@
             width: 2.25em;
             $font-size: 1.25em;
 
+
             &::before{
                 content: "";
                 position: absolute;
                 height: $font-size;
                 width : 0.125em;
-                background-color: $black-800;
                 transition: transform 300ms ease-in;
             }
 
@@ -44,7 +44,6 @@
                 position: absolute;
                 width: $font-size;
                 height: 0.125em;
-                background-color: $black-800;
                 transition: transform 300ms ease-in;
             }
         }
@@ -61,8 +60,6 @@
         transition: height 300ms ease-in, box-shadow 100ms ease-in;
     }
 
-
-    
     &.open {
         .iconCover {
             color: $secondary;

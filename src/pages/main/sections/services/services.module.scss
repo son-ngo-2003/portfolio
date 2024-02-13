@@ -2,11 +2,27 @@
 
 .services {
     .introductionText {
-        width: 90%;
+        width: 100%;
     }
 
     .servicesList {
+        margin-top: 1.5em;
         position: absolute;
         float: right;
+    }
+}
+
+@media (max-width: 1023px) {
+    .services {
+        margin-bottom: 17em;
+        .welcome {
+            text-align: center;
+        }
+    
+        .servicesList{
+            margin-top: 2em;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }

@@ -20,7 +20,7 @@
             font-size: 1em;
         }
 
-        .buttons {
+        .button {
             margin-top: 1.875em;
             position: relative;
         }
@@ -50,7 +50,7 @@
                 bottom: -30px;
 
                 left: 50%;
-                transform: translateX(-53.5%);
+                transform: translateX(-50%);
             }
         }
 
@@ -97,6 +97,24 @@
             font-family: "Raleway";
             font-size: 2.125em;
             text-align: center;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .home {
+        .leftPart {
+            margin-top: 0;
+            .buttonsContainer {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+        }
+
+        .rightPart {
+            margin-top: 2em;
         }
     }
 }

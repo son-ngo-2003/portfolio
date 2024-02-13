@@ -1,8 +1,10 @@
 @use "/src/styles/abstracts" as *;
 
+$sideBarWidth: 18.75rem;
+
 .sideBar {
     height: 100vh;
-    width: 18.75rem;
+    width: $sideBarWidth;
     position: fixed;
 
     img {
@@ -14,7 +16,7 @@
     }
 
     h2 {
-        color: $primary !important;
+        color: $secondary !important;
         font-family: "Raleway-SemiBold";
         font-size: 2em;
         text-align: center;
@@ -90,18 +92,59 @@
                     left: 4%; 
                 }
             }
-
-
-
-            
         }
     }
 }
 
 .light-theme {
     background-color: $white-700;
+    .openButton {
+        background-color: $white-700;
+    }
 }
 
 .dark-theme{
-    background-color: $black-700;
+    background-color: $black-600;
+    .openButton {
+        background-color: $black-600;
+    }
+}
+
+@media (max-width: 1240px) {
+    $sizeButton: 4rem;
+    $bigSizeBarWidth: 28rem;
+    .sideBar {
+        width: $bigSizeBarWidth;
+        z-index: 99;
+        left: -$bigSizeBarWidth;
+        transition: left 300ms ease-out;
+
+        &.open {
+            left: 0;
+
+            &+.overlay {
+                z-index: 95;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .openButton{
+            border: none;
+            width: $sizeButton;
+            height: $sizeButton;
+
+            position: absolute;
+            top: 2rem;
+            right: - $sizeButton;
+
+            border-radius: 0 0.2em 0.2em 0;
+            font-size: 2em;
+        }
+
+
+    }
 }

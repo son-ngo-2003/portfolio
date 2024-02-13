@@ -5,3 +5,12 @@
         margin-top: 2em;
     }
 }
+
+@media (max-width: 1200px) {
+    .contact {
+        padding-bottom: 5em !important;
+        .welcome {
+            text-align: center;
+        }
+    }
+}

@@ -5,3 +5,13 @@
         margin-top: 2em;
     }
 }
+
+@media (max-width: 1200px) {
+    .about {
+        text-align: center;
+
+        .strengths .strengthBox{
+                margin-bottom: 2em;
+        }
+    }
+}

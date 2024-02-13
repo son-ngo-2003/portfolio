@@ -30,11 +30,11 @@ const ServicesSection = forwardRef(( props, ref ) => {
         return [list.slice(0, middleIndex), list.slice(middleIndex)];
     };
 
-    const [leftSkillsList, rightSkillsLists] = separateList(skillsList);
+    let [leftSkillsList, rightSkillsLists] = separateList(skillsList);
 
     return (
         <div ref={ref} className={`${styles.skills} section`}>
-            <div className={`welcome`}>
+            <div className={`${styles.welcome}`}>
                 <h3 className="sub-title">{t("skills.introduction.sub-title")}</h3>
                 <h1 className="title maj">{t("skills.introduction.title")}</h1>
                 <p className={`text`}>{t("skills.introduction.text")}</p>
@@ -72,6 +72,21 @@ const ServicesSection = forwardRef(( props, ref ) => {
                 </div>
             </div>
 
+            {/* Mobile version */}
+            <div className={`col l-12 m-12 c-12`}>
+                <div className={`${styles.skillsListMobile} row`}>
+                {  skillsList.map( (value, index) => (
+                        <div key={index} className="">
+                            <Accordion
+                                icon = {value.icon}
+                                title = {value.title}
+                                text = {value.text}
+                            />
+                        </div>
+                    ))
+                }
+                </div>
+            </div>
 
         </div>
     )

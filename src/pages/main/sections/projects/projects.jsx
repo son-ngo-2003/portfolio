@@ -24,7 +24,7 @@ const Projects = forwardRef(( props, ref ) => {
 
     return (
         <div ref={ref} className={`${styles.projects} section`}>
-            <div className={`welcome`}>
+            <div className={`${styles.welcome}`}>
                 <h3 className="sub-title">{t("projects.introduction.sub-title")}</h3>
                 <h1 className="title maj">{t("projects.introduction.title")}</h1>
             </div>
