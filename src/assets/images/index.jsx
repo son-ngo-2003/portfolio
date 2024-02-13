@@ -1,5 +1,9 @@
 const homeImage = {
-    src : "/src/assets/images/DaLat.png"
+    src : "https://res.cloudinary.com/dnt6wfbks/image/upload/v1707858032/portfolio/home/DaLat_ivbygu.png"
+}
+
+const avatarImage = {
+    src : "https://res.cloudinary.com/dnt6wfbks/image/upload/v1707858047/portfolio/home/avatar_qj5qvt.png"
 }
 
 
@@ -25,6 +29,7 @@ const flags = {
 
 export {
     homeImage,
+    avatarImage,
     flags,
     vnFlag,
     frFlag,

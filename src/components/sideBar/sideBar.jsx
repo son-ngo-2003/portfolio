@@ -6,9 +6,12 @@ import styles from './sideBar.module.scss';
 //context
 import {ThemeContext} from "/src/contexts/themeContext"
 
+//icons
 import { RiMenu2Fill } from "react-icons/ri";
 import { MdMenuOpen } from "react-icons/md";
 
+//images
+import { avatarImage } from "/src/assets/images";
 
 const sideBar = ({sectionsRef}) => {
     const [isShow, setIsShow] = useState(false);
@@ -56,7 +59,7 @@ const sideBar = ({sectionsRef}) => {
     return (
         <>
             <div className={`${styles[theme]} ${styles.sideBar} ${isShow && styles.open}`}> 
-                <img  className="horizontal-center" alt="" />
+                <img  className="horizontal-center" alt="" src={avatarImage.src} />
                 <h2   className='text'>NGO Truong Son</h2>
                 <p    className='text'>3rd student at INSA</p>
 
