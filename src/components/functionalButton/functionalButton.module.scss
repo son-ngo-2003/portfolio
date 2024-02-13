@@ -5,9 +5,17 @@
     position: fixed;
     bottom: 2em;
     right: 2em;
-    display: flex;
-    align-items: center;
     transition: bottom 200ms ease-in;
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 
     .outside {
         width: 3.6em;
@@ -48,4 +56,54 @@
 
 .hide {
     bottom: -5em;
+}
+
+@media (max-width: 1024px) {
+    .fbutton {
+        .desktop {
+            display: none;
+        }
+    
+        .mobile {
+            display: block;
+
+            .overlay {
+                position: absolute;
+                z-index: 20;
+                right: 0;
+                bottom: 0;
+            }
+
+            .outside {
+                margin: 0;
+            }
+
+            .container {
+                position: absolute;
+                width: 100%;
+                bottom: 0.5em;
+                right: 2em;
+
+                transition: bottom 300ms ease-in;
+
+                li {
+                    position: absolute;
+                    margin: auto;
+                    transition: bottom 300ms ease-in;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            @for $i from 1 to 8 {
+                li:nth-child(#{$i}) {
+                    bottom: calc($i * 4em);
+                }
+            }
+
+            &.close .container li{            
+                bottom: 0;
+            }
+        }
+    }
 }

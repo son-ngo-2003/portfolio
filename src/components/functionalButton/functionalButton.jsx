@@ -15,6 +15,8 @@ import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa6";
 import { TiArrowUpThick } from "react-icons/ti";
 import { IoPerson } from "react-icons/io5";
+import { RiMenu5Line } from "react-icons/ri";
+import { IoClose } from "react-icons/io5";
 
 //images
 import { flags } from '/src/assets/images'
@@ -26,6 +28,7 @@ const FunctionalButton = ({ functionList = ['light-dark', 'language', 'contact',
                   divClassName='' }) => {
 
     const [isShown, setIsShown] = useState(true)
+    const [isCombined, setIsCombined] = useState(true) //for mobile
     const posY = useRef(window.scrollY);
     const length = functionList.length;
 
@@ -42,6 +45,9 @@ const FunctionalButton = ({ functionList = ['light-dark', 'language', 'contact',
         type: "image",
         value: flags[lang].src,
     }) )
+    const menuList = [
+        {value: <RiMenu5Line/>, type: "icon"},
+        {value: <IoClose/>, type: "icon"},]
 
     function scrollToSection( section ) {
         const node = sectionsRef.current.get( section );
@@ -56,6 +62,7 @@ const FunctionalButton = ({ functionList = ['light-dark', 'language', 'contact',
         const newPosY = window.scrollY;
         setIsShown(newPosY < posY.current);
         posY.current = newPosY;
+        setIsCombined(true);
     }
 
     useEffect(() => {
@@ -76,13 +83,13 @@ const FunctionalButton = ({ functionList = ['light-dark', 'language', 'contact',
         switch (func) {
             case 'language':
                 return <ButtonElement listAssets={flagsList}
-                                        debutIndex={languageList.findIndex( (e) => e == localStorage.getItem('language') )}
+                                        setIndex={languageList.findIndex( (e) => e == localStorage.getItem('language') )}
                                         onClick={(selectedIndex) => {
                                                 i18next.changeLanguage(languageList[selectedIndex]);
                                                 localStorage.setItem('language', languageList[selectedIndex])}}/>
             case 'light-dark':
                 return <ButtonElement listAssets={themeIconList}
-                                        debutIndex={themeList.findIndex( (e) => e == localStorage.getItem('theme'))}
+                                        setIndex={themeList.findIndex( (e) => e == localStorage.getItem('theme'))}
                                         onClick={(selectedIndex) => {
                                                 setTheme( themeList[selectedIndex] ),
                                                 localStorage.setItem('theme', themeList[selectedIndex])}}/>
@@ -92,20 +99,38 @@ const FunctionalButton = ({ functionList = ['light-dark', 'language', 'contact',
             case 'go-top':
                 return <ButtonElement listAssets={goTopList}
                                         onClick={() => {window.scrollTo({top: 0, behavior: "smooth"})}}/>
+            case 'menu': 
+                return <ButtonElement listAssets={menuList}
+                                        setIndex = {+(!isCombined)}
+                                        onClick={() => {setIsCombined(!isCombined)}}/>
         }
     }
 
     return (
         <div className={`${styles.fbutton} ${styles[theme]} ${divClassName} ${isShown ? '' : styles.hide}`}>
-            <div className={`${styles.outside} flex`}>
-                {choseButton( functionList[length-1] )}
+            <div className={`${styles.desktop}`}>
+                <div className={`${styles.outside} flex`}>
+                    {choseButton( functionList[length-1] )}
+                </div>
+                <ul className={`${styles.overlay}`}>
+                    {functionList.map((func, index)=>
+                        (index < length-1) && 
+                        <li key={index}>{choseButton( func )}</li>
+                    )}
+                </ul>
             </div>
-            <ul className={`${styles.overlay}`}>
-                {functionList.map((func, index)=>
-                    (index < length-1) && 
-                    <li key={index}>{choseButton( func )}</li>
-                )}
-            </ul>
+
+            <div className={`${styles.mobile} ${isCombined ? styles.close : '' }`}>
+                <ul className={`${styles.container} `}>
+                    {functionList.map((func, index)=>
+                        (index < length-1) && 
+                        <li className={`${styles.outside} flex`} key={index}>{choseButton( func )}</li>
+                    )}
+                </ul>
+                <div className={`${styles.overlay}`}>
+                    {choseButton( 'menu' )}
+                </div>
+            </div>
         </div>
     )
 }

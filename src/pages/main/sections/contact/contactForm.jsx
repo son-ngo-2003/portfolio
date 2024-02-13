@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 //services
 import {getInfo} from '/src/services/infoServices'
@@ -14,7 +15,11 @@ import { AiOutlineFacebook } from "react-icons/ai";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { LuTwitter } from "react-icons/lu";
 
+//emailjs
+import { emailjsConfig } from "/src/config/emailjs.js"
+
 const ContactForm = ({ divClassName='', contactContent }) => {
+    const formRef = useRef(null);
     const [infoContact, setInfoContact] = useState({});
     const info = contactContent.info;
     const form = contactContent.form;
@@ -22,7 +27,7 @@ const ContactForm = ({ divClassName='', contactContent }) => {
         name:           {type: 'text', placeholder: form.name, required: true},
         email:          {type: 'email', placeholder: form.email, required: true}, 
         subject:        {type: 'text', placeholder: form.subject, required: true}, 
-        describtion:    {type: 'textarea', placeholder: form.message, required: true},
+        message:    {type: 'textarea', placeholder: form.message, required: true},
     }
 
     useEffect(() => {
@@ -43,17 +48,29 @@ const ContactForm = ({ divClassName='', contactContent }) => {
         ));
     };
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+        console.log(emailjsConfig.service_id, emailjsConfig.template_id, formRef.current, emailjsConfig.options)
+        emailjs
+            .sendForm(emailjsConfig.service_id, emailjsConfig.template_id, formRef.current, emailjsConfig.options)
+            .then(() => { alert( `Email sent successfully! Thanks for your attention! We will reply to you as soon as possible.`)},
+                 (error) => { alert('Email was not able to send! The error text: ', error.text, "\nPlease try again or send an email directly to me. Thank you!")});
+    }
+
     return (
         <div className={`${styles.overlay} ${divClassName} bg-component`}>
 
             <div className={`${styles.formContact}`}>
                 <h3 className={`${styles.title} sub-title`}>SEND ME A MESSAGE</h3>
                 <Form
+                    callback={sendEmail}
+                    ref = {formRef}
                     listInput = {listInput}
                     submitButton = { (<Button
                                         divClassName={styles.btnInside}
                                         size="medium"
                                         text={form.button}
+                                        isUsedSubmit={true}
                                     ></Button>)}
                 ></Form>
             </div>

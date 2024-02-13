@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 import styles from './form.module.scss';
 
 const  mapForObject = (obj, func) => { 
@@ -42,16 +44,16 @@ const getInputElement = (key, value) => {
 //listInput is a obj that like a list of input want to get in form
 //key will be the name and that will be also label (if label contient 2 words, using underscore instead of space)
 //value will be the type of input, and append 'R' in the beginning if required
-const Form = ({ listInput = {
+const Form = forwardRef(({ listInput = {
                     first_name:  {type: 'text', placeholder: 'First Name', required: true},
                     email:       {type: 'email', placeholder: 'Email', required: true}, 
                     password:    {type: 'password', placeholder: 'Password', required: true}, 
                     describtion: {type: 'textarea', placeholder: 'Description', required: true, big: true},
                 },
                 submitButton='', callback=()=>{},
-                divClassName='' }) => {
+                divClassName='' }, ref) => {
     return (
-        <form className={`${styles.form} ${divClassName}`} onSubmit={callback}>
+        <form ref={ref} className={`${styles.form} ${divClassName}`} onSubmit={callback}>
             {mapForObject( listInput, ([key, value], index)=>(
                 <div key={index} className={styles.formRow}>
                     {getInputElement(key,value)}
@@ -60,6 +62,6 @@ const Form = ({ listInput = {
             {submitButton}
         </form>
     )
-}
+})
 
 export default Form;
