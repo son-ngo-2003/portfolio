@@ -26,17 +26,14 @@ const ContactForm = ({ divClassName='', contactContent }) => {
     }
 
     useEffect(() => {
-        const fetchData = async () => {
+        (async () => {
             try {
                 const data = await getInfo();
-                console.log(data);
                 setInfoContact(data);
             } catch (error) {
                 console.error('Error fetching events:', error);
             }
-
-        };
-        fetchData();
+        })();
     }, []);
 
     const separateStringIntoParagraphs = (str) => {

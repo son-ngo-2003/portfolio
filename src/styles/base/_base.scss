@@ -1,5 +1,9 @@
 @use '../abstracts/colors' as *;
 
+* {
+    transition: background-color 300ms ease-in, border-right 300ms ease-in;
+}
+
 .scroll {
     overflow-y: scroll;
     &::-webkit-scrollbar,

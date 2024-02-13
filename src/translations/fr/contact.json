@@ -17,7 +17,7 @@
                 "title" : "Envoyez-moi un message",
                 "name" : "Votre Nom",
                 "email" : "Votre Email",
-                "suject" : "Subjet",
+                "subject" : "Subjet",
                 "message" : "Votre Message",
                 "button" : "Envoyer le message"
             }

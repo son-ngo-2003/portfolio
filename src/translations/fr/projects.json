@@ -2,19 +2,19 @@
     "projects" : {
         "introduction" : {
             "sub-title": "Travail récent",
-            "titre" : "Mon Portfolio"
+            "title" : "Mon Portfolio"
         },
 
-        "projets" : [
+        "projects" : [
             {
                 "date" :  "Date: 06/06/2015",
-                "titre" : "Texte1",
+                "title" : "Texte1",
                 "role" :  "Rôle: Développeur"
             },
 
             {
                 "date":   "Date: 06/06/2015",
-                "titre" : "Texte2",
+                "title" : "Texte2",
                 "role" :  "Rôle: Développeur"
             }
         ]

@@ -1,0 +1,51 @@
+@use "/src/styles/abstracts" as *;
+
+.fbutton {
+    z-index: 90;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    display: flex;
+    align-items: center;
+    transition: bottom 200ms ease-in;
+
+    .outside {
+        width: 3.6em;
+        height: 3.6em;
+        border-radius: 50%;
+        margin-right: 0.5em;
+    }
+
+    .overlay {
+        display: flex;
+        overflow: auto;
+        background-color: $secondary;
+        padding: 0.7em;
+        border-radius: 2em;
+
+        li {
+            margin-left: 0.3em;
+            margin-right: 0.3em;
+        }
+    }
+}
+
+.light-theme {
+    .outside {
+        background-color: $black-400;
+    }
+}
+
+.dark-theme {
+    .outside {
+        background-color: $white-300;
+    }
+
+    .overlay {
+        background-color: $primary;
+    }
+}
+
+.hide {
+    bottom: -5em;
+}

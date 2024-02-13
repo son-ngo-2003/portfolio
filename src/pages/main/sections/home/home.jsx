@@ -13,7 +13,7 @@ import { IoDownloadOutline } from "react-icons/io5";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
 //images
-import { homeImage } from "/src/assets/images/image";
+import { homeImage } from "/src/assets/images";
 
 //context
 import {ThemeContext} from "/src/contexts/themeContext"

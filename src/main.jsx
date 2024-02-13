@@ -14,7 +14,7 @@ i18next
     .use(initReactI18next)
     .init({
         interpolation: {escapeValue: false},
-        lng: "en",
+        lng: localStorage.getItem('language') || "en",
         resources: {
             en : {
                 global: tr.global_en,
