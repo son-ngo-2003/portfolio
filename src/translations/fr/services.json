@@ -1,31 +1,28 @@
 {
     "services" : {
         "introduction" : {
-            "sub-title": "Ce que je peux faire pour vous",
+            "sub-title": "Ce que je peux faire",
             "title" : "Mes Services",
-            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            "text" : "Voici les services que je suis sûr de pouvoir exécuter au mieux lorsque vous engagez votre entreprise. Cependant, s'il y a d'autres exigences pour le recrutement, ne vous inquiétez pas, je ferai également de mon mieux pour assurer la meilleure réalisation des tâches."
         },
 
-        "services" : [
+        "services": [
             {
-                "title" : "Texte1",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Front end",
+                "text": "Je me spécialise dans le développement front-end, en créant des interfaces utilisateur conviviales avec HTML, CSS et JavaScript. J'ai également une expertise dans la bibliothèque React.js."
             },
-
             {
-                "title" : "Texte2",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Back end",
+                "text": "Je brille dans le développement back-end, travaillant avec des frameworks comme Node.js pour construire des applications côté serveur robustes."
             },
-
             {
-                "title" : "Texte3",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Développement d'app",
+                "text": "Je possède des connaissances en développement d'applications pour les plates-formes Android, en utilisant des technologies telles que React Native et Flutter."
             },
-
             {
-                "title" : "Texte3",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Autres services",
+                "text": "Je suis adaptable et capable d'apprendre de nouvelles technologies et frameworks pour répondre aux besoins uniques de votre projet."
             }
-        ]
+        ]        
     }
 }

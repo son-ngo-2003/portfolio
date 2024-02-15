@@ -1,6 +1,11 @@
 @use "/src/styles/abstracts" as *;
 
 .about {
+    .welcome {
+        p {
+            margin-top: 1em;
+        }
+    }
     .strengths {
         margin-top: 2em;
     }

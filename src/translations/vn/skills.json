@@ -1,35 +1,38 @@
 {
-    "skills" : {
-        "introduction" : {
-            "sub-title": "???",
-            "title" : "Kĩ năng của mình",
-            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+    "skills": {
+        "introduction": {
+            "sub-title": "Kỹ năng kỹ thuật của tôi",
+            "title": "Kỹ năng của tôi",
+            "text": "Trong suốt quãng thời gian học tập tại INSA, tôi đã dành nhiều thời gian để nâng cao kiến thức và kỹ năng của mình về công nghệ thông tin. Dưới đây là danh sách các kỹ năng mà tôi đã đạt được."
         },
-
-        "skills" : [
+        "skills": [
             {
-                "title" : "Kĩ năng 1",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Ngôn ngữ lập trình",
+                "text": "Sử dụng thành thạo các ngôn ngữ lập trình như /Python/, /JavaScript/, /C++/, và /Kotlin/."
             },
-
             {
-                "title" : "Kĩ năng 2",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Quản lý cơ sở dữ liệu",
+                "text": "Có nền tảng vững chắc trong /SQL/ (Structured Query Language) với các hệ quản trị cơ sở dữ liệu như /MySQL/, /PostgreSQL/, và cũng có kinh nghiệm trong các cơ sở dữ liệu không quan hệ như /MongoDB/, và /Firebase/."
             },
-
             {
-                "title" : "Kĩ năng 3",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Phát triển Web",
+                "text": "Thông thạo việc sử dụng /HTML/, /CSS/, và /JavaScript/ với framework /Reactjs/ cho phát triển giao diện người dùng (front-end), cũng như các công nghệ back-end như /Node.js/"
             },
-
             {
-                "title" : "Kĩ năng 4",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Phát triển ứng dụng Android",
+                "text": "Quen thuộc với /Kotlin/ và nắm bắt kiến thức nền tảng của /Jetpack Compose/ cho việc phát triển ứng dụng Android."
             },
-            
             {
-                "title" : "Kĩ năng 5",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Docker",
+                "text": "Hiểu biết về /Docker/ và /Docker Compose/, thành thạo trong việc đóng gói ứng dụng vào container và triển khai đa-container."
+            },
+            {
+                "title": "Cấu trúc dữ liệu, thuật toán",
+                "text": "Kiến thức về các /cấu trúc dữ liệu/ (mảng, danh sách liên kết, cây, đồ thị, v.v.) và thuật toán để giải quyết vấn đề một cách hiệu quả."
+            },
+            {
+                "title": "Thiết kế",
+                "text": "Thạo việc sử dụng /Adobe Photoshop/ cho thiết kế đồ họa, với khả năng tạo và chỉnh sửa hình ảnh kỹ thuật số. Cũng có kinh nghiệm trong /Figma/ cho thiết kế UI/UX, có khả năng tạo ra giao diện trực quan và thân thiện với người dùng."
             }
         ]
     }

@@ -1,40 +1,34 @@
 {
-    "education" : {
-        "introduction" : {
-            "sub-title": "Mon parcours d'apprentissage",
-            "title" : "Education"
+    "education": {
+        "introduction": {
+            "sub-title": "Mon parcours éducatif",
+            "title": "Éducation"
         },
-
-        "education" : [
+    
+        "education": [
             {
-                "title" : "Texte1",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Lycée d'élite Lê Quý Đôn - Vietnam",
+                "years": "2018 - 2021",
+                "text": "Pendant 3 ans au lycée, j'ai étudié dans la classe de mathématiques spécialisées. J'ai participé à de nombreuses compétitions dans cette matière, et surtout au terminale, j'ai remporté le prix d'encouragement à l'Olympiade nationale de mathématiques.",
+                "href" : "https://fr.wikipedia.org/wiki/Lyc%C3%A9e_d%27%C3%A9lite_Le_Quy_Don"
             },
-
             {
-                "title" : "Texte2",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "FIMI - INSA Lyon",
+                "years": "2021 - 2023",
+                "text": "En 2021, j'ai été admis à l'INSA Lyon en France et j'ai participé au programme FIMI (Formation Initiale aux Métiers d'Ingénieur). Dans le programme de 2 ans, j'ai obtenu un score moyen assez élevé, avec environ 16/20 la première année et 14,5/20 la deuxième année. Surtout la deuxième année, j'étais parmi les 10% meilleurs de l'école.",
+                "href": "https://www.insa-lyon.fr/fr/cycle-formation/formation-initiale-aux-metiers-d-ingenieur-fimi"
             },
-
             {
-                "title" : "Texte3",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Informatique - INSA Lyon",
+                "years": "2023 -  Récent",
+                "text": "Mes bonnes performances académiques en deuxième année m'ont permis de rejoindre le département d'informatique à l'INSA. Tout au long de cette année, j'ai reçu beaucoup de connaissances en données, programmation d'applications, etc.",
+                "href": "https://www.insa-lyon.fr/fr/formation/informatique"
             },
-
             {
-                "title" : "Texte4",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-            },
-            
-            {
-                "title" : "Texte5",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Auto-étude",
+                "years": "2021 - Récent",
+                "text": "En plus des connaissances fournies par les institutions éducatives, je suis proactif dans la recherche de documents supplémentaires auprès de sources externes telles que celles sur W3Schools, YouTube, etc., et même sur Coursera. Par exemple, j'ai participé à des cours comme 'Backend avec NodeJS' par IBM, ou des cours dans 'Android Developer' par Meta, etc."
             }
         ]
-    }
+    }    
 }

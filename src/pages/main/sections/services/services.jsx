@@ -8,16 +8,16 @@ import styles from "./services.module.scss"
 import { Accordion } from "/src/components"
 
 //icons
-import { RiSearchEyeLine } from "react-icons/ri";
-import { BiTask } from "react-icons/bi";
-import { TbSettingsCode } from "react-icons/tb";
-import { HiOutlineLightBulb } from "react-icons/hi";
+import { FaServer } from "react-icons/fa";
+import { RiReactjsLine } from "react-icons/ri";
+import { ImAndroid } from "react-icons/im";
+import { FaCode } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa6";
 
 const ServicesSection = forwardRef(( props, ref ) => {
     const [t, i18n] = useTranslation("services");
 
-    const iconList = [<RiSearchEyeLine />, <BiTask />, <TbSettingsCode />, <HiOutlineLightBulb /> ]
+    const iconList = [<RiReactjsLine />, <FaServer />, <ImAndroid />, <FaCode /> ]
     const servicesList = t('services.services', {returnObjects: true})
                             .map( ( value, key ) => ({
                                 title: value.title,

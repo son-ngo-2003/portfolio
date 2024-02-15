@@ -25,12 +25,21 @@ const About = forwardRef(( props, ref ) => {
                                 icon: iconList[key] || <FaQuestion />
                             }));
 
+    const renderParagraphs = (inputString) => {
+        const paragraphs = inputString.split("/n");
+        return paragraphs.map((paragraph, index) => (
+            <p key={index} className="text">
+                {paragraph}
+            </p>
+        ));
+    };
+
     return (
         <div ref={ref} className={`${styles.about} section`}>
-            <div className={`welcome`}>
+            <div className={`${styles.welcome}`}>
                 <h3 className="sub-title">{t("about.introduction.sub-title")}</h3>
                 <h1 className="title maj">{t("about.introduction.title")}</h1>
-                <p className="text">{t("about.introduction.text")}</p>
+                {renderParagraphs(t("about.introduction.text"))}
             </div>
 
             <div className={`${styles.strengths} row`}>

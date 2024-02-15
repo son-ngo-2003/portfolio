@@ -2,10 +2,10 @@
 import styles from './textBox.module.scss';
 
 const textBox = ({text='text', title = 'title', subTitle='', 
-                    divClassName='' }) => {
+                    divClassName='', href='' }) => {
     
     return (
-        <div className={`${styles.box} ${divClassName}`}>
+        <a className={`${styles.box} ${divClassName}`} href={href} target="_blank">
             <div className={`${styles.overlay} bg-component-darker`}>
                 <div className={`${styles.header}`}>
                     <h3 className={`${styles.title} sub-title`}>{title}</h3>
@@ -16,7 +16,7 @@ const textBox = ({text='text', title = 'title', subTitle='',
                 <div className={`${styles.triangle} border-as-component-darker`}></div>
             </div>
 
-        </div>
+        </a>
     )
 }
 

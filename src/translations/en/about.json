@@ -3,28 +3,28 @@
         "introduction" : {
             "sub-title": "About me",
             "title" : "Who am I?",
-            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            "text" : "I am Ngo Truong Son, or to be short, you can call me Son. Since primary school, I've had a deep passion for computer science and demonstrated my talent in this area (For example, I won the national first prize in an informatic competition for primary student in Vietnam). Although later on I chose to specialize in mathematics in secondary school (because I believed it was the best subject to hone my reasoning skills), I never forgot to cultivate my knowledge and skills in computer science. And now, I'm confident to pursue my dreams in the Information Technology department at INSA Lyon in France. /n Throughout my 3 years at INSA, I have continuously strived to enhance my knowledge and skills to meet my passion and find the most suitable field in information technology for myself. I have accumulated a wealth of knowledge in web development (front-end, back-end), app development, etc., and I'm still pushing myself even further to pursue my dreams. /nAt the moment, I'm looking for an internship opportunity for this summer where I can challenge myself in a real company environment. If your company needs a young and dynamic intern, I would be a good candidate. Below are four qualities that I believe best represent myself; if you find me interesting, don't forget to leave a message for me in the contact section!"
         },
 
         "strengths" : [
             {
                 "title" : "Curiousity",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "text" : "My insatiable curiosity drives me to explore new areas and deepen my knowledge."
             },
 
             {
                 "title" : "Responsibility",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "text" : " I always strive to complete assigned tasks and become reliable in my responsibilities."
             },
 
             {
                 "title" : "Adaptability",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "text" : " I can adapt to changes and am capable of quickly adjusting to new situations."
             },
-
+            
             {
                 "title" : "Creativity",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "text" : "Not only does creativity give me some talent in design, but it also enables me to think of innovative solutions and think outside the box."
             }
         ]
     }

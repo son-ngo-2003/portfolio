@@ -3,12 +3,12 @@
         "welcome" : {
             "sub-title" : "Hello, I am",
             "name" : "SON NGO",
-            "text" : "Beautiful design has the power to captivate audiences and drive business growth. Specializing in creating stunning designs that transform businesses worldwide."
+            "text" : "I'm a third-year student at INSA Lyon in France, majoring in Computer Science (Informatique), who passionate about programming and design, constantly seeking opportunities to apply my skills in real-world contexts. Welcome to my web portfolio!"
         },
         
         "buttons" : {
             "download-CV" : "Download CV",
-            "discover" : "Discover portfolio"
+            "discover" : "Discover my portfolio"
         }
     }
 }

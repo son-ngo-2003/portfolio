@@ -22,7 +22,8 @@ const ServicesSection = forwardRef(( props, ref ) => {
                             .map( ( value, key ) => ({
                                 title: value.title,
                                 text: value.text,
-                                years: value.years
+                                years: value.years,
+                                href: value.href,
                             }));
 
     return (
@@ -41,6 +42,7 @@ const ServicesSection = forwardRef(( props, ref ) => {
                                 title = {value.title}
                                 subTitle = {value.years}
                                 text = {value.text}
+                                href = {value.href || ''}
                             />
                             <span className={`${styles.linePoint} bg-component-darker`}></span>
 

@@ -3,28 +3,28 @@
         "introduction" : {
             "sub-title": "Về bản thân",
             "title" : "Mình là ai?",
-            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            "text" : "Mình tên đầy đủ là Ngô Trường Sơn, hay được gọi là Sơn. Từ khi còn là học sinh tiểu học, mình đã có niềm đam mê sâu sắc với lĩnh vực tin học và thể hiện tài năng của mình trong đó (Ví dụ, mình từng đoạt giải nhất quốc gia về tin học ở Việt Nam khi mới 11 tuổi). Mặc dù sau này mình đã chọn học chuyên toán ở cấp 2 và cấp 3 (vì theo mình, toán là môn tốt nhất để mình có thể rèn luyện tư duy), mình vẫn không quên rèn luyện kiến thức và kỹ năng trong lĩnh vực tin học. Hiện nay, mình đã có thể tự tin theo đuổi ước mơ của mình tại khoa Công Nghệ Thông Tin của trường Đại học INSA Lyon ở Pháp. /nTrong suốt 3 năm học tại INSA, mình đã không ngừng cố gắng nâng cao kiến thức và kỹ năng của mình để đáp ứng với đam mê bản thân và tìm ra lĩnh vực công nghệ thông tin phù hợp nhất với bản thân. Mình đã tích luỹ được nhiều kiến thức về lập trình web (front-end, back-end), lập trình ứng dụng, v.v, và vẫn đang tiếp tục nỗ lực hơn nữa để theo đuổi ước mơ của mình. /nHiện tại mình đang tìm kiếm cơ hội thực tập trong hè này, nơi mình có thể trải nghiệm môi trường làm việc tại các doanh nghiệp. Nếu công ty của bạn cần một thực tập sinh trẻ trung và năng động, tôi sẽ là một trong các ứng cử viên tốt. Dưới đây là bốn tính cách tốt mà mình cho rằng nó thể hiện tốt nhất về bản thân mình, nếu bạn cảm thấy thú vị về mình đừng quên để lại lời nhắn cho mình ở mục contact nhé!"
         },
 
         "strengths" : [
             {
                 "title" : "Tò mò",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "text" : "Sự tò mò không ngừng thúc đẩy mình khám phá các lĩnh vực mới và nâng cao kiến thức của mình."
             },
 
             {
                 "title" : "Trách nhiệm",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "text" : "Mình luôn cố gắng hoàn thành nhiệm vụ được giao và trở nên đáng tin cậy trong trách nhiệm của mình."
             },
 
             {
                 "title" : "Thích ứng",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "text" : "Mình có thể thích nghi với sự thay đổi và có khả năng thích ứng nhanh chóng với tình huống mới."
             },
-
+            
             {
                 "title" : "Sáng tạo",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "text" : "Không chỉ mang lại cho mình năng khiếu trong nghệ thuật, sự sáng tạo còn giúp mình tìm ra các giải pháp đổi mới."
             }
         ]
     }

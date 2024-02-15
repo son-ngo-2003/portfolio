@@ -45,11 +45,16 @@ const FunctionalButton = ({ functionList = ['light-dark', 'language', 'contact',
         type: "image",
         value: flags[lang].src,
     }) )
+    
     const menuList = [
         {value: <RiMenu5Line/>, type: "icon"},
         {value: <IoClose/>, type: "icon"},]
 
     function scrollToSection( section ) {
+        if (!section) return;
+        if (window.location.pathname !== '/') 
+            window.location.pathname = '/';
+        
         const node = sectionsRef.current.get( section );
         node.scrollIntoView({
             behavior: 'smooth',
@@ -67,6 +72,13 @@ const FunctionalButton = ({ functionList = ['light-dark', 'language', 'contact',
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
+        document.onmousemove = (event) => {
+            const bottomX = window.innerHeight - event.clientY;
+            const rightY = window.innerWidth - event.clientX;
+            if ( ( bottomX < 150) && (rightY < 200) ) {
+                setIsShown(true)
+            }
+        }
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }

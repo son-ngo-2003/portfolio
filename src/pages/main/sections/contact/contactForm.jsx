@@ -14,6 +14,7 @@ import { Form, Button } from "/src/components"
 import { AiOutlineFacebook } from "react-icons/ai";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { LuTwitter } from "react-icons/lu";
+import { FaInstagram } from "react-icons/fa";
 
 //emailjs
 import { emailjsConfig } from "/src/config/emailjs.js"
@@ -44,7 +45,7 @@ const ContactForm = ({ divClassName='', contactContent }) => {
     const separateStringIntoParagraphs = (str) => {
         const paragraphs = str.split(', ');
         return paragraphs.map((paragraph, index) => (
-            <p className={`${styles.detail} text`} key={index}>{paragraph}</p>
+            <p className={``} key={index}>{paragraph}</p>
         ));
     };
 
@@ -61,7 +62,7 @@ const ContactForm = ({ divClassName='', contactContent }) => {
         <div className={`${styles.overlay} ${divClassName} bg-component`}>
 
             <div className={`${styles.formContact}`}>
-                <h3 className={`${styles.title} sub-title`}>SEND ME A MESSAGE</h3>
+                <h3 className={`${styles.title} sub-title`}>{form.title}</h3>
                 <Form
                     callback={sendEmail}
                     ref = {formRef}
@@ -80,20 +81,24 @@ const ContactForm = ({ divClassName='', contactContent }) => {
                     <h3 className={`${styles.title} sub-title`}>{info.title}</h3>
 
                     <p className={`${styles.subTitle} text`}>{info.email}</p>
-                    <p className={`${styles.detail} text`}>{infoContact.email || "error"}</p>
+                    <a className={`${styles.detail} text`}
+                        href={`mailto:${infoContact.email}`}>{infoContact.email || "error"}</a>
 
                     <p className={`${styles.subTitle} text`}>{info.phone}</p>
-                    <p className={`${styles.detail} text`}>{infoContact.telephone || "error"}</p>
+                    <a className={`${styles.detail} text`}
+                        href={`tel:+33${infoContact.telephoneNum}"`}>{infoContact.telephoneFormat || "error"}</a>
 
                     <p className={`${styles.subTitle} text`}>{info.address}</p>
-                    {infoContact.address ? separateStringIntoParagraphs(infoContact.address) : "error"}
+                    <a href={`${infoContact.mapURL}`} className={`text ${styles.detail}`} target='_blank'>
+                        {infoContact.address ? separateStringIntoParagraphs(infoContact.address) : "error"}
+                    </a>
                 </div>
 
                 <span className={`${styles.divLine}`}></span>
                 <div className={`${styles.socialMedia} text`}>
                     <a href={infoContact.linkedin} className=""><AiOutlineLinkedin /></a>
                     <a href={infoContact.facebook} className=""><AiOutlineFacebook /></a>
-                    <a href={infoContact.twitter} className=""><LuTwitter /></a>
+                    <a href={infoContact.instagram} className=""><FaInstagram /></a>
                 </div>
             </div>
         </div>

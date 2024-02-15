@@ -5,18 +5,9 @@
             "title" : "Mon Portfolio"
         },
 
-        "projects" : [
-            {
-                "date" :  "Date: 06/06/2015",
-                "title" : "Texte1",
-                "role" :  "Rôle: Développeur"
-            },
-
-            {
-                "date":   "Date: 06/06/2015",
-                "title" : "Texte2",
-                "role" :  "Rôle: Développeur"
-            }
-        ]
+        "projects" : {
+            "date":   "Date",
+            "role" :  "Rôle"
+        }
     }
 }

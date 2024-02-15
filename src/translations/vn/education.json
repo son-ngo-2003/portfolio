@@ -1,39 +1,36 @@
 {
     "education" : {
         "introduction" : {
-            "sub-title": "Hành trình học tập của tôi",
+            "sub-title": "Hành trình học tập của mình",
             "title" : "Giáo dục"
         },
 
         "education" : [
             {
-                "title" : "Trường 1",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title" : "Trường THPT Chuyên Lê Quý Đôn - Đà Nẵng",
+                "years" : "2018 - 2021",
+                "text" :  "Trong suốt 3 năm tại trường trung học phổ thông, mình đã được học tại lớp chuyên toán. Và mình đã tham dự nhiều kì thi về môn học này, và quan trọng nhất là vào năm mình học lớp 12, mình đã đạt giải khuyến khích học sinh giỏi toán quốc gia.",
+                "href": "https://vi.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Trung_h%E1%BB%8Dc_ph%E1%BB%95_th%C3%B4ng_chuy%C3%AAn_L%C3%AA_Qu%C3%BD_%C4%90%C3%B4n,_%C4%90%C3%A0_N%E1%BA%B5ng"
             },
 
             {
-                "title" : "Trường 2",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title" : "FIMI - INSA Lyon",
+                "years" : "2021 - 2023",
+                "text" : "Năm 2021, mình được nhập học tại trường INSA Lyon tại Pháp và tham gia vào chương trình FIMI (đào tạo tiền đề cho kĩ sư). Trong 2 năm học trong chương trình, mình đã được số điểm trung bình khá cao, với năm 1 khoảng 16/20 và 14.5/20 với năm 2. Và đặc biệt ở năm 2, mình nằm trong khoảng top 10% của trường.",
+                "href": "https://www.insa-lyon.fr/en/node/17"
             },
 
             {
-                "title" : "Trường 3",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title" : "Informatique - INSA Lyon",
+                "years" : "2023 - Hiện tại",
+                "text" : "Việc thành tích tốt mình đạt tại năm 2 đã cho phép mình có thể tham gia vào khoa Công Nghệ Thông Tin (Informatique) của INSA. Trong suốt 1 năm này, mình đã được trường cung cấp rất nhiều kiến thức về dữ liệu, lập trình ứng dụng, v.v",
+                "href": "https://www.insa-lyon.fr/en/node/1916"
             },
 
             {
-                "title" : "Trường 4",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-            },
-            
-            {
-                "title" : "Trường 5",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title" : "Học thêm từ bên ngoài",
+                "years" : "2021 - Hiện tại",
+                "text" : "Ngoài những kiến thức được cung cấp tại các cơ sở giáo dục, mình vẫn tự giác tìm tòi thêm các tài liệu từ bên ngoài như các tài liệu trên W3School, Youtube,... và trên cả Coursera. Ví dụ như mình đã tham gia vào các khoá học như \"Backend với NodeJS\" của IBM, hay các khoá học trong \"Android Developer\" của Meta, v.v"
             }
         ]
     }

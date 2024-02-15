@@ -1,40 +1,35 @@
 {
-    "education" : {
-        "introduction" : {
-            "sub-title": "My learning journey",
-            "title" : "Education"
+    "education": {
+        "introduction": {
+            "sub-title": "My Educational Journey",
+            "title": "Education"
         },
-
-        "education" : [
+    
+        "education": [
             {
-                "title" : "Text1",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Le Quy Don High School for the Gifted - Vietnam",
+                "years": "2018 - 2021",
+                "text": "During 3 years at the high school, I studied in the specialized mathematics class. I participated in numerous competitions in this subject, and most notably in my 12th grade, I achieved the encouragement prize in the national mathematics Olympiad.",
+                "href" : "https://en.wikipedia.org/wiki/L%C3%AA_Qu%C3%BD_%C4%90%C3%B4n_High_School_for_the_Gifted,_Da_Nang"
             },
-
             {
-                "title" : "Text2",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "FIMI - INSA Lyon",
+                "years": "2021 - 2023",
+                "text": "In 2021, I was admitted to INSA Lyon in France and participated in the FIMI program (preparatory training for engineers). In the 2-year program, I achieved a quite high average score, with around 16/20 in the first year and 14.5/20 in the second year. Especially in the second year, I was among the top 10% of the school.",
+                "href": "https://www.insa-lyon.fr/en/node/17"
             },
-
             {
-                "title" : "Text3",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Computer Science - INSA Lyon",
+                "years": "2023 - Present",
+                "text": "My good academic performance in the second year allowed me to join the Computer Science department at INSA. Throughout this year, I have been provided with a lot of knowledge in data, application programming, etc.",
+                "href": "https://www.insa-lyon.fr/en/node/1916"
             },
-
             {
-                "title" : "Text4",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-            },
-            
-            {
-                "title" : "Text5",
-                "years" : "20xx-20yy",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Self-study",
+                "years": "2021 - Present",
+                "text": "In addition to the knowledge provided by educational institutions, I am proactive in seeking additional materials from outside sources such as those on W3Schools, YouTube, etc., and even on Coursera. For example, I have participated in courses like 'Backend with NodeJS' by IBM, or courses in 'Android Developer' by Meta, etc."
             }
         ]
     }
+    
 }

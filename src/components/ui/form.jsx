@@ -16,19 +16,19 @@ const getInputElement = (key, value) => {
         case 'date':
         case 'datetime-local':
             inputNode = (                    
-                <input  type="datetime-local" name={key} className={styles.date}
+                <input id={key} type="datetime-local" name={key} className={styles.date}
                         min={`${value.minDate || "2015-01-01T00:00"}`} 
                         max={`${value.maxDate || "2030-12-31T23:59"}`}
                         required={value.required} placeholder=' '/>)  
             break;
         case 'textarea':
             inputNode = 
-                <textarea type="text" name={key} placeholder=' ' className='scroll text'
+                <textarea id={key} type="text" name={key} placeholder=' ' className='scroll text'
                         rows="20" cols="150" required={value.required}></textarea>
             break;
         default:
             inputNode = 
-                <input type={type} placeholder=' ' className='scroll text'
+                <input id={key} type={type} placeholder=' ' className='scroll text'
                     name={key} required={value.required}/>
     }
 

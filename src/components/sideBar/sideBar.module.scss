@@ -94,6 +94,10 @@ $sideBarWidth: 18.75rem;
             }
         }
     }
+
+    .openButton {
+        display: none !important;
+    }
 }
 
 .light-theme {

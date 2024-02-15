@@ -1,35 +1,42 @@
 {
-    "skills" : {
-        "introduction" : {
-            "sub-title": "???",
-            "title" : "My Skills",
-            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+    "skills": {
+        "introduction": {
+            "sub-title": "My Technical Proficiencies",
+            "title": "My Skills",
+            "text": "In my time at INSA, I've dedicated myself to enhancing my knowledge and skills in information technology. Here is a list of skills I have acquired."
         },
-
-        "skills" : [
+        "skills": [
             {
-                "title" : "Text1",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Programming Languages",
+                "text": "Strong foundation in programming languages such as /Python/, /JavaScript/, /C++/, /Java/ and /Kotlin/."
             },
-
             {
-                "title" : "Text2",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Database Management",
+                "text": "Firm basis in /SQL/ with database management systems like /MySQL/, /PostgreSQL/ and  aussi experience in non relational database like /MongoDB/, /Firebase/."
             },
-
             {
-                "title" : "Text3",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Web Development",
+                "text": "Proficient in /HTML/, /CSS/, and /JavaScript/ with /Reactjs/ framework for front-end web development, as well as back-end technologies like /Node.js/"
             },
-
             {
-                "title" : "Text4",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Android Development",
+                "text": "Being familiar with /Kotlin/ and knowing the basics of /Jetpack Compose/ for Android App development."
             },
-            
             {
-                "title" : "Text5",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Version Control",
+                "text": "Solid foundation in /Git/, adept at managing code changes and resolving conflicts. Proficient in utilizing /GitHub/ and /GitLab/ for version control, collaboration, and continuous integration."
+            },
+            {
+                "title": "Docker",
+                "text": "Understanding of /Docker/ and /Docker Compose/, skilled in containerizing applications and orchestrating multi-container deployments."
+            },
+            {
+                "title": "Data Structures, Algorithms",
+                "text": "Knowledge of various /data structures/ (arrays, linked lists, trees, graphs, etc.) and /algorithms/ for efficient problem-solving."
+            },
+            {
+                "title": "Design",
+                "text": "Proficient in using /Adobe Photoshop/ for graphic design, with the ability to create and edit digital images. Also experienced in /Figma/ for UI/UX design, capable of creating intuitive and user-friendly interfaces."
             }
         ]
     }

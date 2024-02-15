@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useContext } from 'react';
+import { useSearchParams } from 'react-router-dom'
 
 //css
 import styles from './sideBar.module.scss';
@@ -13,13 +14,18 @@ import { MdMenuOpen } from "react-icons/md";
 //images
 import { avatarImage } from "/src/assets/images";
 
-const sideBar = ({sectionsRef}) => {
+const sideBar = ({sectionsRef, sectionCall=''}) => {
+    const [searchParams, setSearchParams] = useSearchParams()
     const [isShow, setIsShow] = useState(false);
     const [currentSection, setCurrentSection] = useState('home');
     const sectionsPos = useRef(null);
-    const {theme} = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext);
 
     function scrollToSection( section ) {
+        if (!section) return;
+        if (window.location.pathname !== '/') 
+            window.location.pathname = '/';
+        
         const node = sectionsRef.current.get( section );
         node.scrollIntoView({
             behavior: 'smooth',
@@ -32,21 +38,30 @@ const sideBar = ({sectionsRef}) => {
         const offset = 100 //offset seen by console.log the position of the section
         const currentPosY = window.scrollY;
         sectionsPos.current.forEach( (value, key) => {
-            if ((value) && (currentPosY > value - offset))
+            if ((value) && (currentPosY > value - offset)) {
                 setCurrentSection(key);
+            }
         })
     }
 
     useEffect(() => {
-        sectionsPos.current = new Map();
-        sectionsRef.current.forEach((value, key) => {
-            const bodyRect = document.body.getBoundingClientRect();
-            const rect = value.getBoundingClientRect();
-            sectionsPos.current.set(key,  rect.top - bodyRect.top);
-        })
+        const currentPath = window.location.pathname;
+        if (currentPath === '/') {
+            sectionsPos.current = new Map();
+            sectionsRef.current.forEach((value, key) => {
+                const bodyRect = document.body.getBoundingClientRect();
+                const rect = value.getBoundingClientRect();
+                sectionsPos.current.set(key,  rect.top - bodyRect.top);
+            })
 
-        window.addEventListener("scroll", handleSroll);
-        //return window.removeEventListener("scroll", handleSroll);
+            scrollToSection( searchParams.get("s") );
+            searchParams.delete('s');
+            setSearchParams(searchParams);
+
+            window.addEventListener("scroll", handleSroll);
+        } else {
+            setCurrentSection(sectionCall);
+        }
     },[]);
 
     const getNavItem = (section, insideText) => 

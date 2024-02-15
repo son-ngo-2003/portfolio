@@ -1,31 +1,29 @@
 {
     "services" : {
         "introduction" : {
-            "sub-title": "Tôi có thể làm gì",
-            "title" : "Dịch vụ của tôi",
-            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            "sub-title": "Mình có thể làm gì",
+            "title" : "Dịch vụ",
+            "text" : "Đây là những dịch vụ mà mình tự tin rằng có thể thực hiện tốt khi được thuê bởi công ty của bạn. Tuy nhiên, nếu có yêu cầu khác cho việc tuyển sinh thì đừng lo, tôi cũng sẽ nỗ lực hết mình để đảm bảo hoàn thành công việc một cách tốt nhất."
         },
 
-        "services" : [
+        "services": [
             {
-                "title" : "Thứ 1",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Front end",
+                "text": "Tôi có kinh nghiệm trong phát triển front-end, tạo ra giao diện thân thiện với người dùng bằng HTML, CSS và JavaScript. Tôi cũng có kiến thức tốt về thư viện React.js."
             },
-
             {
-                "title" : "Thứ 2",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Back end",
+                "text": "Tôi có thể phát triển Back end, làm việc với các framework như Node.js để xây dựng các ứng dụng phía máy chủ (server-side application)"
             },
-
             {
-                "title" : "Thứ 3",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "App development",
+                "text": "Tôi có kiến thức về phát triển ứng dụng cho nền tảng Android, sử dụng các công nghệ như React Native và Flutter."
             },
-
             {
-                "title" : "Thứ 4",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Dịch vụ khác",
+                "text": "Tôi linh hoạt và có khả năng học các công nghệ và framework mới để đáp ứng nhu cầu đặc biệt của dự án của bạn."
             }
         ]
+        
     }
 }

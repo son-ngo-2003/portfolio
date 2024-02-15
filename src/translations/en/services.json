@@ -3,29 +3,27 @@
         "introduction" : {
             "sub-title": "What I can help you with",
             "title" : "My Services",
-            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            "text" : "These are the services that I am confident I can execute best when hired by your company. However, if there are different requirements for recruitment, don't worry, I will also strive to ensure the best completion of the tasks."
         },
 
-        "services" : [
+        "services": [
             {
-                "title" : "Text1",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Front end",
+                "text": "I specialize in front-end development, creating user-friendly interfaces with HTML, CSS, and JavaScript. I also have expertise in React.js library."
             },
-
             {
-                "title" : "Text2",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Back end",
+                "text": "I excel in back-end development, working with frameworks like Node.js to build robust server-side applications."
             },
-
             {
-                "title" : "Text3",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "App development",
+                "text": "I have knowledge in app development for Android platforms, using technologies such as React Native and Flutter."
             },
-
             {
-                "title" : "Text4",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                "title": "Other services",
+                "text": "I am adaptable and capable of learning new technologies and frameworks to meet the unique needs of your project."
             }
         ]
+        
     }
 }

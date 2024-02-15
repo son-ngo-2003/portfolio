@@ -3,12 +3,12 @@
         "welcome" : {
             "sub-title" : "Xin chào, mình là",
             "name" : "Sơn Ngô",
-            "text" : "Beautiful design has the power to captivate audiences and drive business growth. Specializing in creating stunning designs that transform businesses worldwide."
+            "text" : "Mình là học sinh năm ba tại trường Đại học INSA Lyon ở Pháp và đang theo học chuyên ngành Computer Science (Informatique). Mình là một người đam mê lập trình và thiết kế, luôn tìm kiếm cơ hội để khám phá và áp dụng kiến thức của mình vào thực tế. Chào mừng mọi người đến với web portfolio của mình!"
         },
         
         "buttons" : {
             "download-CV" : "Tải xuống CV",
-            "discover" : "Khám phá projects"
+            "discover" : "Khám phá các dự án"
         }
     }
 }

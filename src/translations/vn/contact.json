@@ -3,18 +3,18 @@
         "introduction" : {
             "sub-title": "Hãy giữ liên lạc với tôi",
             "title" : "LIÊN HỆ",
-            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            "text" : "Nếu bạn cảm thấy mình có tiềm năng để thực tập tại công ty của bạn hay chỉ đơn giản cảm thấy tôi thú vị, hãy để lại lời nhắn cho tôi hoặc có thể liên lạc với tôi thông qua các thông tin dưới đây. Mình luôn trông chờ tin nhắn từ bạn."
         },
 
         "contact" : {
             "info" : {
-                "title" : "Thông tin",
+                "title" : "Thông tin liên hệ",
                 "email" : "Email",
                 "phone" : "Số điện thoại",
                 "address" : "Địa chỉ"
             },
             "form" : {
-                "title" : "Để lại lời nhắn",
+                "title" : "Hãy để lại lời nhắn",
                 "name" : "Tên của bạn",
                 "email" : "Email của bạn",
                 "subject" : "Chủ đề",

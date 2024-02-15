@@ -1,4 +1,5 @@
-import { useRef, useContext, useEffect } from 'react'
+import { useRef, useContext } from 'react'
+import { Routes, Route } from "react-router-dom"
 
 // css
 import "./styles/_main.scss"
@@ -8,7 +9,7 @@ import styles from "./App.module.scss"
 import {SideBar, FunctionalButton} from "./components"
 
 //pages
-import {MainPage} from "./pages"
+import {MainPage, BlogPage, BlogAdmin} from "./pages"
 
 //context
 import {ThemeContext} from "/src/contexts/themeContext"
@@ -31,14 +32,20 @@ function App() {
                 <SideBar
                     sectionsRef={sectionsRef}
                 />
+                
                 <FunctionalButton
                     functionList = {functionList}
                     languageList = {languagesAvailable}
                     themeList = {themesAvailable}
                     sectionsRef = {sectionsRef}
                 />
+                
                 <div className={`${styles.container} grid`}>
-                    <MainPage ref={sectionsRef}/>
+                    <Routes>
+                        <Route path="/blog" element={<BlogPage/>} />
+                        <Route path="/admin/blog" element={<BlogAdmin/>} />
+                        <Route path="/" element={<MainPage ref={sectionsRef}/>} />
+                    </Routes>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // css
@@ -10,17 +10,22 @@ import { ImageBox } from "/src/components"
 //context
 import {ThemeContext} from "/src/contexts/themeContext"
 
+//services
+import { getAllProjects } from '/src/services/blogServices'
+
 const Projects = forwardRef(( props, ref ) => {
+    const [ projects, setProjects ] = useState([]);
     const [t, i18n] = useTranslation("projects");
     const {theme} = useContext(ThemeContext);
 
-    const projectsList = t('projects.projects', {returnObjects: true})
-                            .map( ( value, key ) => ({
-                                title: value.title,
-                                role: value.role,
-                                date: value.date,
-                                image: "",
-                            }));
+    const tagName = t('projects.projects', {returnObjects: true});
+
+    useEffect(() => {
+        (async () => {
+            const projectsList = await getAllProjects();
+            setProjects(projectsList);
+        })();
+    }, []);
 
     return (
         <div ref={ref} className={`${styles.projects} section`}>
@@ -30,16 +35,17 @@ const Projects = forwardRef(( props, ref ) => {
             </div>
 
             <div className={`${styles.projectsList} row`}>
-                {  projectsList.map( (value, index) => (
-                        <div key={index} className={`${styles.projectItem} col l-6`}>
+                {projects && projects.map( (project, index) => (
+                        <a key={index} className={`${styles.projectItem} col l-6`}
+                            href={`/blog?type=project&id=${project.id}`}>
                             <ImageBox
-                                subTitle = {value.date}
-                                title = {value.title}
-                                text = {value.role}
-                                image = {value.image}
+                                subTitle = {`${tagName.date}: ${project.date}`}
+                                title = {`${project.name}`}
+                                text = {`${tagName.role}: ${project.role}`}
+                                image = {``}
                                 theme = {theme}
                             />
-                        </div>
+                        </a>
                     ))
                 }
             </div>
