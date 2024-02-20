@@ -8,18 +8,23 @@
         margin-top: 2em;
     }
 
+    .listContainer {
+        position: relative;
+    }
+
     .skillsListMobile {
         display: none;
     }
 
     .leftPart, .rightPart {
         position: absolute;
+        @include horizontal-center-list;
     }
 }
 
 @media (max-width: 1023px) {
     .skills {
-        margin-bottom: 12em;
+        margin-bottom: 22em;
         .welcome {
             text-align: center;
         }
@@ -28,12 +33,15 @@
             display: none;
         }
 
-        .skillsListMobile {
-            position: absolute;
-            display: block;
-            margin-top: 2em;
-            left: 50%;
-            transform: translateX(-50%);
+        .listContainer {
+            .skillsListMobile {
+                width: 100%;
+                position: absolute;
+                display: block;
+                margin-top: 2em;
+                
+                @include horizontal-center-list;
+            }
         }
     }
 }

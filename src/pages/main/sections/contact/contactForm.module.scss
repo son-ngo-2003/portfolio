@@ -1,19 +1,24 @@
 @use "/src/styles/abstracts" as *;
 
+$info-width: 60%;
+$form-width: 65%;
+$overlay-width: 80%;
+$overlay-height: 35em;
+$offset-right: calc(100% - $overlay-width);
+
 .overlay {
-    width: 80%;
-    margin-left: 20%;
-    height: 35em;
+    width: $overlay-width;
+    margin-left: $offset-right;
+    height: $overlay-height;
     position: relative;
-    box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: $shadow-2;
     
     .info {
         position: absolute;
-        width: 60%;
+        width: $info-width;
         height: 90%;
-        left: -25%;
-        top: 50%;
-        transform: translateY(-50%);
+        left: calc( -1 * $offset-right / $overlay-width * 100% );
+        @include veritcal-center;
         padding: 1.8em;
 
         .title {
@@ -39,7 +44,7 @@
             height: 0.15em;
             border-radius: 0.075em;
             display: block;
-            background-color: $white-400;
+            background-color: $white-500;
             margin: 2em auto 1.5em auto;
         }
 
@@ -57,7 +62,7 @@
     }
 
     .formContact {
-        width: 65%;
+        width: $form-width;
         float: right;
         padding: 1.8em 2em 1em 2em;
 
@@ -92,6 +97,14 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+        }
+    }
+}
+
+@media (max-width: 764px) {
+    .overlay {
+        .info {
+            padding: 1.2em; 
         }
     }
 }

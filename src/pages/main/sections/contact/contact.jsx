@@ -20,7 +20,7 @@ const Contact = forwardRef(( props, ref ) => {
             </div>
 
             <div className={`${styles.contactForm} row`}>
-                <div className="col l-12">
+                <div className="col l-12 m-12 c-12">
                     <ContactForm
                         contactContent={contactContent}
                     ></ContactForm>

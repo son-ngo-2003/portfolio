@@ -19,9 +19,8 @@
         }
 
         .projectsList {
-            display: flex;
             margin-top: 2em;
-            justify-content: center;
+            @include horizontal-center-list;
         }
     }
 }

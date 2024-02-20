@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom'
+import i18next from 'i18next';
+import { useTranslation } from "react-i18next";
 
 // services
-import { getBlogByName, getBlogById } from '/src/services/blogServices'
+import { getBlogById } from '/src/services/blogServices'
 
 //css
 import styles from "./blog.module.scss"
 
-const BlogAdmin = () => {
+const BlogPage = () => {
+    const languages = ["en", "fr", "vn"];
+    const [t, i18n] = useTranslation("blog");
+    const [isContentSet, setContentSet] = useState(false);
     const [ searchParams, setSearchParams ] = useSearchParams()
-    const [ blogContent, setBlogContent ] = useState({});
+    
 
     const renderContent = (blogContent = []) => {
         return blogContent.map((item, index) => {
@@ -31,7 +36,7 @@ const BlogAdmin = () => {
                 case 'imageDescription':
                     return <p className={`${styles.imageDescription} text`} key={index}>{item.value}</p>;
                 case 'link':
-                    return <a className={`${styles.link} text`} href={item.value} key={index}>{item.value}</a>;
+                    return <a className={`${styles.link} text`} href={item.value} key={index} target='_blank'>{item.value}</a>;
                 default:
                     return null;
             }
@@ -40,22 +45,30 @@ const BlogAdmin = () => {
 
     useEffect(() => {
         (async () => {
-            console.log(searchParams.get("type"), searchParams.get("id"))
-            const blog = searchParams.get("type") === 'blog' 
-                        ? await getBlogByName(searchParams.get("name") ) 
-                        : await getBlogById(searchParams.get("id") );
-            setBlogContent(blog);
+            const blog = await getBlogById( searchParams.get("id") );
+            
+            const blogTranslation = {
+                en: {...blog, content: blog.content_en},
+                fr: {...blog, content: blog.content_fr},
+                vn: {...blog, content: blog.content_vn}
+            } 
+            languages.forEach( (language) => {
+                i18next.addResourceBundle( language, "blog", blogTranslation[language], true, true ); 
+            } )
+            setContentSet(true);
         })();
     }, []);
+
+
 
     return (
         <div className = {`row section`}>
             <div className = {`${styles.container} col l-12 m-12 c-12`}>
-                <p className={`${styles.date} sub-title`}>Writen on: {blogContent && blogContent.writenDate}</p>
-                {blogContent && renderContent(blogContent.content_en)}
+                <p className={`${styles.date} sub-title`}>Writen on: {t("writenDate")}</p>
+                {isContentSet && renderContent(t("content", {returnObjects: true}))}
             </div>
         </div>
     )
 }
 
-    export default BlogAdmin
+    export default BlogPage

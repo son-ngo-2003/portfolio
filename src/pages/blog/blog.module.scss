@@ -1,3 +1,5 @@
+@use "/src/styles/abstracts" as *;
+
 .container {
     margin: 0;
     * {
@@ -8,7 +10,6 @@
     .date {
         font-family: 'Raleway-Semibold';
         font-size: 1.3em;
-        line-height: 1em;
         text-align: right;
     }
 
@@ -20,14 +21,14 @@
     }
 
     .title {
-        font-size: 3.2em;
-        line-height: 1em;   
+        font-size: 3.2em; 
+        width: 100%;
+        hyphens: auto;
     }
 
     .subTitle {
         font-family: 'Quicksand-SemiBold';
         font-size: 1.3em;
-        //opacity: 0.6;
     }
 
     .heading {
@@ -47,9 +48,8 @@
     img {
         width: 90%;
         position: relative;
-        left: 50%;
-        transform: translateX(-50%);
         margin-top: 3rem;
+        @include horizontal-center;
     }
 
     .imageDescription {
@@ -69,3 +69,31 @@
         margin-left: 2em;
     }
 }
+
+@media (max-width: 1024px) {
+   .container {
+        .title {
+            font-size: 2.5em; 
+        }
+   }
+}
+
+@media (max-width: 724px) {
+    .container {
+        .preTitle {
+            font-size: 2em;
+        }
+
+         .title {
+             font-size: 2em;
+         }
+
+         .heading {
+            font-size: 1.5em;
+         }
+
+         .paragraph {
+            font-size: 1.2em;
+         }
+    }
+ }

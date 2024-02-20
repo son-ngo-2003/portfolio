@@ -140,5 +140,19 @@
     }
 }
 
+@media (max-width: 764px) {
+    .title {
+        font-size: 3em;
+        line-height: 1.3em;
+    }
+    
+    .sub-title {
+        font-size: 1.5em;
+    }
+    
+    .text {
+        font-size: 1.1em;
+    }
+}
 
 

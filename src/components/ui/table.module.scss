@@ -1,0 +1,22 @@
+@use "/src/styles/abstracts" as *;
+
+.table{
+    width: 100%;
+    text-align: center;
+
+    th, td *{
+        text-align: center;
+        padding: 1em 0 1em 0;
+    }
+
+    th {
+        font-weight: 800;
+    }
+
+    tbody {
+        tr {
+            border-bottom: 0.1em solid $white-500 ;
+        }
+    }
+}
+

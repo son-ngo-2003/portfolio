@@ -3,6 +3,7 @@
 $fontSize: 1.3rem;
 $textareaNumlines: 4;
 $big-textareaNumlines: 8;
+$enor-textareaNumlines: 20;
 
 .form {
     * {
@@ -13,6 +14,10 @@ $big-textareaNumlines: 8;
     .formRow{
         display: flex;
         margin: calc($fontSize * 2) 0;
+
+        &.hide {
+            display: none;
+        }
 
 
         //inputs
@@ -35,6 +40,9 @@ $big-textareaNumlines: 8;
 
             &.big {
                 height: calc($big-textareaNumlines * ($fontSize * 1.3) + 0.5rem);
+            }
+            &.enor {
+                height: calc($enor-textareaNumlines * ($fontSize * 1.3) + 0.5rem);
             }
 
             textarea {
@@ -59,19 +67,24 @@ $big-textareaNumlines: 8;
         .inputData input:not(:placeholder-shown) ~ label, 
         .textarea textarea:not(:placeholder-shown) ~ label,
         .inputData input.date ~ label {
-            transform: translateY( calc(-0.1rem - $fontSize ) );
+            @include prefix(transform, translateY( calc(-0.1rem - $fontSize ) ));
             color: $secondary;
             font-size: calc($fontSize - 0.2rem);
         }
 
         .textarea textarea:focus ~ label,
         .textarea textarea:not(:placeholder-shown) ~ label {
-            transform: translateY( calc(-1.5rem - ($textareaNumlines - 1) * ($fontSize * 1.3)) );
+            @include prefix(transform, translateY( calc(-1.5rem - ($textareaNumlines - 1) * ($fontSize * 1.3)) ));
         }
 
         .textarea.big textarea:focus ~ label,
         .textarea.big textarea:not(:placeholder-shown) ~ label {
-            transform: translateY( calc(-1.5rem - ($big-textareaNumlines - 1) * ($fontSize * 1.3)) );
+            @include prefix(transform, translateY( calc(-1.5rem - ($big-textareaNumlines - 1) * ($fontSize * 1.3)) ));
+        }
+
+        .textarea.enor textarea:focus ~ label,
+        .textarea.enor textarea:not(:placeholder-shown) ~ label {
+            @include prefix(transform, translateY( calc(-1.5rem - ($enor-textareaNumlines - 1) * ($fontSize * 1.3)) ));
         }
 
         .inputData label,
@@ -81,7 +94,7 @@ $big-textareaNumlines: 8;
             bottom: 10px;
             font-size: $fontSize;
             transition: all 0.3s ease;
-            text-transform: capitalize
+            @include prefix(text-transform, capitalize);
         }
 
         //underline 
@@ -100,9 +113,9 @@ $big-textareaNumlines: 8;
                 height: 2px;
                 width: 100%;
                 background: $secondary;
-                transform: scaleX(0);
-                transform-origin: center;
-                transition: transform 0.3s ease;
+                @include prefix(transform, scaleX(0));
+                @include prefix(transform-origin, center);
+                @include transition(transform)
             }
         }
 
@@ -110,7 +123,7 @@ $big-textareaNumlines: 8;
         .inputData input:not(:placeholder-shown) ~ .underline:before,
         .textarea textarea:focus ~ .underline:before,
         .textarea textarea:not(:placeholder-shown) ~ .underline:before{
-            transform: scale(1);
+            @include prefix(transform, scale(1));
         }
     } 
 }

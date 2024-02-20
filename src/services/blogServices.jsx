@@ -1,15 +1,15 @@
 import { db } from '/src/config/firebase';
 import { collection, getDocs, getDoc, 
-         addDoc,
+         addDoc, setDoc,
          query, where, doc } from "firebase/firestore"; 
 
 const getAllBlogs =  async () => {
     try {
         const blogs = [];
-        const col = collection(db, "blogs");
-        const snapshots = await getDocs( col );
+        const q = query(collection(db, "blogs"), where("deleted", "==", false));
+        const snapshots = await getDocs( q );
         snapshots.forEach( (snap) => {
-            blogs.push(snap.data());
+            blogs.push({...snap.data(), id: snap.id});
         })
         return blogs;
     } catch (e) {
@@ -20,10 +20,10 @@ const getAllBlogs =  async () => {
 
 const getBlogByName = async (name) => {
     try {
-        const q = query(collection(db, "blogs"), where("name", "==", name));
+        const q = query(collection(db, "blogs"), where("name", "==", name), where("deleted", "==", false));
         const querySnapshot = await getDocs(q);
         if (!querySnapshot.empty) {
-            return querySnapshot.docs[0].data();
+            return {...querySnapshot.docs[0].data(), id: querySnapshot.docs[0].id};
         }
         console.log("No such blog!");
         return null;
@@ -37,10 +37,13 @@ const getBlogByName = async (name) => {
 const getBlogById = async (id) => {
     try {
         const docRef = doc(db, "blogs", id);
-        const docSnap = await getDoc(docRef);
+        const q = query(docRef);
+        const docSnap = await getDoc(q);
         if (docSnap.exists()) {
-            console.log(docSnap.data());
-            return docSnap.data();
+            const data = docSnap.data();
+            if (!data.deleted) {
+                return {...data, id: id};
+            }
         }
         console.log("No such document!");
         return null;
@@ -55,7 +58,7 @@ const getAllProjects = async () => {
     try {
         const projects = [];
         const col = collection(db, "blogs");
-        const q = query(col, where("type", "==", "project"));
+        const q = query(col, where("type", "==", "project"), where("deleted", "==", false));
         const snapshots = await getDocs(q);
         snapshots.forEach((snap) => {
             projects.push({...snap.data(), id: snap.id});
@@ -70,8 +73,8 @@ const getAllProjects = async () => {
 const addBlog = async (blogData) => {
     try {
         const col = collection(db, "blogs");
-        const docRef = await addDoc(col, blogData);
-        alert("Blog added with ID: ", docRef.id);
+        const docRef = await addDoc(col, {...blogData, deleted: false});
+        alert(`Blog added with ID: ${docRef.id}` );
         return docRef.id;
     } catch (e) {
         console.error("Error adding blog: ", e);
@@ -79,11 +82,39 @@ const addBlog = async (blogData) => {
     }
 }
 
+const updateBlogById = async (id, updatedData) => {
+    try {
+        console.log(id, updatedData);
+        const docRef = doc(db, "blogs", id);
+        await setDoc(docRef, updatedData, { merge: true });
+        alert(`Blog updated with ID: ${docRef.id}` );
+        return true;
+    } catch (e) {
+        console.error("Error updating blog: ", e);
+        return false;
+    }
+}
+
+const deleteBlogById = async (id) => {
+    try {
+        const docRef = doc(db, "blogs", id);
+        await setDoc(docRef, {deleted: true}, { merge: true });
+        console.log("Blog deleted successfully!");
+        return true;
+    } catch (e) {
+        console.error("Error deleting blog: ", e);
+        return false;
+    }
+}
+
+
 
 export {
     getAllBlogs,
     getBlogByName,
     getBlogById,
     getAllProjects,
-    addBlog
+    addBlog,
+    updateBlogById,
+    deleteBlogById
 }

@@ -33,10 +33,10 @@ const ServicesSection = forwardRef(( props, ref ) => {
                 <p className={`${styles.introductionText} text`}>{t("services.introduction.text")}</p>
             </div>
 
-            <div className={`col l-6 m-12 c-12`}>
+            <div className={`${styles.listContainer} col l-6 m-12 c-12`}>
                 <div className={`${styles.servicesList}`}>
                     {  servicesList.map( (value, index) => (
-                            <div key={index} className="">
+                            <div key={index} className="flex">
                                 <Accordion
                                     icon = {value.icon}
                                     title = {value.title}

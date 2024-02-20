@@ -3,7 +3,7 @@ const homeImage = {
 }
 
 const avatarImage = {
-    src : "https://res.cloudinary.com/dnt6wfbks/image/upload/v1707858047/portfolio/home/avatar_qj5qvt.png"
+    src : "https://res.cloudinary.com/dnt6wfbks/image/upload/v1708273274/portfolio/home/CV-avatar-black-2_vhlqds.png"
 }
 
 

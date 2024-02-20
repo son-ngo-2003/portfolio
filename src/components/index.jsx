@@ -5,4 +5,6 @@ export {Button,
         Accordion,
         TextBox,
         ImageBox,
-        Form             } from './ui';
+        Form,
+        Table             
+} from './ui';

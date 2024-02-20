@@ -32,24 +32,25 @@ const ServicesSection = forwardRef(( props, ref ) => {
                 <h3 className="sub-title">{t("education.introduction.sub-title")}</h3>
                 <h1 className="title maj">{t("education.introduction.title")}</h1>
             </div>
+            <div className="row">
+                <div className={`${styles.educationList} col l-12 m-12 x-12`}>
+                    <span className={`${styles.line} bg-component-darker`}></span>
+                    {  educationList.map( (value, index) => (
+                            <div key={index} className={`${styles.educationItem}`}>
+                                <TextBox
+                                    divClassName= {styles.educationBox}
+                                    title = {value.title}
+                                    subTitle = {value.years}
+                                    text = {value.text}
+                                    href = {value.href || ''}
+                                />
+                                <div className={`${styles.linePoint} bg-component-darker`}></div>
 
-            <div className={`${styles.educationList} row`}>
-                <span className={`${styles.line} bg-component-darker`}></span>
-                {  educationList.map( (value, index) => (
-                        <div key={index} className={`${styles.educationItem} col l-12 m-12 c-12`}>
-                            <TextBox
-                                divClassName= {styles.educationBox}
-                                title = {value.title}
-                                subTitle = {value.years}
-                                text = {value.text}
-                                href = {value.href || ''}
-                            />
-                            <span className={`${styles.linePoint} bg-component-darker`}></span>
-
-                        </div>
-                    ))
-                }
-                <span className={`${styles.finalPoint} bg-component-darker`}></span>
+                            </div>
+                        ))
+                    }
+                    <span className={`${styles.finalPoint} bg-component-darker`}></span>
+                </div>
             </div>
 
         </div>

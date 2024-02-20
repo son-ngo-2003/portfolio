@@ -12,9 +12,8 @@ const textBox = ({text='text', title = 'title', subTitle='',
                     <p className={`${styles.subTitle} text`}>{subTitle}</p>
                 </div>
                 <p className={`${styles.text} text`}>{text}</p>
-
-                <div className={`${styles.triangle} border-as-component-darker`}></div>
             </div>
+            <div className={`${styles.triangle} bg-component-darker`}></div>
 
         </a>
     )

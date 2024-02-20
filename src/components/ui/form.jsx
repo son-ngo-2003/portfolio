@@ -12,6 +12,7 @@ const  mapForObject = (obj, func) => {
 const getInputElement = (key, value) => {
     const type = value.type;
     let inputNode = undefined;
+    
     switch (type) {
         case 'date':
         case 'datetime-local':
@@ -28,12 +29,12 @@ const getInputElement = (key, value) => {
             break;
         default:
             inputNode = 
-                <input id={key} type={type} placeholder=' ' className='scroll text'
+                <input id={key} type={type} placeholder=' ' className='scroll text '
                     name={key} required={value.required}/>
     }
 
     return (
-        <div className={`${styles.inputData} ${styles[type]} ${value.big && styles.big}`}>
+        <div className={`${styles.inputData} ${styles[type]} ${value.size && styles[value.size]}`}>
             {inputNode}<br/>
             <div className={`${styles.underline}`}></div>
             <label className='text' htmlFor={key}>{value.placeholder}</label>
@@ -48,14 +49,14 @@ const Form = forwardRef(({ listInput = {
                     first_name:  {type: 'text', placeholder: 'First Name', required: true},
                     email:       {type: 'email', placeholder: 'Email', required: true}, 
                     password:    {type: 'password', placeholder: 'Password', required: true}, 
-                    describtion: {type: 'textarea', placeholder: 'Description', required: true, big: true},
+                    describtion: {type: 'textarea', placeholder: 'Description', required: true, size: "normal"},
                 },
-                submitButton='', callback=()=>{},
+                submitButton='', onSubmit=()=>{},
                 divClassName='' }, ref) => {
     return (
-        <form ref={ref} className={`${styles.form} ${divClassName}`} onSubmit={callback}>
+        <form ref={ref} className={`${styles.form} ${divClassName}`} onSubmit={onSubmit}>
             {mapForObject( listInput, ([key, value], index)=>(
-                <div key={index} className={styles.formRow}>
+                <div key={index} className={`${styles.formRow} ${value.hide && styles.hide}`}>
                     {getInputElement(key,value)}
                 </div>
             ))}

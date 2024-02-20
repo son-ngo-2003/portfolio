@@ -5,7 +5,11 @@
     position: fixed;
     bottom: 2em;
     right: 2em;
-    transition: bottom 200ms ease-in;
+    @include transition(bottom);
+
+    &.hide {
+        bottom: -5em;
+    }
 
     .mobile {
         display: none;
@@ -18,9 +22,7 @@
     }
 
     .outside {
-        width: 3.6em;
-        height: 3.6em;
-        border-radius: 50%;
+        @include circle(3.6em);
         margin-right: 0.5em;
     }
 
@@ -54,10 +56,6 @@
     }
 }
 
-.hide {
-    bottom: -5em;
-}
-
 @media (max-width: 1024px) {
     .fbutton {
         .desktop {
@@ -84,14 +82,12 @@
                 bottom: 0.5em;
                 right: 2em;
 
-                transition: bottom 300ms ease-in;
+                @include transition(bottom);
 
                 li {
                     position: absolute;
-                    margin: auto;
-                    transition: bottom 300ms ease-in;
-                    left: 50%;
-                    transform: translateX(-50%);
+                    @include transition(bottom);
+                    @include horizontal-center;
                 }
             }
 

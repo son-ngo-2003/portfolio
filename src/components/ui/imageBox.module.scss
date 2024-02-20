@@ -1,9 +1,9 @@
 @use "/src/styles/abstracts" as *;
 
 .box {
-    width: 25em;
+    width: min(100%, 25em);
     height: 21.5em;
-    box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: $shadow-2;
     position: relative;
 
     .imgPart {
@@ -12,10 +12,8 @@
         overflow: hidden;
 
         img {
-            width: 100%;
-            object-fit: cover;
-            //object-position: 00% 30%;
-            transition: width 300ms ease-in;
+            @include imageFixed;
+            @include transition(width object-position)
         }
 
     }
@@ -27,39 +25,40 @@
         bottom: 0;
         padding: 1em;
         overflow: hidden;
-        transition: height 200ms ease-out;
+        @include transition(height);
 
         .subTitle, .text {
-            transition: font-size 200ms ease-out;
+            @include transition(font-size);
         }
 
         .title {
             font-size: 2.2em;
             font-family: 'Raleway-SemiBold' !important;
             line-height: 1.3em;
-            transition: font-size 200ms ease-out, line-height 200ms ease-out;
+            @include transition(font-size line-height);
         }
     }
 
     &:hover {
         .imgPart img {
             width: 110%;
+            object-position: -1em 50%;
         }
         
         .nameplate {
-            height: 45%;
+            height: 43%;
 
             .subTitle {
-                font-size: 1.5em;
+                font-size: 1.4em;
             }
 
             .title {
-                font-size: 2.7em;
+                font-size: 2.5em;
                 line-height: 1.5em;
             }
 
             .text {
-                font-size: 1.5em;
+                font-size: 1.4em;
             }
 
         }

@@ -31,11 +31,14 @@ const Home = forwardRef(( props, ref ) => {
                     <p className="text">{t("home.welcome.text")}</p>
                 </div>
                 <div className={`${styles.buttonsContainer}`}>
-                    <Button
-                        divClassName={styles.button}
-                        text={t("home.buttons.download-CV")}
-                        icon={<IoDownloadOutline />}
-                    />
+                    <a href="https://drive.google.com/file/d/1pVsZCVxXt8PS2WfD3AY9MMLQSwRdB-jd/view?usp=sharing"
+                        target="_blank">
+                        <Button
+                            divClassName={styles.button}
+                            text={t("home.buttons.download-CV")}
+                            icon={<IoDownloadOutline />}
+                        />
+                    </a>
 
                     <Button
                         divClassName={styles.button}

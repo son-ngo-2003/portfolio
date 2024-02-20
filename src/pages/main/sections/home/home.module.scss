@@ -28,7 +28,7 @@
     }
 
     .rightPart {
-        height: 41.5em;
+        aspect-ratio: 1/1.5;
 
         .overlay {
             width: 100%;
@@ -37,21 +37,18 @@
             position: relative;
 
             .hole {
-                width: 15.75em;
-                height: 15.75em;
-                border-radius: 50%;
+                @include circle(60%);
                 position: absolute;
-                top: 10em;
+                top: 30%;
             }
 
             img {
-                width: 30em;
+                width: 112%;
                 contain: content;
                 position: absolute;
                 bottom: -30px;
-
                 left: 50%;
-                transform: translateX(-50%);
+                @include prefix(transform, translateX(-50%));
             }
         }
 
@@ -116,6 +113,28 @@
 
         .rightPart {
             margin-top: 2em;
+        }
+    }
+}
+
+@media (max-width: 764px) {
+    .home {
+        .leftPart {
+            h1 {
+                font-size: 4em;
+            }
+        }
+
+        .rightPart {
+            .nameplate {    
+                h3 {
+                    font-size: 2.2em;
+                }
+    
+                p {
+                    font-size: 1.9em;
+                }
+            }
         }
     }
 }

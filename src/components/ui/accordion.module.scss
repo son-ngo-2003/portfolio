@@ -1,7 +1,9 @@
 @use "/src/styles/abstracts" as *;
 
+$plusSize: 1.25em;
+
 .box {
-    width: 25em;
+    width: min(25em, 100%);
     overflow: auto;
     border-bottom: 1px solid $black-300;
 
@@ -22,29 +24,26 @@
             line-height: 2em;
             padding-left: 1em;
             flex-grow: 2;
-
         }
 
         .iconPlus {
             position: relative;
             width: 2.25em;
-            $font-size: 1.25em;
-
 
             &::before{
                 content: "";
                 position: absolute;
-                height: $font-size;
+                height: $plusSize;
                 width : 0.125em;
-                transition: transform 300ms ease-in;
+                @include transition(transform);
             }
 
             &::after {
                 content: "";
                 position: absolute;
-                width: $font-size;
+                width: $plusSize;
                 height: 0.125em;
-                transition: transform 300ms ease-in;
+                @include transition(transform);
             }
         }
     }
@@ -52,12 +51,12 @@
     .expandArea {
         width: 100%;
         bottom: 0;
+        height: 0;
+
         overflow: hidden;
         padding: 0 0.8rem 0 0.8rem;
-        height: 0;
         font-size: .9em !important;
-
-        transition: height 300ms ease-in, box-shadow 100ms ease-in;
+        @include transition(height);
 
         p b{
             font-weight: 800;
@@ -73,11 +72,9 @@
         .expandArea{
             display: block;
             height: 7.5em;
-            box-shadow: 0px 15px 15px 2px rgba(30, 30, 30, 0.20);
         }
 
         .iconPlus {
-
             &::before{
                 transform: rotate(90deg);
             }
@@ -90,3 +87,22 @@
     }
 
 }
+
+@media (max-width: 724px) {
+    .box {
+    
+        .overlay {
+    
+            .iconCover {
+                font-size: 2em !important;
+            }
+    
+            h3 {
+                font-size: 1em;
+                line-height: 2.5em;
+                padding-left: 0.5em;
+            }
+        }
+    }
+}
+

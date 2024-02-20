@@ -1,26 +1,52 @@
 @use "/src/styles/abstracts" as *;
 
+@mixin setSizeOfElement($lineWidth, $pointRadius, $marginLeft) {
+    .line {
+        width: $lineWidth;
+        margin-left: calc($marginLeft - $lineWidth/2);
+        border-radius: calc($lineWidth / 2);
+    }
+
+    .finalPoint {
+        @include circle( calc( $pointRadius / 2 ) );
+        margin-left: calc($marginLeft - $pointRadius/4);
+    }
+
+    .linePoint {
+        @include circle( $pointRadius );
+        margin-left: calc($marginLeft - $pointRadius/2);
+        top: 16%;
+
+        &::after {
+            @include circle( calc($pointRadius * 0.7) );
+            top: calc($pointRadius * 0.15);
+            left: calc($pointRadius * 0.15);
+        }
+    }
+}
+
+$big-lineWidth: 0.5rem;
+$big-pointRadius: 3.125rem;
+$big-marginLeft: 1.5rem;
+
 .education {
     .educationList {
         margin-top: 2em;
         position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @include setSizeOfElement($big-lineWidth, $big-pointRadius, $big-marginLeft);
 
         .line {
             position: absolute;
-            width: 0.5em;
             height: 95%;
-            margin-left: 2em;
-            border-radius: 0.25em;
         }
 
         .finalPoint {
             display: block;
-            height: 1.5em;
-            width: 1.5em;
-            border-radius: 50%;
             position: absolute;
             bottom: 4%;
-            margin-left: 1.5em;
         }
 
         .educationItem {
@@ -29,26 +55,13 @@
         }
 
         .linePoint {
-            $pointSize: 3.125em;
-
-            height: $pointSize;
-            width: $pointSize;
-            display: block;
-            position: absolute;
-            border-radius: 50%;
-            top: 10%;
+            position: relative;
+            top: 12%;
 
             &::after {
-                content: "";
-                display: block;
-                height: calc($pointSize * 0.7);
-                width: calc($pointSize * 0.7);
-                border-radius: 50%;
+                @include before-after;
                 background-color: $primary;
                 position: absolute;
-                top: calc($pointSize * 0.15);
-                left: calc($pointSize * 0.15);
-
                 transition: background-color 300ms ease-in;
             }
         }
@@ -64,6 +77,10 @@
     }
 }
 
+$medium-lineWidth: 0.45rem;
+$medium-pointRadius: 2.7rem;
+$medium-marginLeft: 1.2rem;
+
 @media (max-width: 1024px) {
     .education {
         .welcome {
@@ -71,42 +88,30 @@
         }
         
         .educationList {
-
-            .line {
-                margin-left: 1.5em;
-            }
-    
-            .finalPoint {
-                margin-left: 1em;
-            }
+            @include setSizeOfElement($medium-lineWidth, $medium-pointRadius, $medium-marginLeft);
 
             .linePoint {
-                $pointSize: 2.5em;
-    
-                height: $pointSize;
-                width: $pointSize;
-    
-                &::after {
-                    height: calc($pointSize * 0.7);
-                    width: calc($pointSize * 0.7);
-                    top: calc($pointSize * 0.15);
-                    left: calc($pointSize * 0.15);
-                }
+                top: 16%;
             }
 
             .educationItem {
                 margin-bottom: 1.25em;
             }
-    
         }
     }
 }
 
+$small-lineWidth: 0.3rem;
+$small-pointRadius: 2.5rem;
+$small-marginLeft: 1rem;
+
 @media (max-width: 739px) {
     .education {
         .educationList {
-            .line {
-                margin-left: 1.25em;
+            @include setSizeOfElement($small-lineWidth, $small-pointRadius, $small-marginLeft);
+    
+            .linePoint {
+                top: 17%;
             }
         }   
     }

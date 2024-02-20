@@ -26,6 +26,7 @@ i18next
                 projects: tr.projects_en,
                 activities: tr.activities_en,
                 contact: tr.contact_en,
+                blog: {},
             },
             fr : {
                 global: tr.global_fr,
@@ -36,6 +37,7 @@ i18next
                 projects: tr.projects_fr,
                 activities: tr.activities_fr,
                 contact: tr.contact_fr,
+                blog: {},
             },
             vn : {
                 global: tr.global_vn,
@@ -46,6 +48,7 @@ i18next
                 projects: tr.projects_vn,
                 activities: tr.activities_vn,
                 contact: tr.contact_vn,
+                blog: {},
             },
         },
     })

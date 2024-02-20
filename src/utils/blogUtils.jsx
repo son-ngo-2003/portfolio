@@ -31,5 +31,35 @@ const textToBlogModel = (text) => {
 
     return blogModel;
 }
+
+const blogModelToText = (blogModel) => {
+    const lines = blogModel.map(item => {
+        switch (item.type) {
+            case 'preTitle':
+                return `pret:${item.value}`;
+            case 'title':
+                return `t:${item.value}`;
+            case 'subtitle':
+                return `st:${item.value}`;
+            case 'heading':
+                return `h:${item.value}`;
+            case 'subheading':
+                return `sh:${item.value}`;
+            case 'image':
+                return `img:${item.value}`;
+            case 'imageDescription':
+                return `dimg:${item.value}`;
+            case 'paragraph':
+                return `${item.value}`;
+            case 'link':
+                return `link:${item.value}`;
+            default:
+                return `??:${item.value}`;
+        }
+    });
+
+    return lines.join('\n');
+}
+
     
-export { textToBlogModel };
+export { textToBlogModel, blogModelToText };

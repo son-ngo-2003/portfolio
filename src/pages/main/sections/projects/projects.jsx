@@ -36,13 +36,13 @@ const Projects = forwardRef(( props, ref ) => {
 
             <div className={`${styles.projectsList} row`}>
                 {projects && projects.map( (project, index) => (
-                        <a key={index} className={`${styles.projectItem} col l-6`}
-                            href={`/blog?type=project&id=${project.id}`}>
+                        <a key={index} className={`${styles.projectItem} col l-6 m-12 c-12`}
+                            href={`/blog?id=${project.id}`}>
                             <ImageBox
                                 subTitle = {`${tagName.date}: ${project.date}`}
                                 title = {`${project.name}`}
                                 text = {`${tagName.role}: ${project.role}`}
-                                image = {``}
+                                image = {`${project.image}`}
                                 theme = {theme}
                             />
                         </a>

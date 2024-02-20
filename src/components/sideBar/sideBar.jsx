@@ -14,7 +14,7 @@ import { MdMenuOpen } from "react-icons/md";
 //images
 import { avatarImage } from "/src/assets/images";
 
-const sideBar = ({sectionsRef, sectionCall=''}) => {
+const sideBar = ({sectionsRef}) => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [isShow, setIsShow] = useState(false);
     const [currentSection, setCurrentSection] = useState('home');
@@ -23,9 +23,13 @@ const sideBar = ({sectionsRef, sectionCall=''}) => {
 
     function scrollToSection( section ) {
         if (!section) return;
-        if (window.location.pathname !== '/') 
-            window.location.pathname = '/';
         
+        if (window.location.pathname !== '/') {
+            searchParams.set('s', section);
+            setSearchParams(searchParams);
+            window.location.pathname = '/';
+        }
+               
         const node = sectionsRef.current.get( section );
         node.scrollIntoView({
             behavior: 'smooth',
@@ -44,6 +48,13 @@ const sideBar = ({sectionsRef, sectionCall=''}) => {
         })
     }
 
+    const deleteParams = (listParams) => {
+        listParams.forEach( (param) => {
+            searchParams.delete(param);
+        })
+        setSearchParams(searchParams);
+    }
+
     useEffect(() => {
         const currentPath = window.location.pathname;
         if (currentPath === '/') {
@@ -55,12 +66,8 @@ const sideBar = ({sectionsRef, sectionCall=''}) => {
             })
 
             scrollToSection( searchParams.get("s") );
-            searchParams.delete('s');
-            setSearchParams(searchParams);
-
+            deleteParams(['s', 'id'])
             window.addEventListener("scroll", handleSroll);
-        } else {
-            setCurrentSection(sectionCall);
         }
     },[]);
 
@@ -90,17 +97,14 @@ const sideBar = ({sectionsRef, sectionCall=''}) => {
                 </ul>
 
                 <button className={`${styles.openButton} flex text`}
-                        onClick={ () => { setIsShow(!isShow) } }
-                >
+                        onClick={ () => { setIsShow(!isShow) } }>
                     {   isShow 
                         ? <MdMenuOpen/>
                         : <RiMenu2Fill />
                     }
-                    
                 </button>
-
-                
             </div>
+
             <div className={`${styles.overlay}`}
                 onClick={ () => { setIsShow(!isShow) }}
             ></div>

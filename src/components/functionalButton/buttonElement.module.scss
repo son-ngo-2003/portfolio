@@ -6,9 +6,7 @@ $size: 2.75rem;
     cursor: pointer;
 
     .overlay {
-        width: $size;
-        height: $size;
-        border-radius: 50%;
+        @include circle($size);
         overflow: hidden;
 
         i {
@@ -17,10 +15,7 @@ $size: 2.75rem;
         }
 
         img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 50% 50%;
+            @include imageFixed;
         }
     }
 }

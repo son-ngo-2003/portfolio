@@ -4,13 +4,11 @@
     width: 90%;
     height: auto;
     position: relative;
-    $triangle-width: 1em;
 
     .overlay {
-        width: calc(100% - $triangle-width);
+        width: 97%;
         height: 100%;
         padding: 1em; 
-
         float: right;
 
         .header {
@@ -28,22 +26,6 @@
             }
         }
 
-        .triangle {
-            content: "";
-            display: block;
-            position: absolute;
-            left: - $triangle-width;
-            top: 20%;
-
-            border-top: calc($triangle-width / 2) solid transparent;
-            
-            border-right-style: solid;
-            border-right-width: $triangle-width ;
-
-            border-left: $triangle-width solid transparent;
-            border-bottom: calc($triangle-width / 2) solid transparent;
-        }
-
         &:hover {
             .title {
                 color: $secondary;
@@ -51,4 +33,26 @@
         }
     }
 
+    .triangle {
+        @include left-triangle(3%, 1.5em);
+        position: absolute;
+        top: 20%;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .box {
+        .overlay {
+            .header {
+                flex-direction: column;
+                align-items: start;
+
+                .subTitle {
+                    padding-left: 0;
+                    margin-bottom: 0.5em;
+                }
+            }
+        }
+    }
 }

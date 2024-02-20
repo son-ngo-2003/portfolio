@@ -41,10 +41,10 @@ const ServicesSection = forwardRef(( props, ref ) => {
             </div>
 
             <div className={`${styles.skillsList} row`}>
-                <div className={`col l-6`}>
-                    <div className={`${styles.leftPart}`}>
+                <div className={`${styles.listContainer} col l-6`}>
+                    <div className={`${styles.leftPart} flex`}>
                         {  leftSkillsList.map( (value, index) => (
-                                <div key={index} className="">
+                                <div key={index} className="flex">
                                     <Accordion
                                         icon = {value.icon}
                                         title = {value.title}
@@ -56,10 +56,10 @@ const ServicesSection = forwardRef(( props, ref ) => {
                     </div>
                 </div>
 
-                <div className={`col l-6`}>
+                <div className={`${styles.listContainer} col l-6`}>
                     <div className={`${styles.rightPart}`}>
                         {  rightSkillsLists.map( (value, index) => (
-                                <div key={index} className="">
+                                <div key={index} className="flex">
                                     <Accordion
                                         icon = {value.icon}
                                         title = {value.title}
@@ -73,10 +73,10 @@ const ServicesSection = forwardRef(( props, ref ) => {
             </div>
 
             {/* Mobile version */}
-            <div className={`col l-12 m-12 c-12`}>
-                <div className={`${styles.skillsListMobile} row`}>
+            <div className={`${styles.listContainer} col l-12 m-12 c-12`}>
+                <div className={`${styles.skillsListMobile}`}>
                 {  skillsList.map( (value, index) => (
-                        <div key={index} className="">
+                        <div key={index} className="flex">
                             <Accordion
                                 icon = {value.icon}
                                 title = {value.title}

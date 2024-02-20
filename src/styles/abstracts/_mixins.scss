@@ -1,0 +1,142 @@
+@use "sass:list";
+
+$prefixes: "webkit", "moz", "ms", "o", "none";
+@mixin prefix($property, $arguments) {
+    @each $prefix in $prefixes {
+        @if $prefix == "none" {
+            #{$property}: $arguments;
+        } @else {
+            -#{$prefix}-#{$property}: $arguments;
+        } 
+    }
+
+    //shoud use prefix
+    // - hyphens 
+    // - align-items
+    // - animation (everything)
+    // - aspect-ratio
+    // - flex (everything)
+    // - justify-content
+    // - opacity
+    // - transform
+    // - text-justify
+    // - backdrop-filter   
+}
+
+// ----------- Shape -------------------
+@mixin circle($radius, $color:'none') {
+    width: $radius;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    @if $color != "none" {
+        background-color: $color;
+    }
+}
+
+@mixin up-triangle($height, $base, $color:'none') {
+    height: $height;
+    width: $base;
+    @include prefix( clip-path, polygon(50% 0, 100% 100%, 0 100%) );
+    @if $color != "none" {
+        background-color: $color;
+    }
+}
+
+@mixin up-triangle($height, $base, $color:'none') {
+    height: $height;
+    width: $base;
+    @include prefix( clip-path, polygon(50% 0, 100% 100%, 0 100%) );
+    @if $color != "none" {
+        background-color: $color;
+    }
+}
+
+@mixin down-triangle($height, $base, $color:'none') {
+    height: $height;
+    width: $base;
+    @include prefix( clip-path, polygon(0 0, 100% 0, 50% 100%) );
+    @if $color != "none" {
+        background-color: $color;
+    }
+}
+
+@mixin left-triangle($height, $base, $color:'none') {
+    height: $base;
+    width: $height;
+    @include prefix( clip-path, polygon(100% 0, 100% 100%, 0 50%) );
+    @if $color != "none" {
+        background-color: $color;
+    }
+}
+
+@mixin right-triangle($height, $base, $color:'none') {
+    height: $base;
+    width: $height;
+    @include prefix( clip-path, polygon(0 0, 0 100%, 100% 50%) );
+    @if $color != "none" {
+        background-color: $color;
+    }
+}
+
+
+// -------------- Styles -----------------
+@mixin horizontal-center() {
+    left: 50%;
+    @include prefix( transform, translateX(-50%) );
+}
+
+@mixin veritcal-center() {
+    top: 50%;
+    @include prefix( transform, translateY(-50%) );
+}
+
+@mixin center() {
+    @include horizontal-center;
+    @include veritcal-center;
+}
+
+@mixin horizontal-center-list() {
+    display: flex;
+    flex-direction: column;
+    @include prefix( justify-content, center);
+}
+
+@mixin before-after() {
+    content: "";
+    display: block;
+}
+
+@mixin overlay() {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin button-reset() {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background-color: transparent;
+    outline: none;
+}
+
+@mixin imageFixed() {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+// ---------------------- Animation ------------------------
+
+@mixin transition($properties, $duration : 300ms) {
+    $list : ();
+    @each $property in $properties {
+        $list : list.append($list, $property $duration ease-out, comma);
+    }
+    @include prefix( transition, $list )
+}
