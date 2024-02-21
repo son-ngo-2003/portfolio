@@ -9,7 +9,7 @@ import styles from "./App.module.scss"
 import {SideBar, FunctionalButton} from "./components"
 
 //pages
-import {MainPage, BlogPage, BlogAdmin} from "./pages"
+import {MainPage, BlogPage, BlogAdmin, NotFoundPage} from "./pages"
 
 //context
 import {ThemeContext} from "/src/contexts/themeContext"
@@ -45,6 +45,7 @@ function App() {
                         <Route path="/blog" element={<BlogPage/>} />
                         <Route path="/admin/blog" element={<BlogAdmin/>} />
                         <Route path="/" element={<MainPage ref={sectionsRef}/>} />
+                        <Route path="*" element={<NotFoundPage />} />
                     </Routes>
                 </div>
             </div>

@@ -8,16 +8,21 @@ import styles from "./skills.module.scss"
 import { Accordion } from "/src/components"
 
 //icons
-import { RiSearchEyeLine } from "react-icons/ri";
-import { BiTask } from "react-icons/bi";
-import { TbSettingsCode } from "react-icons/tb";
-import { HiOutlineLightBulb } from "react-icons/hi";
 import { FaQuestion } from "react-icons/fa6";
+import { FaCode } from "react-icons/fa";
+import { FaDatabase } from "react-icons/fa6";
+import { FiGlobe } from "react-icons/fi";
+import { DiAndroid } from "react-icons/di";
+import { FaGitSquare } from "react-icons/fa";
+import { FaDocker } from "react-icons/fa";
+import { PiGraphDuotone } from "react-icons/pi";
+import { MdDraw } from "react-icons/md";
 
 const ServicesSection = forwardRef(( props, ref ) => {
     const [t, i18n] = useTranslation("skills");
 
-    const iconList = [<RiSearchEyeLine />, <BiTask />, <TbSettingsCode />, <HiOutlineLightBulb /> ]
+    const iconList = [<FaCode />, <FaDatabase />, <FiGlobe />, <DiAndroid />,
+                      <FaGitSquare />, <FaDocker />, <PiGraphDuotone />, <MdDraw /> ];
     const skillsList = t('skills.skills', {returnObjects: true})
                             .map( ( value, key ) => ({
                                 title: value.title,

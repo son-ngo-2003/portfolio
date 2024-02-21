@@ -10,5 +10,23 @@
             "download-CV" : "Download CV",
             "discover" : "Discover my portfolio"
         }
+    },
+
+    "sidebar" : {
+        "introduction" : {
+            "name" : "NGO Truong Son",
+            "intro1" : "3rd year student at INSA",
+            "intro2" : "Developer"
+        },
+        "navigation" : {
+            "home" : "Home",
+            "about" : "About Me",
+            "services" : "Services",
+            "skills" : "Skills",
+            "education" : "Education",
+            "projects" : "Projects",
+            "activities" : "Activities - Interests",
+            "contact" : "Contact"
+        }
     }
 }

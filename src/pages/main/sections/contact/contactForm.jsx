@@ -96,9 +96,9 @@ const ContactForm = ({ divClassName='', contactContent }) => {
 
                 <span className={`${styles.divLine}`}></span>
                 <div className={`${styles.socialMedia} text`}>
-                    <a href={infoContact.linkedin} className=""><AiOutlineLinkedin /></a>
-                    <a href={infoContact.facebook} className=""><AiOutlineFacebook /></a>
-                    <a href={infoContact.instagram} className=""><FaInstagram /></a>
+                    <a href={infoContact.linkedin} className="" target='_blank'><AiOutlineLinkedin /></a>
+                    <a href={infoContact.facebook} className="" target='_blank'><AiOutlineFacebook /></a>
+                    <a href={infoContact.instagram} className="" target='_blank'><FaInstagram /></a>
                 </div>
             </div>
         </div>

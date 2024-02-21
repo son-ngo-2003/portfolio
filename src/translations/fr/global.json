@@ -10,5 +10,25 @@
             "download-CV" : "Télécharger le CV",
             "discover" : "Découvrir mes travaux"
         }
+    },
+
+    "sidebar" : {
+        "introduction" : {
+            "name" : "NGO Truong Son",
+            "intro1" : "Étudiant en 3ème année à l'INSA de Lyon",
+            "intro2" : "Développeur"
+        },
+
+        "navigation" : {
+            "home" : "Accueil",
+            "about" : "Qui suis-je?",
+            "services" : "Services",
+            "skills" : "Compétences",
+            "education" : "Éducation",
+            "projects" : "Projets",
+            "activities" : "Activités - Intérêts",
+            "contact" : "Contact"
+        }
     }
+
 }

@@ -6,17 +6,21 @@ import { useTranslation } from "react-i18next";
 // services
 import { getBlogById } from '/src/services/blogServices'
 
+//utils
+import { boldTextFormat } from '../../utils/blogUtils';
+
 //css
 import styles from "./blog.module.scss"
 
 const BlogPage = () => {
     const languages = ["en", "fr", "vn"];
     const [t, i18n] = useTranslation("blog");
-    const [isContentSet, setContentSet] = useState(false);
+    const [ isContentSet, setContentSet ] = useState(false);
     const [ searchParams, setSearchParams ] = useSearchParams()
     
 
     const renderContent = (blogContent = []) => {
+
         return blogContent.map((item, index) => {
             switch (item.type) {
                 case 'preTitle':
@@ -30,16 +34,19 @@ const BlogPage = () => {
                 case 'subheading':
                     return <h3 className={`${styles.subheading} sub-title`} key={index}>{item.value}</h3>;
                 case 'paragraph':
-                    return <p className={`${styles.paragraph} text`} key={index}>{item.value}</p>;
+                    return <p className={`${styles.paragraph} text`} key={index}>{boldTextFormat(item.value)}</p>;
                 case 'image':
                     return <img src={item.value} alt={`Image ${index}`} key={index} />;
                 case 'imageDescription':
                     return <p className={`${styles.imageDescription} text`} key={index}>{item.value}</p>;
                 case 'link':
                     return <a className={`${styles.link} text`} href={item.value} key={index} target='_blank'>{item.value}</a>;
+                case 'list':
+                    return <p className={`${styles.list} text`} href={item.value} key={index} target='_blank'>{item.value}</p>;
                 default:
-                    return null;
+                    return null;    
             }
+
         });
     };
 

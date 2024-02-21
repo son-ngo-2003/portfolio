@@ -1,4 +1,4 @@
-@use '../abstracts/colors' as *;
+@use "/src/styles/abstracts" as *;
 
 * {
     transition: background-color 300ms ease-in, border-right 300ms ease-in;
@@ -21,8 +21,8 @@
 
 .flex {
     display: flex !important;
-    justify-content: center;
-    align-items: center;
+    @include prefix(justify-content, center);
+    @include prefix(align-items, center);
 }
 
 .horizontal-center {

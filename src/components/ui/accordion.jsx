@@ -1,22 +1,14 @@
 import { useState } from 'react';
 
+//utils
+import { boldTextFormat } from '/src/utils/blogUtils';
+
 // css
 import styles from './accordion.module.scss';
 
 const Accordion = ({text='text', title = 'title', icon={}, 
                     divClassName='' }) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    const formatText = (input) => {
-        const words = input.split('/');
-        const formattedWords = words.map((word, index) => {
-            if (index % 2 == 1) {
-                return <b key={index}>{word}</b>;
-            }
-            return word;
-        });
-        return <p className="text">{formattedWords}</p>;
-    };
 
     return (
         <div className={`${styles.box} ${divClassName} ${isOpen ? styles.open : ''}`}
@@ -30,7 +22,7 @@ const Accordion = ({text='text', title = 'title', icon={},
                 </span>
             </div>
             <div className={`${styles.expandArea} text background`}>
-                {formatText(text)}
+                <p className="text">{boldTextFormat(text)}</p>;
             </div>
         </div>
     );

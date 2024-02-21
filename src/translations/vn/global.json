@@ -10,5 +10,24 @@
             "download-CV" : "Tải xuống CV",
             "discover" : "Khám phá các dự án"
         }
+    },
+
+    "sidebar" : {
+        "introduction" : {
+            "name" : "Ngô Trường Sơn",
+            "intro1" : "Học sinh năm 3 tại INSA",
+            "intro2" : "Developer"
+        },
+
+        "navigation" : {
+            "home" : "Trang chủ",
+            "about" : "Giới thiệu",
+            "services" : "Dịch vụ",
+            "skills" : "Kĩ năng",
+            "education" : "Giáo dục",
+            "projects" : "Dự án",
+            "activities" : "Hoạt động - Sở thích",
+            "contact" : "Liên hệ"
+        }
     }
 }

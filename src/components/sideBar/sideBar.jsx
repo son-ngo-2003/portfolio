@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useContext } from 'react';
 import { useSearchParams } from 'react-router-dom'
+import { useTranslation } from "react-i18next";
 
 //css
 import styles from './sideBar.module.scss';
@@ -15,6 +16,7 @@ import { MdMenuOpen } from "react-icons/md";
 import { avatarImage } from "/src/assets/images";
 
 const sideBar = ({sectionsRef}) => {
+    const [t, i18n] = useTranslation("global");
     const [searchParams, setSearchParams] = useSearchParams()
     const [isShow, setIsShow] = useState(false);
     const [currentSection, setCurrentSection] = useState('home');
@@ -69,7 +71,7 @@ const sideBar = ({sectionsRef}) => {
             deleteParams(['s', 'id'])
             window.addEventListener("scroll", handleSroll);
         }
-    },[]);
+    },[sectionsRef]);
 
     const getNavItem = (section, insideText) => 
         (<li>
@@ -82,26 +84,25 @@ const sideBar = ({sectionsRef}) => {
         <>
             <div className={`${styles[theme]} ${styles.sideBar} ${isShow && styles.open}`}> 
                 <img  className="horizontal-center" alt="" src={avatarImage.src} />
-                <h2   className='text'>NGO Truong Son</h2>
-                <p    className='text'>3rd student at INSA</p>
+                <h2   className='text'>{t("sidebar.introduction.name")}</h2>
+                <p    className='text'>{t("sidebar.introduction.intro1")}</p>
+                <p    className='text'>{t("sidebar.introduction.intro2")}</p>
 
                 <ul className="text">
-                    {getNavItem("home",         "Home")}
-                    {getNavItem("about",        "About Me")}
-                    {getNavItem("services",     "Services")}
-                    {getNavItem("skills",       "Skills")}
-                    {getNavItem("education",    "Education")}
-                    {getNavItem("projects",     "Projects")}
-                    {getNavItem("activities",   "Activities - Interests")}
-                    {getNavItem("contact",      "Contact ")}
+                    {getNavItem("home",         t("sidebar.navigation.home"))}
+                    {getNavItem("about",        t("sidebar.navigation.about"))}
+                    {getNavItem("services",     t("sidebar.navigation.services"))}
+                    {getNavItem("skills",       t("sidebar.navigation.skills"))}
+                    {getNavItem("education",    t("sidebar.navigation.education"))}
+                    {getNavItem("projects",     t("sidebar.navigation.projects"))}
+                    {getNavItem("activities",   t("sidebar.navigation.activities"))}
+                    {getNavItem("contact",      t("sidebar.navigation.contact"))}
                 </ul>
 
                 <button className={`${styles.openButton} flex text`}
                         onClick={ () => { setIsShow(!isShow) } }>
-                    {   isShow 
-                        ? <MdMenuOpen/>
-                        : <RiMenu2Fill />
-                    }
+                    <i className={`${isShow ? styles.show : styles.hide }`}><MdMenuOpen/></i>
+                    <i className={`${!isShow ? styles.show  : styles.hide}`}><RiMenu2Fill /></i>
                 </button>
             </div>
 

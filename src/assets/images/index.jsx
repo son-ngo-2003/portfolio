@@ -6,6 +6,9 @@ const avatarImage = {
     src : "https://res.cloudinary.com/dnt6wfbks/image/upload/v1708273274/portfolio/home/CV-avatar-black-2_vhlqds.png"
 }
 
+const notfoundImage = {
+    src: "https://res.cloudinary.com/dnt6wfbks/image/upload/v1708542666/portfolio/home/notfound-small_qmgwjk.png"
+}
 
 // ------------------------flags---------------------------------------
 const vnFlag = {
@@ -30,6 +33,7 @@ const flags = {
 export {
     homeImage,
     avatarImage,
+    notfoundImage,
     flags,
     vnFlag,
     frFlag,

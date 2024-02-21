@@ -24,6 +24,8 @@ const textToBlogModel = (text) => {
                 return {value: value, type: 'paragraph'};
             case 'link':
                 return {value: value, type: 'link'};
+            case 'list':
+                return {value: value, type: 'list'};
             default:
                 return {value: value, type: 'unknown'};
         }
@@ -50,9 +52,11 @@ const blogModelToText = (blogModel) => {
             case 'imageDescription':
                 return `dimg:${item.value}`;
             case 'paragraph':
-                return `${item.value}`;
+                return `p:${item.value}`;
             case 'link':
                 return `link:${item.value}`;
+            case 'list':
+                return `list:${item.value}`;
             default:
                 return `??:${item.value}`;
         }
@@ -61,5 +65,16 @@ const blogModelToText = (blogModel) => {
     return lines.join('\n');
 }
 
+const boldTextFormat = (text) => {
+    const words = text.split('/');
+    const formattedWords = words.map((word, index) => {
+        if (index % 2 == 1) {
+            return <b key={index}>{word}</b>;
+        }
+        return word;
+    });
+    return formattedWords;
+}
+
     
-export { textToBlogModel, blogModelToText };
+export { textToBlogModel, blogModelToText, boldTextFormat };

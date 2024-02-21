@@ -1,9 +1,11 @@
-import { forwardRef, useContext } from "react";
-
+import { forwardRef, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // css
 import styles from "./home.module.scss"
+
+//services
+import {getInfo} from '/src/services/infoServices'
 
 //components
 import { Button } from "/src/components"
@@ -18,9 +20,17 @@ import { homeImage } from "/src/assets/images";
 //context
 import {ThemeContext} from "/src/contexts/themeContext"
 
-const Home = forwardRef(( props, ref ) => {
+const Home = forwardRef(( {projectsRef={}}, ref ) => {
     const [t, i18n] = useTranslation("global");
     const {theme} = useContext(ThemeContext);
+    const [linkCV, setLinkCV] = useState();
+
+    useEffect(() => {
+        (async () => {
+            const data = await getInfo();
+            setLinkCV(data.cv[i18n.language] || data.cv["en"]);
+        })();
+    }, [i18n.language]);
 
     return (
         <div ref={ref} className={`${styles.home} row section`}>
@@ -31,7 +41,7 @@ const Home = forwardRef(( props, ref ) => {
                     <p className="text">{t("home.welcome.text")}</p>
                 </div>
                 <div className={`${styles.buttonsContainer}`}>
-                    <a href="https://drive.google.com/file/d/1pVsZCVxXt8PS2WfD3AY9MMLQSwRdB-jd/view?usp=sharing"
+                    <a href={linkCV}
                         target="_blank">
                         <Button
                             divClassName={styles.button}
@@ -44,6 +54,13 @@ const Home = forwardRef(( props, ref ) => {
                         divClassName={styles.button}
                         text={t("home.buttons.discover")}
                         icon={<MdOutlineWorkOutline />}
+                        onClick={ () => { 
+                            console.log(projectsRef)
+                            projectsRef.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                            inline: 'center'
+                        });}}
                     />
                 </div>
             </div>

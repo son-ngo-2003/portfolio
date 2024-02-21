@@ -24,6 +24,7 @@ const BlogAdmin = () => {
         id:                 {type: 'text', placeholder: '', required: false, hide: true},
         type:               {type: 'text', placeholder: 'type (*)', required: true},
         name:               {type: 'text', placeholder: 'name (*)', required: true}, 
+        priority:           {type: 'number', placeholder: 'priority (*)', required: true}, 
         writenDate:         {type: 'text', placeholder: 'writenDate (*)', required: true}, 
         role:               {type: 'text', placeholder: 'role (for project)', required: false}, //for project
         date:               {type: 'text', placeholder: 'date (for project)', required: false}, //for project
@@ -36,19 +37,23 @@ const BlogAdmin = () => {
     const getTableCell = (header, value, index) => {
         switch (header) {
             case 'Image':
-                return <a className='text' href={value.image} target='_blank'>See image</a>
+                return (
+                    value.image 
+                    ? <a className='text' href={value.image} target='_blank'>See image</a>
+                    : <p className='text'>Not available</p>
+                )
             case 'Blog':
                 return <a className='text' href={`/blog?id=${value.id}`} target='_blank'>
                             <Button size="small" text={"See blog"} fill={true}/>
                         </a>
             case 'Update':
                 return  <Button size="small" text={"Update"} fill={true}
-                                onClick={()=>{setCurrentAction("Update"); setFormValue(value)}}/>
+                                onClick={() => handleUpdateButton(value)}/>
             case 'Delete':
                 return <Button size="small" text={"Delete"} fill={true}
                                 onClick={()=>{deleteBlog(value.id)}}/>
             case '#':
-                return <p className='text'>{index}</p>
+                return <p className='text'>{value.priority}</p>
             case 'Type':
                 return <p className='text'>{value.type}</p>
             case 'Writen Date':
@@ -60,8 +65,18 @@ const BlogAdmin = () => {
         }
     }
 
-    const getListData = () => {
-        const ld = blogs.map( (blog, index) => 
+    const handleUpdateButton = (value) => {
+        setCurrentAction("Update"); 
+        setFormValue(value); 
+        formRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'center'
+        });
+    }
+
+    const getListData = (blogs) => {
+        const ld = blogs?.map( (blog, index) => 
             contentShowInTable.map( (header) => getTableCell(header, blog, index) )
         )
         return ld;
@@ -71,6 +86,7 @@ const BlogAdmin = () => {
         const form = formRef.current;
         form.querySelector('#id').value = blog.id;
         form.querySelector('#name').value = blog.name;
+        form.querySelector('#priority').value = blog.priority;
         form.querySelector('#role').value = blog.role;
         form.querySelector('#date').value = blog.date;
         form.querySelector('#type').value = blog.type;
@@ -97,6 +113,7 @@ const BlogAdmin = () => {
         return {
             id: form.querySelector('#id').value,
             name: form.querySelector('#name').value,
+            priority: +form.querySelector('#priority').value,
             role: form.querySelector('#role').value,
             date: form.querySelector('#date').value,
             type: form.querySelector('#type').value,
@@ -111,9 +128,9 @@ const BlogAdmin = () => {
     const addNewBlog = async (e) => {
         e.preventDefault();
         const newBlog = getBlogData()
-        await addBlog(newBlog);
+        const id = await addBlog(newBlog);
         let newBlogs = blogs;
-        newBlogs.push(newBlog);
+        newBlogs.push({...newBlog, id: id});
         setBlogs(newBlogs);
         formRef.current.reset();
     }
@@ -123,10 +140,11 @@ const BlogAdmin = () => {
         const updatedBlog = getBlogData();
         await updateBlogById(updatedBlog.id, updatedBlog);
         const newBlogs = blogs.map((blog) => (
-            blog.id === id ? blog : updatedBlog
+            blog.id === updatedBlog.id ? updatedBlog : blog
         ));
         setBlogs(newBlogs);
         formRef.current.reset();
+        setCurrentAction('Add');
     }
 
     const deleteBlog = async (id) => {
@@ -149,7 +167,7 @@ const BlogAdmin = () => {
                 <div className={`${styles.tableBlogs}`}>
                     <h1 className={`${styles.title} sub-title`}>Current Blogs</h1>
                     <Table
-                        listData={getListData()}
+                        listData={getListData(blogs)}
                         tableHeaders={contentShowInTable}
                         divClassName={styles.table}
                     ></Table>

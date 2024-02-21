@@ -1,12 +1,14 @@
 import { db } from '/src/config/firebase';
 import { collection, getDocs, getDoc, 
          addDoc, setDoc,
-         query, where, doc } from "firebase/firestore"; 
+         query, where, doc, orderBy } from "firebase/firestore"; 
 
 const getAllBlogs =  async () => {
     try {
         const blogs = [];
-        const q = query(collection(db, "blogs"), where("deleted", "==", false));
+        const q = query(collection(db, "blogs"), 
+                        where("deleted", "==", false), 
+                        orderBy("priority"));
         const snapshots = await getDocs( q );
         snapshots.forEach( (snap) => {
             blogs.push({...snap.data(), id: snap.id});
@@ -20,7 +22,10 @@ const getAllBlogs =  async () => {
 
 const getBlogByName = async (name) => {
     try {
-        const q = query(collection(db, "blogs"), where("name", "==", name), where("deleted", "==", false));
+        const q = query(collection(db, "blogs"), 
+                                    where("name", "==", name), 
+                                    where("deleted", "==", false),
+                                    orderBy("priority"));
         const querySnapshot = await getDocs(q);
         if (!querySnapshot.empty) {
             return {...querySnapshot.docs[0].data(), id: querySnapshot.docs[0].id};
@@ -54,18 +59,21 @@ const getBlogById = async (id) => {
     }
 }
 
-const getAllProjects = async () => {
+const getBlogsByType = async (type) => {
     try {
         const projects = [];
         const col = collection(db, "blogs");
-        const q = query(col, where("type", "==", "project"), where("deleted", "==", false));
+        const q = query(col, 
+                        where("type", "==", type), 
+                        where("deleted", "==", false),
+                        orderBy("priority"));
         const snapshots = await getDocs(q);
         snapshots.forEach((snap) => {
             projects.push({...snap.data(), id: snap.id});
         });
         return projects;
     } catch (e) {
-        console.error("Error retrieving projects: ", e);
+        console.error(`Error retrieving blogs de type ${type}: `, e);
         return null;
     }
 }
@@ -113,7 +121,7 @@ export {
     getAllBlogs,
     getBlogByName,
     getBlogById,
-    getAllProjects,
+    getBlogsByType,
     addBlog,
     updateBlogById,
     deleteBlogById

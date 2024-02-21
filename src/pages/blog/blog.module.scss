@@ -63,9 +63,22 @@
 
     .paragraph {
         font-size: 1.3em;
+        b{
+            font-weight: 800;
+        }
+    }
+
+    .paragraph+.paragraph {
+        margin-top: 1rem;
     }
 
     a {
+        margin-left: 2em;
+    }
+
+    .list {
+        list-style:disc outside none;
+        display:list-item; 
         margin-left: 2em;
     }
 }

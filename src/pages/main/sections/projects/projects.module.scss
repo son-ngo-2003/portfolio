@@ -1,7 +1,9 @@
 @use "/src/styles/abstracts" as *;
 
 .projects {
-    padding-bottom: 8em !important;
+    &.notRendered {
+        padding-bottom: 45rem !important;
+    }
 
     .projectsList {
         margin-top: 2em;

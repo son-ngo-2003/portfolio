@@ -1,4 +1,4 @@
-import { forwardRef, useRef, useImperativeHandle } from 'react'
+import { forwardRef, useRef, useImperativeHandle, useState } from 'react'
 
 //sections
 import {Home, About, ServicesSection, Skills, 
@@ -6,6 +6,7 @@ import {Home, About, ServicesSection, Skills,
 
 const MainPage = forwardRef((props, ref) => {
     const sectionsRef = useRef(null);
+    const [projectsRef, setProjectRef] = useState(null);
     useImperativeHandle(ref, () => sectionsRef.current, []);
 
     function getSectionsRef () {
@@ -18,8 +19,9 @@ const MainPage = forwardRef((props, ref) => {
     return (
         <>
             <Home 
-                ref={(node) => {getSectionsRef().set('home', node);}
-            }/>
+                ref={(node) => {getSectionsRef().set('home', node);}}
+                projectsRef={projectsRef}
+            />
             <About 
                 ref={(node) => {getSectionsRef().set('about', node);}
             }/>
@@ -33,7 +35,7 @@ const MainPage = forwardRef((props, ref) => {
                 ref={(node) => {getSectionsRef().set('education', node);}
             }/>
             <Projects 
-                ref={(node) => {getSectionsRef().set('projects', node);}
+                ref={(node) => {getSectionsRef().set('projects', node); setProjectRef(node);}
             }/>
             <Activities 
                 ref={(node) => {getSectionsRef().set('activities', node);}

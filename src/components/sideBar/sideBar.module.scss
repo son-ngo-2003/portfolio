@@ -2,13 +2,14 @@
 
 $sideBarWidth: 18.75rem;
 $imageSize: 12.5em;
-$sizeButton: 4rem;
+$sizeButton: 3.7rem;
 
 .sideBar {
     height: 100vh;
     width: $sideBarWidth;
     position: fixed;
     z-index: 20;
+    padding: 0.5rem;
 
     img {
         @include circle($imageSize);
@@ -27,6 +28,7 @@ $sizeButton: 4rem;
     p {
         width: 100%;
         text-align: center;
+        line-height: 1.5;
     }
 
     ul {
@@ -138,7 +140,18 @@ $sizeButton: 4rem;
             right: - $sizeButton;
 
             border-radius: 0 0.2em 0.2em 0;
-            font-size: 2em;
+            font-size: 2rem;
+
+            i {
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            i.hide {
+                display: none;
+            }
         }
     }
 }
