@@ -24,11 +24,12 @@ const Home = forwardRef(( {projectsRef={}}, ref ) => {
     const [t, i18n] = useTranslation("global");
     const {theme} = useContext(ThemeContext);
     const [linkCV, setLinkCV] = useState();
+    const betaCVLink = "https://drive.google.com/file/d/17POE18amlH1-F-jOE4B25AdliaAay2ER/view?usp=sharing"
 
     useEffect(() => {
         (async () => {
             const data = await getInfo();
-            setLinkCV(data.cv[i18n.language] || data.cv["en"]);
+            setLinkCV(data?.cv[i18n.language] || data?.cv["en"] || betaCVLink);
         })();
     }, [i18n.language]);
 

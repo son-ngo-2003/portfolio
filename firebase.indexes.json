@@ -1,19 +1,37 @@
 {
-    "indexes": [
-      {
-        "collectionGroup": "blogs",
-        "queryScope": "COLLECTION",
-        "fields": [
-          {
-            "fieldPath": "priority",
-            "order": "ASCENDING"
-          },
-          {
-            "fieldPath": "name",
-            "order": "ASCENDING"
-          }
-        ]
-      }
-    ],
-    "fieldOverrides": []
-  }
+  "indexes": [
+    {
+      "collectionGroup": "blogs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "deleted",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "priority",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "blogs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "deleted",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "priority",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

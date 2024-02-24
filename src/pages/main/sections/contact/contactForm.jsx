@@ -82,11 +82,11 @@ const ContactForm = ({ divClassName='', contactContent }) => {
 
                     <p className={`${styles.subTitle} text`}>{info.email}</p>
                     <a className={`${styles.detail} text`}
-                        href={`mailto:${infoContact.email}`}>{infoContact.email || "error"}</a>
+                        href={`mailto:${infoContact?.email}`}>{infoContact?.email || "error"}</a>
 
                     <p className={`${styles.subTitle} text`}>{info.phone}</p>
                     <a className={`${styles.detail} text`}
-                        href={`tel:+33${infoContact.telephoneNum}"`}>{infoContact.telephoneFormat || "error"}</a>
+                        href={`tel:+33${infoContact?.telephoneNum}"`}>{infoContact?.telephoneFormat || "error"}</a>
 
                     <p className={`${styles.subTitle} text`}>{info.address}</p>
                     <a href={`${infoContact.mapURL}`} className={`text ${styles.detail}`} target='_blank'>
