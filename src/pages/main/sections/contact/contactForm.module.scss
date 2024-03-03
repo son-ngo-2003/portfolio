@@ -57,7 +57,16 @@ $offset-right: calc(100% - $overlay-width);
 
             a {
                 color: inherit;
+
+                &:hover {
+                    transition-delay: 0s;
+                    transform: scale(1.1);
+                }
             }
+        }
+
+        a {
+            display: block;
         }
     }
 

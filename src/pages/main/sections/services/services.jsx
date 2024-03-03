@@ -28,15 +28,20 @@ const ServicesSection = forwardRef(( props, ref ) => {
     return (
         <div ref={ref} className={`${styles.services} section row`}>
             <div className={`${styles.welcome} col l-6 m-12 c-12`}>
-                <h3 className="sub-title">{t("services.introduction.sub-title")}</h3>
-                <h1 className="title maj">{t("services.introduction.title")}</h1>
-                <p className={`${styles.introductionText} text`}>{t("services.introduction.text")}</p>
+                <h3 className="sub-title" data-aos="fade-right" data-aos-delay="50">{t("services.introduction.sub-title")}</h3>
+                <h1 className="title maj" data-aos="fade-right" data-aos-delay="150">{t("services.introduction.title")}</h1>
+                
+                <p className={`${styles.introductionText} text`} 
+                    data-aos="fade-right" data-aos-delay="250"
+                >{t("services.introduction.text")}</p>
+
             </div>
 
             <div className={`${styles.listContainer} col l-6 m-12 c-12`}>
                 <div className={`${styles.servicesList}`}>
                     {  servicesList.map( (value, index) => (
-                            <div key={index} className="flex">
+                            <div key={index} className="flex"
+                                data-aos="fade-up" data-aos-delay={250 + index*100}>
                                 <Accordion
                                     icon = {value.icon}
                                     title = {value.title}

@@ -28,7 +28,7 @@ const About = forwardRef(( props, ref ) => {
     const renderParagraphs = (inputString) => {
         const paragraphs = inputString.split("/n");
         return paragraphs.map((paragraph, index) => (
-            <p key={index} className="text">
+            <p key={index} className="text" data-aos="fade-right" data-aos-delay={250 + index*100}>
                 {paragraph}
             </p>
         ));
@@ -37,14 +37,15 @@ const About = forwardRef(( props, ref ) => {
     return (
         <div ref={ref} className={`${styles.about} section`}>
             <div className={`${styles.welcome}`}>
-                <h3 className="sub-title">{t("about.introduction.sub-title")}</h3>
-                <h1 className="title maj">{t("about.introduction.title")}</h1>
+                <h3 className="sub-title" data-aos="fade-right" data-aos-delay="50">{t("about.introduction.sub-title")}</h3>
+                <h1 className="title maj" data-aos="fade-right" data-aos-delay="150">{t("about.introduction.title")}</h1>
                 {renderParagraphs(t("about.introduction.text"))}
             </div>
 
             <div className={`${styles.strengths} row`}>
                 {  strengthsList.map( (value, index) => (
-                        <div key={index} className={`${styles.strengthBox} flex col l-3 m-6 c-6`}>
+                        <div key={index} className={`${styles.strengthBox} flex col l-3 m-6 c-6`}
+                            data-aos="flip-right" data-aos-delay={350 + index*100}>
                             <ExpandableBox
                                 icon = {value.icon}
                                 title = {value.title}

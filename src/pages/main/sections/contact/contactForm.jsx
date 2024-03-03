@@ -59,46 +59,96 @@ const ContactForm = ({ divClassName='', contactContent }) => {
     }
 
     return (
-        <div className={`${styles.overlay} ${divClassName} bg-component`}>
+        <div className={`${styles.overlay} ${divClassName} bg-component contact-form-container`}>
 
             <div className={`${styles.formContact}`}>
-                <h3 className={`${styles.title} sub-title`}>{form.title}</h3>
-                <Form
-                    callback={sendEmail}
-                    ref = {formRef}
-                    listInput = {listInput}
-                    submitButton = { (<Button
-                                        divClassName={styles.btnInside}
-                                        size="medium"
-                                        text={form.button}
-                                        isUsedSubmit={true}
-                                    ></Button>)}
-                ></Form>
+                <h3 className={`${styles.title} sub-title`}
+                    data-aos="fade-right" data-aos-delay="250"
+                >{form.title}</h3>
+
+                <div data-aos="fade-right" data-aos-delay="350"  
+                    data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} >
+                        <Form
+                            callback={sendEmail}
+                            ref = {formRef}
+                            listInput = {listInput}
+                            submitButton = { (<Button
+                                                divClassName={styles.btnInside}
+                                                size="medium"
+                                                text={form.button}
+                                                isUsedSubmit={true}
+                                            ></Button>)}
+                        ></Form>
+                    </div>
             </div>
 
-            <div className={`${styles.info} bg-component-primary`}>
+            <div className={`${styles.info} bg-component-primary`}
+                data-aos="zoom-in" data-aos-delay="150"
+                data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+            >
                 <div className={`${styles.mainDetails}`}>
-                    <h3 className={`${styles.title} sub-title`}>{info.title}</h3>
+                    <h3 className={`${styles.title} sub-title`}
+                        data-aos="fade-up" data-aos-delay="400"   
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        >{info.title}</h3>
 
-                    <p className={`${styles.subTitle} text`}>{info.email}</p>
+                    <p className={`${styles.subTitle} text`}
+                        data-aos="fade-up" data-aos-delay="500"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        >{info.email}</p>
+
                     <a className={`${styles.detail} text`}
                         href={`mailto:${infoContact?.email}`}>{infoContact?.email || "error"}</a>
+                        href={`mailto:${infoContact.email}`}
+                        data-aos="fade-up" data-aos-delay="550"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        >{infoContact.email || "error"}</a>
 
-                    <p className={`${styles.subTitle} text`}>{info.phone}</p>
+                    <p className={`${styles.subTitle} text`}
+                        data-aos="fade-up" data-aos-delay="600"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        >{info.phone}</p>
+
                     <a className={`${styles.detail} text`}
                         href={`tel:+33${infoContact?.telephoneNum}"`}>{infoContact?.telephoneFormat || "error"}</a>
+                        href={`tel:+33${infoContact.telephoneNum}"`}
+                        data-aos="fade-up" data-aos-delay="650"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        >{infoContact.telephoneFormat || "error"}</a>
 
-                    <p className={`${styles.subTitle} text`}>{info.address}</p>
-                    <a href={`${infoContact.mapURL}`} className={`text ${styles.detail}`} target='_blank'>
+                    <p className={`${styles.subTitle} text`}
+                        data-aos="fade-up" data-aos-delay="700"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        >{info.address}</p>
+
+                    <a href={`${infoContact.mapURL}`} className={`text ${styles.detail}`} target='_blank'
+                        data-aos="fade-up" data-aos-delay="750"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        >
                         {infoContact.address ? separateStringIntoParagraphs(infoContact.address) : "error"}
                     </a>
                 </div>
 
-                <span className={`${styles.divLine}`}></span>
+                <span className={`${styles.divLine}`}
+                    data-aos="zoom-in" data-aos-delay="550"
+                    data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                ></span>
+
                 <div className={`${styles.socialMedia} text`}>
-                    <a href={infoContact.linkedin} className="" target='_blank'><AiOutlineLinkedin /></a>
-                    <a href={infoContact.facebook} className="" target='_blank'><AiOutlineFacebook /></a>
-                    <a href={infoContact.instagram} className="" target='_blank'><FaInstagram /></a>
+                    <a href={infoContact.linkedin} className="" target='_blank'
+                        data-aos="zoom-in" data-aos-delay="700"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        ><AiOutlineLinkedin /></a>
+
+                    <a href={infoContact.facebook} className="" target='_blank'
+                        data-aos="zoom-in" data-aos-delay="800"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        ><AiOutlineFacebook /></a>
+
+                    <a href={infoContact.instagram} className="" target='_blank'
+                        data-aos="zoom-in" data-aos-delay="900"  
+                        data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+                        ><FaInstagram /></a>
                 </div>
             </div>
         </div>

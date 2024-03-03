@@ -22,7 +22,7 @@ const Accordion = ({text='text', title = 'title', icon={},
                 </span>
             </div>
             <div className={`${styles.expandArea} text background`}>
-                <p className="text">{boldTextFormat(text)}</p>;
+                <p className="text">{boldTextFormat(text)}</p>
             </div>
         </div>
     );

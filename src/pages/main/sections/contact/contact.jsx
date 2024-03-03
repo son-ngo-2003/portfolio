@@ -14,9 +14,9 @@ const Contact = forwardRef(( props, ref ) => {
     return (
         <div ref={ref} className={`${styles.contact} section`}>
             <div className={`${styles.welcome}`}>
-                <h3 className="sub-title">{t("contact.introduction.sub-title")}</h3>
-                <h1 className="title maj">{t("contact.introduction.title")}</h1>
-                <p className="text">{t("contact.introduction.text")}</p>
+                <h3 className="sub-title" data-aos="fade-right" data-aos-delay="50">{t("contact.introduction.sub-title")}</h3>
+                <h1 className="title maj" data-aos="fade-right" data-aos-delay="150">{t("contact.introduction.title")}</h1>
+                <p className="text" data-aos="fade-right" data-aos-delay="250">{t("contact.introduction.text")}</p>
             </div>
 
             <div className={`${styles.contactForm} row`}>

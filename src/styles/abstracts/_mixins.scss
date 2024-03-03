@@ -82,17 +82,18 @@ $prefixes: "webkit", "moz", "ms", "o", "none";
 // -------------- Styles -----------------
 @mixin horizontal-center() {
     left: 50%;
-    @include prefix( transform, translateX(-50%) );
+    @include prefix( translate, -50% 0 );
 }
 
 @mixin veritcal-center() {
     top: 50%;
-    @include prefix( transform, translateY(-50%) );
+    @include prefix( translate, 0 -50% );
 }
 
 @mixin center() {
-    @include horizontal-center;
-    @include veritcal-center;
+    left: 50%;
+    top: 50%;
+    @include prefix( translate, -50% -50% );
 }
 
 @mixin horizontal-center-list() {

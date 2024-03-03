@@ -83,12 +83,14 @@ const sideBar = ({sectionsRef}) => {
     return (
         <>
             <div className={`${styles[theme]} ${styles.sideBar} ${isShow && styles.open}`}> 
-                <img  className="horizontal-center" alt="" src={avatarImage.src} />
-                <h2   className='text'>{t("sidebar.introduction.name")}</h2>
-                <p    className='text'>{t("sidebar.introduction.intro1")}</p>
-                <p    className='text'>{t("sidebar.introduction.intro2")}</p>
+                <div data-aos="flip-left">
+                    <img  className="horizontal-center" alt="" src={avatarImage.src} />
+                </div>
+                <h2   className='text' data-aos="fade-up" data-aos-delay="100">{t("sidebar.introduction.name")}</h2>
+                <p    className='text' data-aos="fade-up" data-aos-delay="200">{t("sidebar.introduction.intro1")}</p>
+                <p    className='text' data-aos="fade-up" data-aos-delay="300">{t("sidebar.introduction.intro2")}</p>
 
-                <ul className="text">
+                <ul className="text" data-aos="zoom-in" data-aos-delay="400">
                     {getNavItem("home",         t("sidebar.navigation.home"))}
                     {getNavItem("about",        t("sidebar.navigation.about"))}
                     {getNavItem("services",     t("sidebar.navigation.services"))}

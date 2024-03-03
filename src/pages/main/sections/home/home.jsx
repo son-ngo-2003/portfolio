@@ -37,36 +37,47 @@ const Home = forwardRef(( {projectsRef={}}, ref ) => {
         <div ref={ref} className={`${styles.home} row section`}>
             <div className={`${styles.leftPart} col l-6 m-12 c-12`}>
                 <div className={`welcome`}>
-                    <h3 className="sub-title">{t("home.welcome.sub-title")}</h3>
-                    <h1 className="title">{t("home.welcome.name")}</h1>
-                    <p className="text">{t("home.welcome.text")}</p>
+                    <h3 className="sub-title" 
+                        data-aos="fade-right" data-aos-delay="50">{t("home.welcome.sub-title")}</h3>
+
+                    <h1 className="title" 
+                        data-aos="fade-right" data-aos-delay="150">{t("home.welcome.name")}</h1>
+
+                    <p className="text" 
+                        data-aos="fade-right" data-aos-delay="300">{t("home.welcome.text")}</p>
                 </div>
                 <div className={`${styles.buttonsContainer}`}>
-                    <a href={linkCV}
-                        target="_blank">
+
+                    <div data-aos="zoom-in-right" data-aos-delay="400">
+                        <a href={linkCV} target="_blank">
+                            <Button
+                                divClassName={styles.button}
+                                text={t("home.buttons.download-CV")}
+                                icon={<IoDownloadOutline />}
+                            />
+                        </a>
+                    </div>
+
+                    <div data-aos="zoom-in-right" data-aos-delay="500">
                         <Button
                             divClassName={styles.button}
-                            text={t("home.buttons.download-CV")}
-                            icon={<IoDownloadOutline />}
+                            text={t("home.buttons.discover")}
+                            icon={<MdOutlineWorkOutline />}
+                            onClick={ () => { 
+                                console.log(projectsRef)
+                                projectsRef.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start',
+                                inline: 'center'
+                            });}}
                         />
-                    </a>
+                    </div>
 
-                    <Button
-                        divClassName={styles.button}
-                        text={t("home.buttons.discover")}
-                        icon={<MdOutlineWorkOutline />}
-                        onClick={ () => { 
-                            console.log(projectsRef)
-                            projectsRef.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start',
-                            inline: 'center'
-                        });}}
-                    />
                 </div>
             </div>
 
-            <div className={`${styles.rightPart} ${styles[theme]} col l-6 m-12 c-12`}>
+            <div className={`${styles.rightPart} ${styles[theme]} col l-6 m-12 c-12`} 
+                data-aos="fade-up" data-aos-delay="100">
                 <div className={`${styles.overlay}`}>
                     <div className={`${styles.hole} horizontal-center background`}></div>
                     <img src={homeImage.src} alt="" />

@@ -29,27 +29,37 @@ const ServicesSection = forwardRef(( props, ref ) => {
     return (
         <div ref={ref} className={`${styles.education} section`}>
             <div className={`${styles.welcome}`}>
-                <h3 className="sub-title">{t("education.introduction.sub-title")}</h3>
-                <h1 className="title maj">{t("education.introduction.title")}</h1>
+                <h3 className="sub-title" data-aos="fade-right" data-aos-delay="50">{t("education.introduction.sub-title")}</h3>
+                <h1 className="title maj" data-aos="fade-right" data-aos-delay="150">{t("education.introduction.title")}</h1>
             </div>
             <div className="row">
                 <div className={`${styles.educationList} col l-12 m-12 x-12`}>
-                    <span className={`${styles.line} bg-component-darker`}></span>
+                    <span className={`${styles.line} bg-component-darker`}
+                        data-aos="zoom-in-up" data-aos-delay="50"
+                    ></span>
                     {  educationList.map( (value, index) => (
                             <div key={index} className={`${styles.educationItem}`}>
-                                <TextBox
-                                    divClassName= {styles.educationBox}
-                                    title = {value.title}
-                                    subTitle = {value.years}
-                                    text = {value.text}
-                                    href = {value.href || ''}
-                                />
-                                <div className={`${styles.linePoint} bg-component-darker`}></div>
+
+                                <div data-aos="zoom-in-left" data-aos-delay="150">
+                                    <TextBox
+                                        divClassName= {styles.educationBox}
+                                        title = {value.title}
+                                        subTitle = {value.years}
+                                        text = {value.text}
+                                        href = {value.href || ''}
+                                    />
+                                </div>
+
+                                <div className={`${styles.linePoint} bg-component-darker`}
+                                    data-aos="zoom-in" data-aos-delay="150"
+                                ></div>
 
                             </div>
                         ))
                     }
-                    <span className={`${styles.finalPoint} bg-component-darker`}></span>
+                    <span className={`${styles.finalPoint} bg-component-darker`}
+                            data-aos="zoom-in" data-aos-delay="150"
+                    ></span>
                 </div>
             </div>
 

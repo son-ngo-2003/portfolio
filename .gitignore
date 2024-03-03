@@ -1,3 +1,7 @@
+# Locals files
+locals
+locals/*
+
 # Logs
 logs
 *.log

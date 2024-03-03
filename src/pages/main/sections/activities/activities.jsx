@@ -31,13 +31,14 @@ const Activities = forwardRef(( props, ref ) => {
     return (
         <div ref={ref} className={`${styles.activities} section`}>
             <div className={`${styles.welcome}`}>
-                <h3 className="sub-title">{t("activities.introduction.sub-title")}</h3>
-                <h1 className="title maj">{t("activities.introduction.title")}</h1>
-                <p className={`text`}>{t("activities.introduction.text")}</p>
+                <h3 className="sub-title" data-aos="fade-right" data-aos-delay="50">{t("activities.introduction.sub-title")}</h3>
+                <h1 className="title maj" data-aos="fade-right" data-aos-delay="150">{t("activities.introduction.title")}</h1>
+                <p className={`text`} data-aos="fade-right" data-aos-delay="250">{t("activities.introduction.text")}</p>
             </div>
 
             <div className={`${styles.buttons} row`}>
-                <a href={`/blog?id=${assoBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank">
+                <a href={`/blog?id=${assoBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank"
+                    data-aos="zoom-in-right" data-aos-delay="150">
                     <Button
                         text={t("activities.activities.associations")}
                         size='large'
@@ -45,7 +46,8 @@ const Activities = forwardRef(( props, ref ) => {
                     />
                 </a>
 
-                <a href={`/blog?id=${sportBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank">
+                <a href={`/blog?id=${sportBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank"
+                    data-aos="zoom-in-right" data-aos-delay="250">
                     <Button
                         text={t("activities.activities.sports")}
                         size='large'
@@ -53,7 +55,8 @@ const Activities = forwardRef(( props, ref ) => {
                     />
                 </a>
 
-                <a href={`/blog?id=${artBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank">
+                <a href={`/blog?id=${artBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank"
+                    data-aos="zoom-in-right" data-aos-delay="350">
                     <Button
                         text={t("activities.activities.arts")}
                         size='large'

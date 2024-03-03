@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom'
 import i18next from 'i18next';
 import { useTranslation } from "react-i18next";
@@ -22,30 +22,48 @@ const BlogPage = () => {
     const renderContent = (blogContent = []) => {
 
         return blogContent.map((item, index) => {
+            let element = null;
             switch (item.type) {
                 case 'preTitle':
-                    return <h2 className={`${styles.preTitle} title`} key={index}>{item.value}</h2>;
+                    element = <h2 className={`${styles.preTitle} title`} key={index}>{item.value}</h2>;
+                    break;
                 case 'title':
-                    return <h1 className={`${styles.title} title`} key={index}>{item.value}</h1>;
+                    element =  <h1 className={`${styles.title} title`} key={index}>{item.value}</h1>;
+                    break;
                 case 'subtitle':
-                    return <h2 className={`${styles.subTitle} sub-title`} key={index}>{item.value}</h2>;
+                    element =  <h2 className={`${styles.subTitle} sub-title`} key={index}>{item.value}</h2>;
+                    break;
                 case 'heading':
-                    return <h3 className={`${styles.heading} sub-title`} key={index}>{item.value}</h3>;
+                    element =  <h3 className={`${styles.heading} sub-title`} key={index}>{item.value}</h3>;
+                    break;
                 case 'subheading':
-                    return <h3 className={`${styles.subheading} sub-title`} key={index}>{item.value}</h3>;
+                    element =  <h3 className={`${styles.subheading} sub-title`} key={index}>{item.value}</h3>;
+                    break;
                 case 'paragraph':
-                    return <p className={`${styles.paragraph} text`} key={index}>{boldTextFormat(item.value)}</p>;
+                    element =  <p className={`${styles.paragraph} text`} key={index}>{boldTextFormat(item.value)}</p>;
+                    break;
                 case 'image':
-                    return <img src={item.value} alt={`Image ${index}`} key={index} />;
+                    element =  <img src={item.value} alt={`Image ${index}`} key={index} />;
+                    break;
                 case 'imageDescription':
-                    return <p className={`${styles.imageDescription} text`} key={index}>{item.value}</p>;
+                    element =  <p className={`${styles.imageDescription} text`} key={index}>{item.value}</p>;
+                    break;
                 case 'link':
-                    return <a className={`${styles.link} text`} href={item.value} key={index} target='_blank'>{item.value}</a>;
+                    element =  <a className={`${styles.link} text`} href={item.value} key={index} target='_blank'>{item.value}</a>;
+                    break;
                 case 'list':
-                    return <p className={`${styles.list} text`} href={item.value} key={index} target='_blank'>{item.value}</p>;
+                    element =  <p className={`${styles.list} text`} href={item.value} key={index} target='_blank'>{item.value}</p>;
+                    break;
                 default:
                     return null;    
             }
+
+            element = React.cloneElement(element, {
+                "data-aos": "fade-right",
+                "data-aos-delay": `${index * 100}`,
+                "data-aos-anchor" : "blog-written-date",
+            });
+            return element;
 
         });
     };
@@ -71,7 +89,7 @@ const BlogPage = () => {
     return (
         <div className = {`row section`}>
             <div className = {`${styles.container} col l-12 m-12 c-12`}>
-                <p className={`${styles.date} sub-title`}>Writen on: {t("writenDate")}</p>
+                <p className={`${styles.date} sub-title blog-written-date`}>Writen on: {t("writenDate")}</p>
                 {isContentSet && renderContent(t("content", {returnObjects: true}))}
             </div>
         </div>
