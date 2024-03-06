@@ -83,7 +83,8 @@ const ServicesSection = forwardRef(( props, ref ) => {
             <div className={`${styles.listContainer} col l-12 m-12 c-12`}>
                 <div className={`${styles.skillsListMobile}`}>
                 {  skillsList.map( (value, index) => (
-                        <div key={index} className="flex">
+                        <div key={index} className="flex"
+                            data-aos="fade-up" data-aos-delay={400 + index*100}>
                             <Accordion
                                 icon = {value.icon}
                                 title = {value.title}

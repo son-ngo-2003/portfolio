@@ -68,7 +68,13 @@ $big-marginLeft: 1.5rem;
 
         .educationBox {
             float: right;
+        }
+    }
+}
 
+@media (hover:hover ) {
+    .education {
+        .educationList .educationBox{
             //when hovering, the ::after of the immediately next element 
             &:hover+.linePoint::after { 
                 background-color: $secondary;

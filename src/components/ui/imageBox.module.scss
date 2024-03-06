@@ -38,8 +38,10 @@
             @include transition(font-size line-height);
         }
     }
+}
 
-    &:hover {
+@media (hover: hover) {
+    .box:hover {
         .imgPart img {
             width: 110%;
             object-position: -1em 50%;
@@ -64,3 +66,4 @@
         }
     }
 }
+

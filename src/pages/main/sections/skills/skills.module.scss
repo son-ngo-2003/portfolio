@@ -18,6 +18,7 @@
 
     .leftPart, .rightPart {
         position: absolute;
+        z-index: 20;
         @include horizontal-center-list;
     }
 }
@@ -39,6 +40,7 @@
                 position: absolute;
                 display: block;
                 margin-top: 2em;
+                z-index: 20;
                 
                 @include horizontal-center-list;
             }

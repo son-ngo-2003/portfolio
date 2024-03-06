@@ -49,6 +49,7 @@ $plusSize: 1.25em;
     }
 
     .expandArea {
+        position: relative;
         width: 100%;
         bottom: 0;
         height: 0;
@@ -72,6 +73,7 @@ $plusSize: 1.25em;
         .expandArea{
             display: block;
             height: 7.5em;
+            z-index: 20;
         }
 
         .iconPlus {

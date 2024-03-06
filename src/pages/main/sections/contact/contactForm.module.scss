@@ -18,7 +18,7 @@ $offset-right: calc(100% - $overlay-width);
         width: $info-width;
         height: 90%;
         left: calc( -1 * $offset-right / $overlay-width * 100% );
-        @include veritcal-center;
+        @include vertical-center;
         padding: 1.8em;
 
         .title {
@@ -57,11 +57,6 @@ $offset-right: calc(100% - $overlay-width);
 
             a {
                 color: inherit;
-
-                &:hover {
-                    transition-delay: 0s;
-                    transform: scale(1.1);
-                }
             }
         }
 
@@ -81,6 +76,17 @@ $offset-right: calc(100% - $overlay-width);
     }
 }
 
+@media (hover: hover) {
+    .overlay {
+        .infor {
+            .socialMedia a:hover {
+                transition-delay: 0s;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
 @media (max-width: 1024px) {
     .overlay {
         width: 100%;
@@ -93,7 +99,7 @@ $offset-right: calc(100% - $overlay-width);
             position: relative;
             left: 0;
             width: 100%;
-            transform: translateY(0);
+            @include prefix(translate, 0 0);
             padding: 1em 3em 1em 3em; 
         }
 

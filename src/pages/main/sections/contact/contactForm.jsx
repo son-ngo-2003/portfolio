@@ -98,8 +98,7 @@ const ContactForm = ({ divClassName='', contactContent }) => {
                         >{info.email}</p>
 
                     <a className={`${styles.detail} text`}
-                        href={`mailto:${infoContact?.email}`}>{infoContact?.email || "error"}</a>
-                        href={`mailto:${infoContact.email}`}
+                        href={`mailto:${infoContact?.email}`}
                         data-aos="fade-up" data-aos-delay="550"  
                         data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
                         >{infoContact.email || "error"}</a>
@@ -110,8 +109,7 @@ const ContactForm = ({ divClassName='', contactContent }) => {
                         >{info.phone}</p>
 
                     <a className={`${styles.detail} text`}
-                        href={`tel:+33${infoContact?.telephoneNum}"`}>{infoContact?.telephoneFormat || "error"}</a>
-                        href={`tel:+33${infoContact.telephoneNum}"`}
+                        href={`tel:+33${infoContact?.telephoneNum}"`}
                         data-aos="fade-up" data-aos-delay="650"  
                         data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
                         >{infoContact.telephoneFormat || "error"}</a>

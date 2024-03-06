@@ -44,7 +44,6 @@ $height: 4.5em;
         }
     }
 
-    .overlay:hover,
     .overlay.fill{
         p, 
         .icon {
@@ -73,10 +72,6 @@ $height: 4.5em;
         &::before {
             display: none;
         }
-
-        &.fill:hover p{
-            font-size: 1.7em !important;
-        }
     }
 }
 
@@ -90,10 +85,6 @@ $height: 4.5em;
         }
         .icon {
             font-size: 1.7em;
-        }
-
-        &.fill:hover p{
-            font-size: 1.7em !important;
         }
     }
 }
@@ -109,10 +100,6 @@ $height: 4.5em;
         .icon {
             font-size: 2em;
         }
-
-        &.fill:hover p{
-            font-size: 2em !important;
-        }
     }
 }
 
@@ -127,6 +114,40 @@ $height: 4.5em;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (hover: hover) {
+    .button {
+        .overlay:hover {
+            p, 
+            .icon {
+                color: $white-900 !important;
+            }
+    
+            &::after {
+                width: 50em;
+                height: 50em;
+            }
+        }
+    }
+
+    .small {
+        .overlay.fill:hover p{
+            font-size: 1.7em !important;
+        }
+    }
+
+    .medium {
+        .overlay.fill:hover p{
+            font-size: 1.7em !important;
+        }
+    }
+
+    .large {
+        .overlay.fill:hover p{
+            font-size: 1.7em !important;
+        }
+    }
 }
 
 @media (max-width: 1024px) {

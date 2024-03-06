@@ -12,6 +12,7 @@
     .servicesList {
         margin-top: 1.5em;
         position: absolute;
+        z-index: 20;
         float: right;
         @include horizontal-center-list;
     }

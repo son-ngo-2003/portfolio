@@ -85,7 +85,7 @@ $prefixes: "webkit", "moz", "ms", "o", "none";
     @include prefix( translate, -50% 0 );
 }
 
-@mixin veritcal-center() {
+@mixin vertical-center() {
     top: 50%;
     @include prefix( translate, 0 -50% );
 }

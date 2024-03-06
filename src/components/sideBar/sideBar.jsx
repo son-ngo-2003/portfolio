@@ -41,7 +41,7 @@ const sideBar = ({sectionsRef}) => {
     }
 
     const handleSroll = (e) => {
-        const offset = 100 //offset seen by console.log the position of the section
+        const offset = window.innerHeight * 0.4;
         const currentPosY = window.scrollY;
         sectionsPos.current.forEach( (value, key) => {
             if ((value) && (currentPosY > value - offset)) {
@@ -61,17 +61,18 @@ const sideBar = ({sectionsRef}) => {
         const currentPath = window.location.pathname;
         if (currentPath === '/') {
             sectionsPos.current = new Map();
+            const bodyRect = document.body.getBoundingClientRect();
+
             sectionsRef.current.forEach((value, key) => {
-                const bodyRect = document.body.getBoundingClientRect();
                 const rect = value.getBoundingClientRect();
-                sectionsPos.current.set(key,  rect.top - bodyRect.top);
+                sectionsPos.current.set(key,  rect.y - bodyRect.y);
             })
 
             scrollToSection( searchParams.get("s") );
             deleteParams(['s', 'id'])
             window.addEventListener("scroll", handleSroll);
         }
-    },[sectionsRef]);
+    },[sectionsRef.current]);
 
     const getNavItem = (section, insideText) => 
         (<li>

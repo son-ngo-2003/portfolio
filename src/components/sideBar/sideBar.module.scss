@@ -80,15 +80,6 @@ $sizeButton: 3.7rem;
                     background-color: $primary;
                 }
             }
-
-            &:hover button{
-                font-family: 'Quicksand-SemiBold';
-
-                &::after {
-                    width: 90%; 
-                    left: 4%; 
-                }
-            }
         }
     }
 
@@ -108,6 +99,19 @@ $sizeButton: 3.7rem;
     background-color: $black-600;
     .openButton {
         background-color: $black-600; 
+    }
+}
+
+@media (hover: hover) {
+    .sideBar {
+        ul li:hover {
+            button {
+                &::after {
+                    width: 90%; 
+                    left: 4%; 
+                }
+            }
+        } 
     }
 }
 
