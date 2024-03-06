@@ -71,6 +71,8 @@ const BlogPage = () => {
     useEffect(() => {
         (async () => {
             const blog = await getBlogById( searchParams.get("id") );
+
+            if (!blog.length) return;
             
             const blogTranslation = {
                 en: {...blog, content: blog.content_en},
@@ -89,8 +91,12 @@ const BlogPage = () => {
     return (
         <div className = {`row section`}>
             <div className = {`${styles.container} col l-12 m-12 c-12`}>
-                <p className={`${styles.date} sub-title blog-written-date`}>Writen on: {t("writenDate")}</p>
-                {isContentSet && renderContent(t("content", {returnObjects: true}))}
+                {isContentSet 
+                    ?   <>
+                            <p className={`${styles.date} sub-title blog-written-date`}>Writen on: {t("writenDate")}</p>
+                            {renderContent(t("content", {returnObjects: true}))}
+                        </>
+                    : <h2 className={`${styles.notfound} title`}>{t("blog.notFound")}</h2>}
             </div>
         </div>
     )

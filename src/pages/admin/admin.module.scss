@@ -1,0 +1,33 @@
+@use "/src/styles/abstracts" as *;
+
+.container {
+    
+}
+
+@media (max-width: 1024px) {
+   .container {
+        .title {
+            font-size: 2.5em; 
+        }
+   }
+}
+
+@media (max-width: 724px) {
+    .container {
+        .preTitle {
+            font-size: 2em;
+        }
+
+         .title {
+             font-size: 2em;
+         }
+
+         .heading {
+            font-size: 1.5em;
+         }
+
+         .paragraph {
+            font-size: 1.2em;
+         }
+    }
+ }

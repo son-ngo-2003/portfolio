@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import { auth } from '/src/config/firebase'
 
 // services
-import { getAllBlogs , getBlogById, 
+import { getAllBlogs , getBlogById, getRandomBlogs,
          addBlog, updateBlogById, deleteBlogById 
 } from '/src/services/blogServices'
 
@@ -13,12 +14,14 @@ import styles from "./blogAdmin.module.scss"
 
 //components
 import { Form, Table, Button } from "/src/components"
+import { InfoLoginBar } from "./components"
 
 const BlogAdmin = () => {
     const formRef = useRef(null);
     const [currentAction, setCurrentAction] = useState('Add')
     const [blogs, setBlogs] = useState([]);
     const contentShowInTable = ['#', 'Type', 'Name', 'Image', 'Blog', 'Update', 'Delete']; //3 lasts are "see blog", "update", "delete" buttons
+    const [user, setUser] = useState(null);
 
     const listInput = {
         id:                 {type: 'text', placeholder: '', required: false, hide: true},
@@ -128,7 +131,7 @@ const BlogAdmin = () => {
     const addNewBlog = async (e) => {
         e.preventDefault();
         const newBlog = getBlogData()
-        const id = await addBlog(newBlog);
+        const id = await addBlog(user, newBlog);
         let newBlogs = blogs;
         newBlogs.push({...newBlog, id: id});
         setBlogs(newBlogs);
@@ -138,7 +141,7 @@ const BlogAdmin = () => {
     const updateBlog = async (e={}) => {
         e.preventDefault();
         const updatedBlog = getBlogData();
-        await updateBlogById(updatedBlog.id, updatedBlog);
+        await updateBlogById(user, updatedBlog.id, updatedBlog);
         const newBlogs = blogs.map((blog) => (
             blog.id === updatedBlog.id ? updatedBlog : blog
         ));
@@ -148,20 +151,32 @@ const BlogAdmin = () => {
     }
 
     const deleteBlog = async (id) => {
-        await deleteBlogById(id);
+        await deleteBlogById(user, id);
         const newBlogs = blogs.filter(b => b.id !== id);
         setBlogs(newBlogs);
     }
 
     useEffect(() => {
+        auth.onAuthStateChanged(user => {
+            setUser(user);
+            user && getAllBlogs()
+                .then( (blogList)=> {
+                    setBlogs(blogList);
+                } );
+        });
+
         (async () => {
-            const blogList = await getAllBlogs();
+            const blogList = await getRandomBlogs(8);
             setBlogs(blogList);
         })();
     },[]);
 
     return (
         <div className = {`row section`}>
+            <div className = {`${styles.header} col l-12 m-12 c-12`}>
+                <InfoLoginBar user={user}/>
+            </div>
+
             <div className = {`${styles.container} col l-12 m-12 c-12`}>
 
                 <div className={`${styles.tableBlogs}`}>

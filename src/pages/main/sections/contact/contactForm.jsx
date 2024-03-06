@@ -59,9 +59,13 @@ const ContactForm = ({ divClassName='', contactContent }) => {
     }
 
     return (
-        <div className={`${styles.overlay} ${divClassName} bg-component contact-form-container`}>
+        <div className={`${styles.overlay} ${divClassName} bg-component contact-form-container`}
+            data-aos="fade-right"  
+            data-aos-anchor={`.contact-form-container${divClassName && '.'+divClassName}`} 
+            >
 
             <div className={`${styles.formContact}`}>
+
                 <h3 className={`${styles.title} sub-title`}
                     data-aos="fade-right" data-aos-delay="250"
                 >{form.title}</h3>

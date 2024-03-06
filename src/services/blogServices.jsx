@@ -3,6 +3,8 @@ import { collection, getDocs, getDoc,
          addDoc, setDoc,
          query, where, doc, orderBy } from "firebase/firestore"; 
 
+import { getRandomNumber, getRandomInt, getRandomString, getRandomText } from '/src/utils/randomUtils';
+
 const getAllBlogs =  async () => {
     try {
         const blogs = [];
@@ -18,6 +20,29 @@ const getAllBlogs =  async () => {
         console.error("Error adding document: ", e);
         return null;
     }
+}
+
+const getRandomBlogs = (count) => {
+    const blogs = [];
+    for (let i = 0; i < count; i++) {
+        const id = getRandomString(20);
+        const priority = i;
+        const name = `Blog ${i}`;
+        const writenDate = new Date();
+        const date = new Date();
+        const content_en = [{
+            type: "paragraph",
+            value: getRandomText(getRandomInt(3, 10))}];
+        const content_fr = [{
+            type: "paragraph",
+            value: getRandomText(getRandomInt(3, 10))}];
+        const content_vn = [{
+            type: "paragraph",
+            value: getRandomText(getRandomInt(3, 10))}];
+        const type = 'project';
+        blogs.push({id, date, type, priority, name, writenDate, content_en, content_fr, content_vn});
+    }
+    return blogs;
 }
 
 const getBlogByName = async (name) => {
@@ -78,7 +103,12 @@ const getBlogsByType = async (type) => {
     }
 }
 
-const addBlog = async (blogData) => {
+const addBlog = async (user, blogData) => {
+    if (!user) {
+        console.error("Error updating blog: user is not logged in");
+        return false;
+    }
+    
     try {
         const col = collection(db, "blogs");
         const docRef = await addDoc(col, {...blogData, deleted: false});
@@ -90,7 +120,12 @@ const addBlog = async (blogData) => {
     }
 }
 
-const updateBlogById = async (id, updatedData) => {
+const updateBlogById = async (user, id, updatedData) => {
+    if (!user) {
+        console.error("Error updating blog: user is not logged in");
+        return false;
+    }
+
     try {
         console.log(id, updatedData);
         const docRef = doc(db, "blogs", id);
@@ -103,7 +138,12 @@ const updateBlogById = async (id, updatedData) => {
     }
 }
 
-const deleteBlogById = async (id) => {
+const deleteBlogById = async (user, id) => {
+    if (!user) {
+        console.error("Error updating blog: user is not logged in");
+        return false;
+    }
+
     try {
         const docRef = doc(db, "blogs", id);
         await setDoc(docRef, {deleted: true}, { merge: true });
@@ -119,6 +159,7 @@ const deleteBlogById = async (id) => {
 
 export {
     getAllBlogs,
+    getRandomBlogs,
     getBlogByName,
     getBlogById,
     getBlogsByType,

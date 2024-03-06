@@ -29,3 +29,7 @@ export {default as activities_vn} from "./vn/activities.json";
 export {default as contact_en} from "./en/contact.json";
 export {default as contact_fr} from "./fr/contact.json";
 export {default as contact_vn} from "./vn/contact.json";
+
+export {default as blog_en} from "./en/blog.json";
+export {default as blog_fr} from "./fr/blog.json";
+export {default as blog_vn} from "./vn/blog.json";

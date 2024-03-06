@@ -81,6 +81,11 @@
         display:list-item; 
         margin-left: 2em;
     }
+
+    .notfound {
+        height: 100vh;
+        text-align: center;
+    }
 }
 
 @media (max-width: 1024px) {

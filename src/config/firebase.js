@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, initializeFirestore } from "firebase/firestore";
-// import { getAuth } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 const env = import.meta.env || {};
 
@@ -22,9 +22,9 @@ const app = initializeApp(firebaseConfig);
 const db = initializeFirestore(app, { experimentalForceLongPolling: true })
 
 // Initialize Firebase Authentication and get a reference to the service
-// const auth = getAuth(app);
+const auth = getAuth(app);
 
 export {
     db,
-    // auth
+    auth
 }
