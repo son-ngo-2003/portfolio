@@ -76,17 +76,17 @@ const Home = forwardRef(( {projectsRef={}}, ref ) => {
                 </div>
             </div>
 
-            <div className={`${styles.rightPart} ${styles[theme]} col l-6 m-12 c-12`} 
-                data-aos="fade-up" data-aos-delay="100">
-                <div className={`${styles.overlay}`}>
-                    <div className={`${styles.hole} horizontal-center background`}></div>
-                    <img src={homeImage.src} alt="" />
-                </div>
+            <div className={`${styles.rightPart} ${styles[theme]} col l-6 m-12 c-12`} >
+                    <div className={`${styles.overlay}`} data-aos="fade-down" data-aos-delay="100">
+                        <div className={`${styles.hole} horizontal-center background`}></div>
+                        <img src={homeImage.src} alt="" />
+                    </div>
 
-                <div className={`${styles.nameplate}`}>
-                    <h3>NGO Truong Son</h3>
-                    <p>18/03/2003</p>
-                </div>
+                    <div className={`${styles.nameplate}`} data-aos="fade-up" data-aos-delay="100">
+                        <h3>NGO Truong Son</h3>
+                        <p>18/03/2003</p>
+                    </div>
+
             </div>
         </div>
     )

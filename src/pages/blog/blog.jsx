@@ -72,7 +72,7 @@ const BlogPage = () => {
         (async () => {
             const blog = await getBlogById( searchParams.get("id") );
 
-            if (!blog.length) return;
+            if (!blog) return;
             
             const blogTranslation = {
                 en: {...blog, content: blog.content_en},
