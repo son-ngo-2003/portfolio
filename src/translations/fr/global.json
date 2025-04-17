@@ -3,7 +3,7 @@
         "welcome" : {
             "sub-title" : "Bonjour, je suis",
             "name" : "SON NGO",
-            "text" : " Je suis étudiant en troisième année à l'INSA Lyon en France, spécialisé en Informatique. Je suis passionné par la programmation et le design, toujours à la recherche d'opportunités pour appliquer mes compétences dans des contextes réels. Bienvenue sur mon portfolio web !"
+            "text" : " Je suis étudiant en quartième année à l'INSA Lyon en France, spécialisé en Informatique. Je suis passionné par la programmation et le design, toujours à la recherche d'opportunités pour appliquer mes compétences dans des contextes réels. Bienvenue sur mon portfolio web !"
         },
         
         "buttons" : {
@@ -15,7 +15,7 @@
     "sidebar" : {
         "introduction" : {
             "name" : "NGO Truong Son",
-            "intro1" : "Étudiant en 3ème année à l'INSA de Lyon",
+            "intro1" : "Étudiant en 4ème année à l'INSA de Lyon",
             "intro2" : "Développeur"
         },
 

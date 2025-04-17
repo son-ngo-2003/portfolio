@@ -1,0 +1,1 @@
+export { default, type ButtonFunctionType } from './functionalButton/functionalButton' 

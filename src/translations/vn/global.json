@@ -3,7 +3,7 @@
         "welcome" : {
             "sub-title" : "Xin chào, mình là",
             "name" : "Sơn Ngô",
-            "text" : "Mình là học sinh năm ba tại trường Đại học INSA Lyon ở Pháp và đang theo học chuyên ngành Computer Science (Informatique). Mình là một người đam mê lập trình và thiết kế, luôn tìm kiếm cơ hội để khám phá và áp dụng kiến thức của mình vào thực tế. Chào mừng mọi người đến với web portfolio của mình!"
+            "text" : "Mình là học sinh năm tư tại trường Đại học INSA Lyon ở Pháp và đang theo học chuyên ngành Computer Science (Informatique). Mình là một người đam mê lập trình và thiết kế, luôn tìm kiếm cơ hội để khám phá và áp dụng kiến thức của mình vào thực tế. Chào mừng mọi người đến với web portfolio của mình!"
         },
         
         "buttons" : {
@@ -15,7 +15,7 @@
     "sidebar" : {
         "introduction" : {
             "name" : "Ngô Trường Sơn",
-            "intro1" : "Học sinh năm 3 tại INSA",
+            "intro1" : "Học sinh năm 4 tại INSA",
             "intro2" : "Developer"
         },
 
