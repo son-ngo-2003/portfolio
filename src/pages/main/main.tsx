@@ -9,10 +9,10 @@ import {
 // Define interfaces
 interface MainPageProps {
     /** Reference passed from parent component */
-    ref?: React.Ref<{ sectionsRef: Map<string, HTMLDivElement> }>;
+    ref?: React.Ref<{ sectionsRef: Map<string, HTMLElement> }>;
 }
 
-interface SectionsRefMap extends Map<string, HTMLDivElement> {}
+interface SectionsRefMap extends Map<string, HTMLElement> {}
 
 const MainPage = forwardRef<{ sectionsRef: SectionsRefMap }, MainPageProps>(
     (props, ref) => {

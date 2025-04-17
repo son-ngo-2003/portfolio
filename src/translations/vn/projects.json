@@ -7,7 +7,8 @@
 
         "projects" : {
             "date":   "Thời gian",
-            "role" :  "Vai trò"
+            "role" :  "Vai trò",
+            "now" : "hiện tại"
         }
     }
 }

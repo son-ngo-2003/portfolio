@@ -3,7 +3,7 @@ import { Language } from "./languages";
 export interface Info {
     id: string;
     email: string;
-    phone: string;
+    telephone: string;
     cv: Record<Language, string>;
 
     facebook: string;
@@ -18,7 +18,7 @@ export const isInstanceofInfo = (info: any): boolean => {
     return (
         typeof info === "object" &&
         typeof info.email === "string" &&
-        typeof info.phone === "string" &&
+        typeof info.telephone === "string" &&
         typeof info.cv === "object" &&
         typeof info.facebook === "string" &&
         typeof info.instagram === "string" &&

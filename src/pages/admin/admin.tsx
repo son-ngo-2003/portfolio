@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { auth } from '/src/config/firebase'
+import { auth } from '@src/config/firebase'
 
 //components
 import { SignInBox } from './components'
@@ -23,4 +23,4 @@ const AdminPage = () => {
     )
 }
 
-    export default AdminPage
+export default AdminPage

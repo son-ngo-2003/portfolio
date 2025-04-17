@@ -11,7 +11,7 @@ import { I18nextProvider } from 'react-i18next';
 import {ThemeProvider} from "@src/contexts/themeContext"
 
 //animated on scroll library
-// import '@src/config/aos';
+import '@src/config/aos';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

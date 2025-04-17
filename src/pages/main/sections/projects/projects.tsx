@@ -12,35 +12,21 @@ import { ThemeContext } from "@src/contexts/themeContext";
 
 //services
 import { getBlogsByType } from '@src/services/blogServices';
-
-// Define interfaces
-interface ProjectItem {
-    id: string;
-    name: string;
-    date: string;
-    role: string;
-    image: string;
-    [key: string]: any;
-}
-
-interface ProjectLabels {
-    date: string;
-    role: string;
-}
+import { ProjectBlog } from "@src/types/blog";
 
 /**
  * Projects section component to display portfolio projects
  * @returns {JSX.Element} - Rendered projects section
  */
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
-    const [projects, setProjects] = useState<ProjectItem[]>([]);
+    const [projects, setProjects] = useState<ProjectBlog[]>([]);
     const { t } = useTranslation("projects");
     const { theme } = useContext(ThemeContext);
-    const tagName = t('projects.projects', { returnObjects: true }) as ProjectLabels;
+    const tagName = t('projects.projects', { returnObjects: true }) as any;
 
     useEffect(() => {
         (async () => {
-            const projectsList = await getBlogsByType('project');
+            const projectsList = await getBlogsByType('project') as ProjectBlog[];
             if (projectsList) {
                 setProjects(projectsList);
             }
@@ -66,8 +52,8 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                         data-aos-delay={100 + index * 100}
                     >
                         <ImageBox
-                            subTitle={`${tagName.date}: ${project.date}`}
-                            title={`${project.name}`}
+                            subTitle={`${tagName.date}: ${project.startDate.toDateString() + (project.endDate ? ` - ${project.endDate.toDateString()}` : 'current')}`}
+                            title={`${project.title}`}
                             text={`${tagName.role}: ${project.role}`}
                             image={`${project.image}`}
                             theme={theme}

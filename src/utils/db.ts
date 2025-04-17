@@ -2,7 +2,6 @@ import { fs } from '@src/config/firebase';
 import { Blog, isInstanceofBlog } from '@src/types/blog';
 import { Info, isInstanceofInfo } from '@src/types/info';
 import { DocumentData, FirestoreDataConverter, type QueryDocumentSnapshot, collection, serverTimestamp } from "firebase/firestore"
-import { info } from 'sass';
 
 type EntityType = Blog | Info;
 
@@ -58,5 +57,16 @@ function convert2Object(snap: QueryDocumentSnapshot): EntityType {
         } as Info;
     }
 
-    throw new Error('Invalid data type');
+    const jsonString = JSON.stringify(data);
+    const file = new Blob([jsonString], { type: 'application/json' });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(file);
+    a.download = `${data.id}.json`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    a.remove();
+
+    console.log("Error: Invalid data type", data);
+
+    // throw new Error('Invalid data type');
 }

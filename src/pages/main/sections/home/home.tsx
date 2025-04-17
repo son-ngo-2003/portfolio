@@ -23,7 +23,7 @@ import { Language } from "@src/types/languages";
 
 interface HomeProps {
     /** Reference to the projects section for scroll navigation */
-    projectsRef?: HTMLDivElement;
+    projectsRef?: HTMLElement;
 }
 
 const Home = forwardRef<HTMLDivElement, HomeProps>(({ projectsRef = {} }, ref) => {

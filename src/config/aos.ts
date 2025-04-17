@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 // below listed default settings
 AOS.init({
     // Global settings:
-    disable: true, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function  
+    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function  
 
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
     offset: 120, // offset (in px) from the original trigger point

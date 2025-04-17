@@ -10,34 +10,23 @@ import { Button } from "@src/components";
 //services
 import { getBlogsByType } from '@src/services/blogServices';
 
-// Define type for blog data
-interface BlogItem {
-    id?: string;
-    title?: string;
-    content?: string;
-    type?: string;
-    date?: string;
-    [key: string]: any;
-}
-
-
 const Activities = forwardRef<HTMLDivElement>((props, ref) => {
     const { t } = useTranslation("activities");
-    const [assoBlog, setAssoBlog] = useState<BlogItem>({});
-    const [sportBlog, setSportBlog] = useState<BlogItem>({});
-    const [artBlog, setArtBlog] = useState<BlogItem>({});
+    const [assoBlogId, setAssoBlogId] = useState<string>();
+    const [sportBlogId, setSportBlogId] = useState<string>();
+    const [artBlogId, setArtBlogId] = useState<string>();
 
     useEffect(() => {
-        const setBlog = async (type: string, set: React.Dispatch<React.SetStateAction<BlogItem>>) => {
+        const setBlog = async (type: string, set: (id: string) => void) => {
             const blogs = await getBlogsByType(type);
             if (blogs && blogs.length > 0) {
-                set(blogs[0]);
+                set(blogs[0].id);
             }
         };
 
-        setBlog('associations', setAssoBlog);
-        setBlog('sports', setSportBlog);
-        setBlog('arts', setArtBlog);
+        setBlog('associations', setAssoBlogId);
+        setBlog('sports', setSportBlogId);
+        setBlog('arts', setArtBlogId);
 
     }, []);
 
@@ -50,7 +39,7 @@ const Activities = forwardRef<HTMLDivElement>((props, ref) => {
             </div>
 
             <div className={`${styles.buttons} row`}>
-                <a href={`/blog?id=${assoBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank" rel="noopener noreferrer"
+                <a href={`/blog?id=${assoBlogId}`} className="col l-6 m-12 c-12 flex" target="_blank" rel="noopener noreferrer"
                     data-aos="zoom-in-right" data-aos-delay="150">
                     <Button
                         text={t("activities.activities.associations")}
@@ -59,7 +48,7 @@ const Activities = forwardRef<HTMLDivElement>((props, ref) => {
                     />
                 </a>
 
-                <a href={`/blog?id=${sportBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank" rel="noopener noreferrer"
+                <a href={`/blog?id=${sportBlogId}`} className="col l-6 m-12 c-12 flex" target="_blank" rel="noopener noreferrer"
                     data-aos="zoom-in-right" data-aos-delay="250">
                     <Button
                         text={t("activities.activities.sports")}
@@ -68,7 +57,7 @@ const Activities = forwardRef<HTMLDivElement>((props, ref) => {
                     />
                 </a>
 
-                <a href={`/blog?id=${artBlog?.id}`} className="col l-6 m-12 c-12 flex" target="_blank" rel="noopener noreferrer"
+                <a href={`/blog?id=${artBlogId}`} className="col l-6 m-12 c-12 flex" target="_blank" rel="noopener noreferrer"
                     data-aos="zoom-in-right" data-aos-delay="350">
                     <Button
                         text={t("activities.activities.arts")}

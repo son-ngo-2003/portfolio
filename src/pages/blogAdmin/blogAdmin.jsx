@@ -157,6 +157,7 @@ const BlogAdmin = () => {
     }
 
     useEffect(() => {
+        // TODO: move all firebase auth to a separate file, a requireAuth component
         auth.onAuthStateChanged(user => {
             setUser(user);
             user && getAllBlogs()
