@@ -27,16 +27,43 @@ $teal-300: #62bbbf;
 $teal-200: #70cbc7;
 $teal-100: #7edbd7;
 
+$red-900:   #7f1d1d;
+$red-800:   #991b1b;
+$red-700:   #b91c1c;
+$red-600:   #dc2626;
+$red-500:   #ef4444;
+$red-400:   #f87171;
+$red-300:   #fca5a5;
+$red-200:   #fecaca;
+$red-100:   #fee2e2;
+
+$yellow-900: #78350f;
+$yellow-800: #92400e;
+$yellow-700: #b45309;
+$yellow-600: #d97706;
+$yellow-500: #f59e0b;
+$yellow-400: #fbbf24;
+$yellow-300: #fcd34d;
+$yellow-200: #fde68a;
+$yellow-100: #fef3c7;
+
+
 $primary: $teal-600;
 $secondary: $teal-500;
 $background: $white-800;
 $component-background: $white-800;
 $component-background-darker: $white-700;
+$border-color: $black-500;
+$danger: $red-500;
+$warning: $yellow-500;
 
 $dark-primary: $teal-400;
 $dark-background: $black-800;
 $dark-component-background: $black-700;
 $dark-component-background-darker: $black-600;
+$dark-border-color: $white-400;
+$dark-danger: $red-500;
+$dark-warning: $yellow-400;
 
 
 

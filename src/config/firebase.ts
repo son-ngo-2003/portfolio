@@ -19,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Initialize Cloud Firestore and get a reference to the service
-const fs = initializeFirestore(app, { experimentalForceLongPolling: true })
+const fs = initializeFirestore(app, { experimentalForceLongPolling: true, ignoreUndefinedProperties: true })
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);

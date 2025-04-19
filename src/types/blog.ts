@@ -11,6 +11,7 @@ export interface Blog {
     id: string;
     image: string | null;
     priority: number;
+    type: BlogType;
 
     title: Record<Language, string>;
     content: Record<Language, string>;
@@ -47,7 +48,7 @@ export interface SportBlog extends Blog {
 export const isInstanceofBlog = (blog: any): boolean => {
     return (
         typeof blog === "object" &&
-        typeof blog.image === "string" &&
+        (!blog.image || typeof blog.image === "string") &&
         typeof blog.priority === "number" &&
         typeof blog.title === "object" &&
         typeof blog.content === "object"

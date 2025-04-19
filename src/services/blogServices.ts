@@ -72,7 +72,7 @@ const getBlogById = async (id: string): Promise<Blog | null> => {
  * @param type - The type of blogs to retrieve
  * @returns Promise with array of blogs or null if error
  */
-const getBlogsByType = async (type: string): Promise<Blog[] | null> => {
+const getBlogsByType = async (type: string): Promise<Blog[]> => {
     const blogs: Blog[] = [];
     const q = query(
         dbCollection.blog, 
@@ -95,7 +95,7 @@ const getBlogsByType = async (type: string): Promise<Blog[] | null> => {
  * @param blogData - The blog data to add
  * @returns Promise with the new blog ID or null if error
  */
-const addBlog = async (user: any, blogData: Partial<Blog>): Promise<string | null> => {
+const addBlog = async (user: any, blogData: Partial<Blog>): Promise<string> => {
     if (!user) {
         throw new Error("Error adding blog: user is not logged in");
     }

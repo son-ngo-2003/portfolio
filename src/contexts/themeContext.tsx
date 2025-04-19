@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { AppTheme, getTheme, getThemeFromLocalStorage } from "@src/types/theme";
 import { createContext, useState } from "react";
 
@@ -18,6 +18,11 @@ interface ThemeProviderProps {
 
 export const ThemeProvider = ({children}: ThemeProviderProps) => {
     const [theme, setTheme] = useState( getThemeFromLocalStorage() );
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-color-mode', theme == AppTheme.LIGHT ? 'light' : 'dark');
+    }, [theme])
+
     return (
         <ThemeContext.Provider value = { {theme, setTheme} }>
             {children}

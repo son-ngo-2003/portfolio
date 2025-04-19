@@ -1,6 +1,6 @@
 import { useRef, useContext } from 'react'
 import { Routes, Route } from "react-router-dom";
-import { MainPage, BlogPage, AdminPage, BlogAdmin, NotFoundPage } from "./pages";
+import { MainPage, BlogPage, AdminPage, BlogAdmin, NotFoundPage, TestPage } from "./pages";
 
 // css
 import "./styles/_main.scss"
@@ -40,6 +40,7 @@ function App() {
                         <Route path="/blog" element={<BlogPage />} />
                         <Route path="/admin" element={<AdminPage />} />
                         <Route path="/admin/blog" element={<BlogAdmin/>} />
+                        <Route path="/test" element={<TestPage />} />
                         <Route path="/" element={<MainPage ref={ appRoutesRef }/>} />
                         <Route path="*" element={<NotFoundPage />} />
                     </Routes>

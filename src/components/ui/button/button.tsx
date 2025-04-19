@@ -3,6 +3,14 @@ import styles from './button.module.scss';
 
 type ButtonSize = 'small' | 'medium' | 'large';
 
+export enum ButtonColor {
+	PRIMARY = 'primary',
+	YELLOW = 'yellow',
+	GRAY = 'gray',
+	TEAL = 'teal',
+	RED = 'red',
+}
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	/** Text content of the button */
 	text?: string;
@@ -20,6 +28,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	disabled?: boolean;
 	/** Whether to show loading state */
 	loading?: boolean;
+	/** Color of the button */
+	color?: ButtonColor;
 }
 
 const Button : React.FC<ButtonProps> = ({
@@ -33,11 +43,12 @@ const Button : React.FC<ButtonProps> = ({
 	disabled = false,
 	loading = false,
 	className = '',
+	color = ButtonColor.PRIMARY,
 	...restProps
 }) => {
 	return (
 		<button
-			className={`${styles.button} ${styles[size]} ${divClassName} ${className}`}
+			className={`${styles.button} ${styles[size]} ${divClassName} ${className} ${color}`}
 			onClick={onClick}
 			type={isUsedSubmit ? 'submit' : 'button'}
 			disabled={disabled || loading}

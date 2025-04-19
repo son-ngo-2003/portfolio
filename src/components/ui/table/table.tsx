@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './table.module.scss';
 
 interface TableProps {
@@ -10,29 +10,49 @@ interface TableProps {
     divClassName?: string;
 }
 
-
-const Table : React.FC<TableProps> = ({
+const Table: React.FC<TableProps> = ({
     listData = [],
     tableHeaders = [],
     divClassName = ''
 }) => {
     return (
         <table className={`${divClassName} ${styles.table}`}>
-            <thead className='bg-component-darker'>
+            <thead className={styles.tableHeader}>
                 <tr>
-                    {tableHeaders.map((value, index) => (
-                        <th key={index} className='text'>{value}</th>
+                    {tableHeaders.map((header, index) => (
+                        <th key={index} className={`text ${styles.headerCell}`}>
+                            {header}
+                        </th>
                     ))}
                 </tr>
             </thead>
             <tbody>
-                {listData.map((row, index) => (
-                    <tr key={index}>
-                        {row.map((value, index) => (
-                            <td scope="row" key={index}>{value}</td>
-                        ))}
+                {listData.length === 0 ? (
+                    <tr>
+                        <td 
+                            colSpan={tableHeaders.length}
+                            className={styles.emptyCell}
+                        >
+                            <span className="text">No data available</span>
+                        </td>
                     </tr>
-                ))}
+                ) : (
+                    listData.map((row, rowIndex) => (
+                        <tr 
+                            key={rowIndex}
+                            className={rowIndex % 2 === 0 ? styles.evenRow : styles.oddRow}
+                        >
+                            {row.map((cell, cellIndex) => (
+                                <td 
+                                    key={cellIndex}
+                                    className={styles.cell}
+                                >
+                                    {cell}
+                                </td>
+                            ))}
+                        </tr>
+                    ))
+                )}
             </tbody>
         </table>
     );

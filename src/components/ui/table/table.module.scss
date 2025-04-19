@@ -1,22 +1,78 @@
 @use "/src/styles/abstracts" as *;
 
-.table{
+.table {
     width: 100%;
-    text-align: center;
+    border-collapse: collapse;
+    font-family: 'Quicksand', sans-serif;
+}
 
-    th, td *{
-        text-align: center;
-        padding: 1em 0 1em 0;
-    }
-
+.tableHeader {
+    background-color: $primary;
+    
     th {
-        font-weight: 800;
-    }
-
-    tbody {
-        tr {
-            border-bottom: 0.1em solid $white-500 ;
-        }
+        color: $white-900 !important;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
     }
 }
 
+.headerCell {
+    padding: 1rem !important;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.cell {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid $white-600;
+}
+
+.evenRow {
+    background-color: $white-800;
+}
+
+.oddRow {
+    background-color: $white-700;
+}
+
+.emptyCell {
+    padding: 3rem;
+    text-align: center;
+    color: $white-400;
+}
+
+// Hover effect
+tr:not(.tableHeader):hover {
+    background-color: rgba($primary, 0.05);
+}
+
+// Dark theme support
+:global(.dark-theme) {
+    .tableHeader {
+        background-color: $dark-primary;
+    }
+
+    .cell {
+        border-bottom-color: $dark-border-color;
+    }
+
+    .evenRow {
+        background-color: $dark-component-background;
+    }
+
+    .oddRow {
+        background-color: $dark-component-background-darker;
+    }
+
+    tr:not(.tableHeader):hover {
+        background-color: rgba($dark-primary, 0.1);
+    }
+
+    .emptyCell {
+        color: $white-300;
+    }
+}

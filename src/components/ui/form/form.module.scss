@@ -58,7 +58,7 @@ $enor-textareaNumlines: 20;
             height: 100%;
             border: none;
             font-size: $fontSize;
-            border-bottom: 2px solid rgba(0,0,0, 0.12);
+            border-bottom: 2px solid $border-color;
             background-color: transparent;
         }
 

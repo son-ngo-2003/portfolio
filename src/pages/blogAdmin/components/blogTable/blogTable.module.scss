@@ -1,0 +1,141 @@
+@use "/src/styles/abstracts" as *;
+@use "sass:color";
+
+.tableBlogs {
+    width: 100%;
+    box-shadow: 0 2px 8px rgba($black-900, 0.05);
+}
+
+.tableHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid $white-600;
+}
+
+.title {
+    margin: 0;
+    color: $primary;
+}
+
+.blogCount {
+    padding: 0.25rem 0.75rem;
+    background-color: $white-700;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    border: 2px solid $border-color;
+}
+
+.table {
+    min-width: 100%;
+}
+
+.emptyState {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: $white-700;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 1px dashed $white-500;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.typeBadge {
+    display: flex;
+    justify-content: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: $white-900;
+}
+
+.projectBadge {
+    background-color: $primary;
+}
+
+.associationBadge {
+    background-color: $teal-500;
+}
+
+.artBadge {
+    background-color: $yellow-500;
+}
+
+.sportBadge {
+    background-color: $red-400;
+}
+
+.blogInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.blogTitle {
+    margin: 0;
+    max-width: 18rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hasImage {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: $primary;
+    color: $white-900;
+    font-size: 0.85rem;
+}
+
+// Dark theme support
+.dark-theme {
+    .tableBlogs {
+        background-color: $dark-component-background;
+        box-shadow: 0 2px 8px rgba($black-900, 0.2);
+        border-color: $dark-border-color;
+    }
+
+    .tableHeader {
+        border-bottom-color: $dark-border-color;
+    }
+
+    .blogCount {
+        background-color: $dark-component-background-darker;
+    }
+
+    .tableWrapper {
+        border-color: $dark-border-color;
+    }
+
+    .emptyState {
+        background-color: $dark-component-background-darker;
+        border-color: $dark-border-color;
+    }
+}

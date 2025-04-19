@@ -57,6 +57,51 @@ $height: 4.5em;
     }
 }
 
+:global(.primary),
+:global(.teal) {
+    .overlay {
+        &::before {
+            background-color: $primary;
+        }
+        &::after {
+            background-color: $primary;
+        }
+    }
+}
+
+:global(.red) {
+    .overlay {
+        &::before {
+            background-color: $red-500;
+        }
+        &::after {
+            background-color: $red-500;
+        }
+    }
+}
+
+:global(.yellow) {
+    .overlay {
+        &::before {
+            background-color: $yellow-500;
+        }
+        &::after {
+            background-color: $yellow-500;
+        }
+    }
+}
+
+:global(.gray){
+    .overlay {
+        &::before {
+            background-color: $white-400;
+        }
+        &::after {
+            background-color: $white-400;
+        }
+    }
+}
+
 .small {
     width: $small-width;
     height: $height * 0.8;

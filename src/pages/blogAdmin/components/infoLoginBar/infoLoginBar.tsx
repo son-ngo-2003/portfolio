@@ -1,15 +1,24 @@
 import { useNavigate } from 'react-router-dom';
-import { signOut } from "firebase/auth";
-import { auth } from '/src/config/firebase';
+import { signOut, User } from "firebase/auth";
+import { auth } from '@src/config/firebase';
+import { MouseEvent as ReactMouseEvent } from 'react';
 
 //css
 import styles from './infoLoginBar.module.scss';
 
 //components
-import { Button } from "/src/components"
+import { Button } from "@src/components"
 
-const InfoLoginBar = ({ divClassName='', user=null }) => {
-    const handleSignOut = async (e) => {
+interface InfoLoginBarProps {
+    divClassName?: string;
+    user?: User | null;
+}
+
+const InfoLoginBar : React.FC<InfoLoginBarProps> = ({ 
+    divClassName = '', 
+    user = null 
+}) => {
+    const handleSignOut = async (e: ReactMouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         try {
             await signOut(auth);

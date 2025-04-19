@@ -7,5 +7,6 @@ export {
     TextBox,
     ImageBox,
     Form, type InputField,
-    Table             
+    Table,
+    Dropdown, type DropdownItem,
 } from './ui';
