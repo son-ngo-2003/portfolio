@@ -1,5 +1,5 @@
 import { fs } from '@src/config/firebase';
-import { Blog, isInstanceofBlog } from '@src/types/blog';
+import { AssociationBlog, Blog, BlogType, isInstanceofBlog, ProjectBlog } from '@src/types/blog';
 import { Info, isInstanceofInfo } from '@src/types/info';
 import { DocumentData, FirestoreDataConverter, type QueryDocumentSnapshot, collection, serverTimestamp } from "firebase/firestore"
 
@@ -24,8 +24,8 @@ function convert2Entity(data: EntityType) : DocumentData {
         return {
             ..._data,
             deleted: _data.deleted || false,
-            createdAt: _data.createdAt || new Date(),
-            updatedAt: _data.updatedAt,
+            createdAt: _data.createdAt || serverTimestamp(),
+            updatedAt: _data.createdAt ? serverTimestamp() : null,
         } as DocumentData;
     }
 
@@ -43,12 +43,23 @@ function convert2Object(snap: QueryDocumentSnapshot): EntityType {
     const data = snap.data();
 
     if (isInstanceofBlog(data)) {
-        return {
+        const id = snap.id;
+        const blog = {
             ...data,
+            id,
             deleted: data.deleted || false,
-            createdAt: data.createdAt.toDate() || new Date(),
-            updatedAt: data.updatedAt,
+            createdAt: firebaseTimestampToDate(data.createdAt),
+            updatedAt: firebaseTimestampToDate(data.updatedAt),
         } as Blog;
+
+        if ( [BlogType.Project, BlogType.Association].includes(blog.type) ) {
+            const _blog = blog as (ProjectBlog | AssociationBlog);
+            _blog.startDate = firebaseTimestampToDate(_blog.startDate)!;
+            _blog.endDate = firebaseTimestampToDate(_blog.endDate);
+            return _blog;
+        }
+
+        return blog;
     }
 
     if (isInstanceofInfo(data)) {
@@ -57,16 +68,10 @@ function convert2Object(snap: QueryDocumentSnapshot): EntityType {
         } as Info;
     }
 
-    const jsonString = JSON.stringify(data);
-    const file = new Blob([jsonString], { type: 'application/json' });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(file);
-    a.download = `${data.id}.json`;
-    a.click();
-    URL.revokeObjectURL(a.href);
-    a.remove();
+    throw new Error('Invalid data type');
+}
 
-    console.log("Error: Invalid data type", data);
-
-    // throw new Error('Invalid data type');
+function firebaseTimestampToDate( ts: any ) {
+    if (!ts) return null;
+    return new Date(ts.seconds * 1000 + ts.nanoseconds / 1000000);
 }

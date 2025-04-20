@@ -95,13 +95,14 @@ const getBlogsByType = async (type: string): Promise<Blog[]> => {
  * @param blogData - The blog data to add
  * @returns Promise with the new blog ID or null if error
  */
-const addBlog = async (user: any, blogData: Partial<Blog>): Promise<string> => {
+const addBlog = async (user: any, blogData: Partial<Blog>): Promise<Blog | null> => {
     if (!user) {
         throw new Error("Error adding blog: user is not logged in");
     }
     
+    delete blogData.id;
     const docRef = await addDoc(dbCollection.blog, blogData);
-    return docRef.id;
+    return await getBlogById(docRef.id);
 }
 
 /**
@@ -115,13 +116,21 @@ const updateBlogById = async (
     user: any, 
     id: string, 
     updatedData: Partial<Blog>
-): Promise<void> => {
+): Promise<Blog | null> => {
     if (!user) {
         throw new Error("Error updating blog: user is not logged in");
     }
 
+    // Check if the blog exists
+    const blog = await getBlogById(id);
+    if (!blog) {
+        throw new Error(`Error updating blog: blog with ID ${id} does not exist`);
+    }
+
     const docRef = doc(dbCollection.blog, id);
-    await setDoc(docRef, updatedData, { merge: true });
+    await setDoc(docRef, {...blog, ...updatedData}, { merge: true });
+    return await getBlogById(id);
+
 }
 
 /**

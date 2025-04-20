@@ -57,7 +57,9 @@ const BlogAdmin: React.FC = () => {
         const isProjectOrAssoc = 
             blog.type === BlogType.Project || 
             blog.type === BlogType.Association;
-        
+
+        console.log( blog );
+
         const startDate = isProjectOrAssoc && (blog as ProjectBlog | AssociationBlog).startDate 
             ? new Date((blog as ProjectBlog | AssociationBlog).startDate).toISOString().split('T')[0] 
             : '';
@@ -207,8 +209,13 @@ const BlogAdmin: React.FC = () => {
         
         if (user) {
             try {
-                const id = await addBlog(user, newBlog);
-                setBlogs(prev => [...prev, { ...newBlog, id }]);
+                const _newBlog = await addBlog(user, newBlog);
+                if (!_newBlog) {
+                    alert('Failed to add blog. Please try again.');
+                    return;
+                }
+
+                setBlogs(prev => [...prev, _newBlog]);
                 resetForm();
             } catch (error) {
                 alert('Failed to add blog. Error adding blog: ' + error);
@@ -228,10 +235,15 @@ const BlogAdmin: React.FC = () => {
         
         if (user) {
             try {
-                await updateBlogById(user, updatedBlog.id, updatedBlog);
+                const _updatedBlog = await updateBlogById(user, updatedBlog.id, updatedBlog);
+                if (!_updatedBlog) {
+                    alert('Failed to update blog. Please try again.');
+                    return;
+                }
+
                 // Update the blog in the state
                 setBlogs(prev => prev.map(blog => 
-                    blog.id === updatedBlog.id ? updatedBlog : blog
+                    blog.id === updatedBlog.id ? _updatedBlog : blog
                 ));
 
                 resetForm();

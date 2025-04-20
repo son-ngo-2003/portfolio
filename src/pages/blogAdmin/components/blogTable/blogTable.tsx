@@ -63,7 +63,6 @@ const BlogTable: React.FC<BlogTableProps> = ({
             case 'Name':
                 // Get title in any available language
                 const title = blog.title[Language.EN] || Object.values(blog.title)[0] || 'Untitled';
-                console.log('Image:', blog.image);
                 return (
                     <div className={styles.blogInfo}>
                         <p className={`text ${styles.blogTitle}`}>{title}</p>
