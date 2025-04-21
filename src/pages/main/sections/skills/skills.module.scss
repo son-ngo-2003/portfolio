@@ -1,10 +1,9 @@
 @use "/src/styles/abstracts" as *;
 
 .skills {
-    padding-bottom: 15em !important;
+    margin-bottom: calc(3rem * 4);
     
     .skillsList {
-        // position: absolute;
         margin-top: 2em;
     }
 
@@ -25,7 +24,7 @@
 
 @media (max-width: 1023px) {
     .skills {
-        margin-bottom: 22em;
+        margin-bottom: calc(3rem * 8);
         .welcome {
             text-align: center;
         }

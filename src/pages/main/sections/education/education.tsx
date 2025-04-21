@@ -66,7 +66,7 @@ const EducationSection = forwardRef<HTMLDivElement>((props, ref) => {
                     ></span>
                     {educationList.map((value, index) => (
                         <div key={index} className={`${styles.educationItem}`}>
-                            <div data-aos="zoom-in-left" data-aos-delay="150">
+                            <div data-aos="zoom-in-left" data-aos-delay="150" className={`${styles.educationBoxCtn}`}>
                                 <TextBox
                                     divClassName={styles.educationBox}
                                     title={value.title}

@@ -1,7 +1,7 @@
 @use "/src/styles/abstracts" as *;
 
 * {
-    transition: background-color 300ms ease-in, border-right 300ms ease-in;
+    transition: background-color 300ms ease-out, border-right 300ms ease-in;
 }
 
 .scroll {

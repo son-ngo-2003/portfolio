@@ -3,13 +3,16 @@
 $plusSize: 1.25em;
 
 .box {
-    width: min(25em, 100%);
+    @include button-reset;
+    width: 100%;
     overflow: auto;
     border-bottom: 1px solid $black-300;
+    cursor: pointer;
+    max-width: 30em;
 
     .overlay {
         width: 100%;
-        height: 3.5em;
+        height: 3rem;
         padding: 0.5em;
         display: flex;
 
@@ -57,11 +60,11 @@ $plusSize: 1.25em;
         overflow: hidden;
         padding: 0 0.8rem 0 0.8rem;
         font-size: .9em !important;
-        @include transition(height);
+        @include transition(height background-color);
 
         p b{
             font-weight: 800;
-            color: $secondary;
+            color: $primary;
         }
     }
 

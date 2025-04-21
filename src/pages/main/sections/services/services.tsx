@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from "react";
+import { forwardRef, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // css
@@ -16,6 +16,7 @@ import { FaQuestion } from "react-icons/fa6";
 
 // Define interfaces
 interface ServiceItem {
+    id: number;
     title: string;
     text: string;
     icon: ReactNode;
@@ -28,6 +29,7 @@ interface ServiceTranslation {
 
 const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
     const { t } = useTranslation("services");
+    const [ openAccordion, setOpenAccordion ] = useState<number | null>(null);
 
     const iconList: ReactNode[] = [
         <RiReactjsLine key="react" />, 
@@ -38,6 +40,7 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
     
     const servicesList: ServiceItem[] = (t('services.services', { returnObjects: true }) as ServiceTranslation[])
         .map((value, key) => ({
+            id: key,
             title: value.title,
             text: value.text,
             icon: iconList[key] || <FaQuestion key="default" />
@@ -68,6 +71,9 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
                             data-aos-delay={250 + index * 100}
                         >
                             <Accordion
+                                isOpen={openAccordion === value.id}
+                                onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
+
                                 icon={value.icon}
                                 title={value.title}
                                 text={value.text}

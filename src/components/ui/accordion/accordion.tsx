@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 //utils
-import { boldTextFormat } from '@src/utils/blogUtils.js';
+import { boldTextFormat } from '@src/utils/blogUtils';
 
 // css
 import styles from './accordion.module.scss';
@@ -11,6 +11,9 @@ interface AccordionProps {
     title: string;
     icon: React.ReactNode;
     divClassName?: string;
+
+    isOpen?: boolean;
+    onClick?: () => void;
 }
 
 const Accordion : React.FC<AccordionProps> = ({
@@ -18,12 +21,13 @@ const Accordion : React.FC<AccordionProps> = ({
     title, 
     icon,                
     divClassName='',
+    isOpen=false,
+    onClick
 }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
     return (
-        <div className={`${styles.box} ${divClassName} ${isOpen ? styles.open : ''}`}
-            onClick={() => { setIsOpen(!isOpen) }}>
+        <button 
+            className={`${styles.box} ${divClassName} ${isOpen ? styles.open : ''}`}
+            onClick={onClick}>
 
             <div className={`${styles.overlay} background`}>
                 <div className={`${styles.iconCover} title`}>{icon}</div>
@@ -35,7 +39,7 @@ const Accordion : React.FC<AccordionProps> = ({
             <div className={`${styles.expandArea} text background`}>
                 <p className="text">{boldTextFormat(text)}</p>
             </div>
-        </div>
+        </button>
     );
 };
 

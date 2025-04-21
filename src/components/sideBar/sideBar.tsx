@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef, useContext, RefObject, Ref } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState, useRef, useContext, RefObject } from 'react';
 import { useTranslation } from "react-i18next";
 
 // CSS

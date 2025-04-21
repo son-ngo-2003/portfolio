@@ -33,7 +33,7 @@ $big-marginLeft: 1.5rem;
     .educationList {
         margin-top: 2em;
         position: relative;
-        display: flex;
+        display: flex !important;
         flex-direction: column;
 
         @include setSizeOfElement($big-lineWidth, $big-pointRadius, $big-marginLeft);
@@ -74,11 +74,17 @@ $big-marginLeft: 1.5rem;
 
 @media (hover:hover ) {
     .education {
-        .educationList .educationBox{
-            //when hovering, the ::after of the immediately next element 
-            &:hover+.linePoint::after { 
-                background-color: $secondary;
+        .educationBox{
+            @include transition(scale translate);
+
+            &:hover {
+                scale: 1.05;
+                translate: 0.55em 0;
             }
+        }
+
+        .educationBoxCtn:hover+.linePoint::after {
+            background-color: $secondary;
         }
     }
 }

@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from "react";
+import { forwardRef, ReactNode, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // css
@@ -20,6 +20,7 @@ import { MdDraw } from "react-icons/md";
 
 // Define types for skill items
 interface SkillItem {
+    id: number;
     title: string;
     text: string;
     icon: ReactNode;
@@ -32,6 +33,7 @@ interface SkillTranslation {
 
 const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
     const { t } = useTranslation("skills");
+    const [ openAccordion, setOpenAccordion ] = useState<number | null>(null);
 
     const iconList: ReactNode[] = [
         <FaCode key="code" />, 
@@ -46,6 +48,7 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
     
     const skillsList: SkillItem[] = (t('skills.skills', {returnObjects: true}) as SkillTranslation[])
         .map((value: SkillTranslation, key: number) => ({
+            id: key,
             title: value.title,
             text: value.text,
             icon: iconList[key] || <FaQuestion key="default" />
@@ -77,6 +80,9 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
                                 data-aos-delay={250 + index * 100}
                             >
                                 <Accordion
+                                    isOpen={openAccordion === value.id}
+                                    onClick={() => setOpenAccordion(openAccordion === value.id ? null : value.id)}
+
                                     icon={value.icon}
                                     title={value.title}
                                     text={value.text}
@@ -96,6 +102,9 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
                                 data-aos-delay={400 + index * 100}
                             >
                                 <Accordion
+                                    isOpen={openAccordion === value.id}
+                                    onClick={() => setOpenAccordion(openAccordion === value.id ? null : value.id)}
+
                                     icon={value.icon}
                                     title={value.title}
                                     text={value.text}
@@ -117,6 +126,9 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
                             data-aos-delay={400 + index * 100}
                         >
                             <Accordion
+                                isOpen={openAccordion === value.id}
+                                onClick={() => setOpenAccordion(openAccordion === value.id ? null : value.id)}
+
                                 icon={value.icon}
                                 title={value.title}
                                 text={value.text}

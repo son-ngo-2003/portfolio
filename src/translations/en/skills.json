@@ -8,35 +8,35 @@
         "skills": [
             {
                 "title": "Programming Languages",
-                "text": "Strong foundation in programming languages such as /Python/, /JavaScript/, /C++/, /Java/ and /Kotlin/."
+                "text": "Strong foundation in programming languages such as **Python**, **JavaScript**, **C++**, **Java** and **Kotlin**."
             },
             {
                 "title": "Database Management",
-                "text": "Firm basis in /SQL/ with database management systems like /MySQL/, /PostgreSQL/ and  aussi experience in non relational database like /MongoDB/, /Firebase/."
+                "text": "Firm basis in **SQL** with database management systems like **MySQL**, **PostgreSQL** and  aussi experience in non relational database like **MongoDB**, **Firebase**."
             },
             {
                 "title": "Web Development",
-                "text": "Proficient in /HTML/, /CSS/, and /JavaScript/ with /Reactjs/ framework for front-end web development, as well as back-end technologies like /Node.js/"
+                "text": "Proficient in **HTML**, **CSS**, and **JavaScript** with **Reactjs** framework for front-end web development, as well as back-end technologies like **Node.js**"
             },
             {
                 "title": "Android Development",
-                "text": "Being familiar with /Kotlin/ and knowing the basics of /Jetpack Compose/ for Android App development."
+                "text": "Being familiar with **Kotlin** and knowing the basics of **Jetpack Compose** for Android App development."
             },
             {
                 "title": "Version Control",
-                "text": "Solid foundation in /Git/, adept at managing code changes and resolving conflicts. Proficient in utilizing /GitHub/ and /GitLab/ for version control, collaboration, and continuous integration."
+                "text": "Solid foundation in **Git**, adept at managing code changes and resolving conflicts. Proficient in utilizing **GitHub** and **GitLab** for version control, collaboration, and continuous integration."
             },
             {
                 "title": "Docker",
-                "text": "Understanding of /Docker/ and /Docker Compose/, skilled in containerizing applications and orchestrating multi-container deployments."
+                "text": "Understanding of **Docker** and **Docker Compose**, skilled in containerizing applications and orchestrating multi-container deployments."
             },
             {
                 "title": "Data Structures, Algorithms",
-                "text": "Knowledge of various /data structures/ (arrays, linked lists, trees, graphs, etc.) and /algorithms/ for efficient problem-solving."
+                "text": "Knowledge of various **data structures** (arrays, linked lists, trees, graphs, etc.) and **algorithms** for efficient problem-solving."
             },
             {
                 "title": "Design",
-                "text": "Proficient in using /Adobe Photoshop/ for graphic design, with the ability to create and edit digital images. Also experienced in /Figma/ for UI/UX design, capable of creating intuitive and user-friendly interfaces."
+                "text": "Proficient in using **Adobe Photoshop** for graphic design, with the ability to create and edit digital images. Also experienced in **Figma** for UI**UX design, capable of creating intuitive and user-friendly interfaces."
             }
         ]
     }

@@ -8,31 +8,31 @@
         "skills": [
             {
                 "title": "Ngôn ngữ lập trình",
-                "text": "Sử dụng thành thạo các ngôn ngữ lập trình như /Python/, /JavaScript/, /C++/, và /Kotlin/."
+                "text": "Sử dụng thành thạo các ngôn ngữ lập trình như **Python**, **JavaScript**, **C++**, và **Kotlin**."
             },
             {
                 "title": "Quản lý cơ sở dữ liệu",
-                "text": "Có nền tảng vững chắc trong /SQL/ (Structured Query Language) với các hệ quản trị cơ sở dữ liệu như /MySQL/, /PostgreSQL/, và cũng có kinh nghiệm trong các cơ sở dữ liệu không quan hệ như /MongoDB/, và /Firebase/."
+                "text": "Có nền tảng vững chắc trong **SQL** (Structured Query Language) với các hệ quản trị cơ sở dữ liệu như **MySQL**, **PostgreSQL**, và cũng có kinh nghiệm trong các cơ sở dữ liệu không quan hệ như **MongoDB**, và **Firebase**."
             },
             {
                 "title": "Phát triển Web",
-                "text": "Thông thạo việc sử dụng /HTML/, /CSS/, và /JavaScript/ với framework /Reactjs/ cho phát triển giao diện người dùng (front-end), cũng như các công nghệ back-end như /Node.js/"
+                "text": "Thông thạo việc sử dụng **HTML**, **CSS**, và **JavaScript** với framework **Reactjs** cho phát triển giao diện người dùng (front-end), cũng như các công nghệ back-end như **Node.js**."
             },
             {
                 "title": "Phát triển ứng dụng Android",
-                "text": "Quen thuộc với /Kotlin/ và nắm bắt kiến thức nền tảng của /Jetpack Compose/ cho việc phát triển ứng dụng Android."
+                "text": "Quen thuộc với **Kotlin** và nắm bắt kiến thức nền tảng của **Jetpack Compose** cho việc phát triển ứng dụng Android."
             },
             {
                 "title": "Docker",
-                "text": "Hiểu biết về /Docker/ và /Docker Compose/, thành thạo trong việc đóng gói ứng dụng vào container và triển khai đa-container."
+                "text": "Hiểu biết về **Docker** và **Docker Compose**, thành thạo trong việc đóng gói ứng dụng vào container và triển khai đa-container."
             },
             {
                 "title": "Cấu trúc dữ liệu, thuật toán",
-                "text": "Kiến thức về các /cấu trúc dữ liệu/ (mảng, danh sách liên kết, cây, đồ thị, v.v.) và thuật toán để giải quyết vấn đề một cách hiệu quả."
+                "text": "Kiến thức về các **cấu trúc dữ liệu** (mảng, danh sách liên kết, cây, đồ thị, v.v.) và thuật toán để giải quyết vấn đề một cách hiệu quả."
             },
             {
                 "title": "Thiết kế",
-                "text": "Thạo việc sử dụng /Adobe Photoshop/ cho thiết kế đồ họa, với khả năng tạo và chỉnh sửa hình ảnh kỹ thuật số. Cũng có kinh nghiệm trong /Figma/ cho thiết kế UI/UX, có khả năng tạo ra giao diện trực quan và thân thiện với người dùng."
+                "text": "Thạo việc sử dụng **Adobe Photoshop** cho thiết kế đồ họa, với khả năng tạo và chỉnh sửa hình ảnh kỹ thuật số. Cũng có kinh nghiệm trong **Figma** cho thiết kế UI**UX, có khả năng tạo ra giao diện trực quan và thân thiện với người dùng."
             }
         ]
     }

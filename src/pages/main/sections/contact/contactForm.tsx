@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, FormEvent } from 'react';
+import parsePhoneNumber from 'libphonenumber-js'
 import emailjs from '@emailjs/browser';
 
 //services
@@ -38,8 +39,7 @@ export interface ContactContent {
 
 interface ContactInfo {
     email?: string;
-    telephoneNum?: string;
-    telephoneFormat?: string;
+    telephone?: string;
     mapURL?: string;
     address?: string;
     linkedin?: string;
@@ -64,6 +64,7 @@ const ContactForm : React.FC<ContactFormProps> = ({
     const [infoContact, setInfoContact] = useState<ContactInfo>({});
     const info = contactContent.info;
     const form = contactContent.form;
+    const telephone = parsePhoneNumber(infoContact?.telephone || '', 'FR');
     const listInput : Record<string, InputField> = {
         name:       { type: 'text', label: form.name, required: true },
         email:      { type: 'email', label: form.email, required: true }, 
@@ -193,12 +194,12 @@ const ContactForm : React.FC<ContactFormProps> = ({
 
                     <a 
                         className={`${styles.detail} text`}
-                        href={`tel:+33${infoContact?.telephoneNum}`}
+                        href={`${telephone?.getURI()}`}
                         data-aos="fade-up" 
                         data-aos-delay="650"  
                         data-aos-anchor={`.contact-form-container${divClassName ? '.' + divClassName : ''}`} 
                     >
-                        {infoContact.telephoneFormat || "error"}
+                        {telephone?.formatInternational()}
                     </a>
 
                     <p 
