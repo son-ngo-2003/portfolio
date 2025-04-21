@@ -9,6 +9,12 @@
             "date":   "Date",
             "role" :  "Rôle",
             "now" : "maintenant"
+        },
+
+        "fetch" : {
+            "error": "Erreur lors du chargement des projets",
+            "loading": "Chargement des projets...",
+            "no-projects": "Aucun projet trouvé"
         }
     }
 }

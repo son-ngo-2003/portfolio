@@ -1,9 +1,6 @@
 @use "/src/styles/abstracts" as *;
 
 .projects {
-    &.notRendered {
-        padding-bottom: 45rem !important;
-    }
 
     .projectsList {
         margin-top: 2em;
@@ -11,6 +8,19 @@
         .projectItem {
             margin-bottom: 1.5em;
         }
+    }
+
+    .loadingContainer h2, .errorContainer h2{
+        text-align: center;
+        font-size: 1.6em;
+    }
+
+    .errorIcon {
+        display: flex;
+        justify-content: center;
+        font-size: 4rem;
+        margin-bottom: 0.6rem;
+        color: $danger;
     }
 }
 
@@ -25,5 +35,11 @@
             @include horizontal-center-list;
             margin-top: 2em;
         }
+    }
+}
+
+:global(.dark-theme) {
+    .errorIcon {
+        color: $dark-danger;
     }
 }

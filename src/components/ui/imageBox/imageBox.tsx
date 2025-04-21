@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styles from './imageBox.module.scss';
+import { placeHolderImage } from '@src/assets/images';
 
 type Theme = 'none' | 'dark' | 'light' | string;
 
@@ -33,7 +34,7 @@ const ImageBox : React.FC<ImageBoxProps> = ({
     return (
         <div className={`${styles.box} ${divClassName} ${styles[theme]}`}>
             <div className={`${styles.imgPart} bg-component`}>
-                {image && <img src={image} alt={alt || title} />}
+                <img src={ image || placeHolderImage.src } alt={alt || title} />
             </div>
             <div className={`${styles.nameplate} bg-component-primary`}>
                 <p className={`${styles.subTitle} text`}>{subTitle}</p>

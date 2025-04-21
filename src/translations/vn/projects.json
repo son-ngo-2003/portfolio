@@ -9,6 +9,12 @@
             "date":   "Thời gian",
             "role" :  "Vai trò",
             "now" : "hiện tại"
+        },
+
+        "fetch" : {
+            "error": "Lỗi khi tải dự án",
+            "loading": "Đang tải dự án...",
+            "no-projects": "Không tìm thấy dự án nào"
         }
     }
 }

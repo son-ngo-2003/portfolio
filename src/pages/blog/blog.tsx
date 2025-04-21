@@ -30,13 +30,13 @@ const BlogPage: React.FC = () => {
 
                 const fetchedBlog = await getBlogById(blogId);
                 if (!fetchedBlog) {
-                    setError(t("blogNotFound"));
+                    setError(t("blogNotFound")); // TODO: add error handling for translation
                     return;
                 }
                 
                 setBlog(fetchedBlog);
             } catch (err) {
-                setError(t("errorLoading"));
+                setError(t("errorLoading")); // TODO: add error handling for translation
                 console.error("Error fetching blog:", err);
             } finally {
                 setIsLoading(false);
@@ -79,7 +79,7 @@ const BlogPage: React.FC = () => {
                     />
                 ) : (
                     <div className={styles.notfound}>
-                        <h1>{t("contentNotAvailable")}</h1>
+                        <h1>{t("contentNotAvailable")}</h1> {/* TODO: add error handling for translation */}
                         <p>{t("contentNotAvailableMessage")}</p>
                     </div>
                 )}

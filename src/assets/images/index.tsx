@@ -10,6 +10,10 @@ const notfoundImage = {
     src: "https://res.cloudinary.com/dnt6wfbks/image/upload/v1708542666/portfolio/home/notfound-small_qmgwjk.png"
 }
 
+const placeHolderImage = {
+    src: "/src/assets/images/img-placeholder.webp"
+}
+
 // ------------------------flags---------------------------------------
 const vnFlag = {
     src : "https://res.cloudinary.com/dnt6wfbks/image/upload/v1707777752/portfolio/flags/027-vietnam_generated_osqy6i.jpg"
@@ -34,6 +38,7 @@ export {
     homeImage,
     avatarImage,
     notfoundImage,
+    placeHolderImage,
     flags,
     vnFlag,
     frFlag,

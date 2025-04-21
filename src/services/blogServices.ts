@@ -6,7 +6,7 @@ import {
 
 import { getRandomInt, getRandomString, getRandomText } from '@src/utils/randomUtils';
 import { dbCollection } from '@src/utils/db';
-import { Blog } from "@src/types/blog";
+import { Blog, BlogType } from "@src/types/blog";
 import { Language } from "@src/types/languages";
 
 /**
@@ -72,7 +72,7 @@ const getBlogById = async (id: string): Promise<Blog | null> => {
  * @param type - The type of blogs to retrieve
  * @returns Promise with array of blogs or null if error
  */
-const getBlogsByType = async (type: string): Promise<Blog[]> => {
+const getBlogsByType = async (type: BlogType): Promise<Blog[]> => {
     const blogs: Blog[] = [];
     const q = query(
         dbCollection.blog, 

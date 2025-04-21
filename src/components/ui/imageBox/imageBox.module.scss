@@ -1,29 +1,25 @@
 @use "/src/styles/abstracts" as *;
 
 .box {
-    width: min(100%, 25em);
+    width: 100%;
     height: 21.5em;
     box-shadow: $shadow-2;
     position: relative;
-    overflow: hidden;
+    @include transition(scale);
 
     .imgPart {
         width: 100%;
         height: 65%;
-        overflow: hidden;
 
         img {
             @include imageFixed;
-            @include transition(width object-position)
         }
 
     }
 
     .nameplate {
-        height: 37%;
+        height: 35%;
         width: 100%;
-        position: absolute;
-        bottom: 0;
         padding: 1em;
         overflow: hidden;
         @include transition(transform);
@@ -43,15 +39,7 @@
 
 @media (hover: hover) {
     .box:hover {
-        .imgPart img {
-            width: 110%;
-            object-position: -1em 50%;
-        }
-        
-        .nameplate {
-            transform: translateX(1em) scale(1.1);
-
-        }
+        scale: 1.05;
     }
 }
 
