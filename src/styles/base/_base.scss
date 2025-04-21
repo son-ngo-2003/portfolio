@@ -99,6 +99,10 @@
     .border-as-component-darker { //border has same color as component
         border-color: $component-background-darker;
     }
+
+    input {
+        color-scheme: light;
+    }
 }
 
 .dark-theme {
@@ -145,6 +149,10 @@
 
     .border-as-component-darker { //border has same color as component
         border-color: $dark-component-background-darker;
+    }
+
+    input {
+        color-scheme: dark;
     }
 }
 

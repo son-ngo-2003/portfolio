@@ -115,9 +115,9 @@
 }
 
 // Dark theme support
-.dark-theme {
+:global(.dark-theme) {
     .tableBlogs {
-        background-color: $dark-component-background;
+        background-color: $dark-background;
         box-shadow: 0 2px 8px rgba($black-900, 0.2);
         border-color: $dark-border-color;
     }

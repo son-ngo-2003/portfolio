@@ -144,8 +144,15 @@ const deleteBlogById = async (user: any, id: string): Promise<void> => {
         throw new Error("Error deleting blog: user is not logged in");
     }
 
+    // Check if the blog exists
+    const blog = await getBlogById(id);
+    if (!blog) {
+        throw new Error(`Error deleting blog: blog with ID ${id} does not exist`);
+    }
+
+    // Soft delete the blog
     const docRef = doc(dbCollection.blog, id);
-    await setDoc(docRef, {deleted: true}, { merge: true });
+    await setDoc(docRef, {...blog, deleted: true}, { merge: true });
 }
 
 /**

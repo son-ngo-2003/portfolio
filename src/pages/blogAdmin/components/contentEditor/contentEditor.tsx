@@ -101,7 +101,6 @@ const ContentEditor: React.FC<ContentEditorProps> = ({
 
 					<div className={styles.inputGroup}>
 						<label htmlFor={`content-${lang}`} className='text'>Content ({lang.toUpperCase()})</label>
-
 						<MDEditor
 							value={content[lang] || ''}
 							onChange={(value) => handleContentChange(lang, value)}

@@ -9,4 +9,5 @@ export {
     Form, type InputField,
     Table,
     Dropdown, type DropdownItem,
+    LoadingSpinner,
 } from './ui';

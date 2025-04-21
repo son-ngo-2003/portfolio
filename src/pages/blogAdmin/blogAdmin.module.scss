@@ -84,3 +84,27 @@
 .typeDropdown {
     width: 100%;
 }
+
+// Dark theme support
+:global(.dark-theme) {
+    .title {
+        border-bottom-color: $dark-border-color;
+    }
+    
+    .form {
+        background-color: $dark-background;
+    }
+    
+    .formGroup {
+        input, textarea, select {
+            border-color: $dark-border-color;
+            background-color: $dark-background;
+        }
+    }
+    
+    .contentSection {
+        h3 {
+            border-bottom-color: $dark-border-color;
+        }
+    }
+}

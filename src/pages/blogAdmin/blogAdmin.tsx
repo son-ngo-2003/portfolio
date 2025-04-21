@@ -424,7 +424,7 @@ const BlogAdmin: React.FC = () => {
                         {renderTypeSpecificFields()}
                         
                         <div className={styles.contentSection}>
-                            <h3>Content and Titles</h3>
+                            <h3 className={`text`}>Content and Titles</h3>
                             <ContentEditor 
                                 content={formData.content}
                                 title={formData.title}

@@ -1,106 +1,173 @@
 @use "/src/styles/abstracts" as *;
+@use "sass:color";
+
 .contentEditor {
-		margin: 1.25px 0;
-		width: 100%;
-	}
-	
-	.languageSelector {
-		display: flex;
-		align-items: center;
-		gap: 0.625rem;
-		margin-bottom: 1.25rem;
-		
-		h4 {
-			margin: 0;
-			flex-shrink: 1;
-		}
+    margin: 1.25px 0;
+    width: 100%;
+}
 
-		.dropdown {
-			flex: 1
-		}
-
-		.emptyLangBox {
-			padding: 0.5rem;
-			border: 2px solid $border-color;
-			width: 100%;
-			border-radius: 8px;
-		}
-	}
-	
-	.languageContent {
-		border: 1px solid $border-color;
-		border-radius: 8px;
-		padding: 1rem;
-		margin-bottom: 1.25rem;
-		background-color: $background;
-	
-		.languageHeader {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			margin-bottom: 1rem;
-			
-			h3 {
-				margin: 0;
-			}
-		}
-	}
-	
-	.inputGroup {
-		margin-bottom: 15px;
-		
-		label {
-			display: block;
-			margin-bottom: 0.325rem;
-			font-weight: 600;
-		}
-		
-		& > input, & > textarea {
-			width: 100%;
-			padding: 10px;
-			border: 2px solid $border-color;
-			border-radius: 8px;
-			background-color: $background;
-		}
-		
-		& > textarea {
-			resize: vertical;
-		}
-	}
-	
-	.removeBtn {
-		background-color: $danger;
-		color: $white-900 !important;
-		border: none;
-		border-radius: 8px;
-		padding: 0.5rem 0.8rem;
-		cursor: pointer;
-		
-		&:hover {
-			background-color: $danger;
-		}
-	}
-
-	.contentMdEditor {
-		border: 2px solid $border-color;
-	}
-
-:global(.w-md-editor)
-{
-	font-family: 'Quicksand', sans-serif !important;
-	:global(.w-md-editor-text-pre) > code,
-	:global(.w-md-editor-text-input) {
-		font-size: 1.1rem !important;
-		line-height: 1.2 !important;
-	}
-
-	&, * {
-        font-family: inherit !important;
-		--md-editor-font-family: 'Quicksand', sans-serif !important;
-		--color-canvas-default: $background !important;
+.languageSelector {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 1.25rem;
+    
+    h4 {
+        margin: 0;
+        flex-shrink: 1;
     }
 
-	:global(.wmde-markdown) {
-		font-family: 'Quicksand', sans-serif !important;
+    .dropdown {
+        flex: 1
+    }
+
+    .emptyLangBox {
+        padding: 0.5rem;
+        border: 2px solid $border-color;
+        width: 100%;
+        border-radius: 8px;
+    }
+}
+
+.languageContent {
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    background-color: $background;
+
+    .languageHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        
+        h3 {
+            margin: 0;
+        }
+    }
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+    
+    label {
+        display: block;
+        margin-bottom: 0.325rem;
+        font-weight: 600;
+    }
+    
+    & > input, & > textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid $border-color;
+        border-radius: 8px;
+        background-color: $background;
+    }
+    
+    & > textarea {
+        resize: vertical;
+    }
+}
+
+.removeBtn {
+    background-color: $danger;
+    color: $white-900 !important;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: color.adjust($danger, $lightness: -10%, $space: hsl);
+    }
+}
+
+.contentMdEditor {
+    border: 2px solid $border-color;
+}
+
+:global(.w-md-editor) {
+    font-family: 'Quicksand', sans-serif !important;
+    
+    :global(.w-md-editor-text-pre) > code,
+    :global(.w-md-editor-text-input) {
+        font-size: 1.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    &, * {
+        font-family: 'Quicksand', sans-serif !important;
+        --color-canvas-default: $background !important;
+    }
+
+    :global(.wmde-markdown) {
+        font-family: 'Quicksand', sans-serif !important;
+    }
+
+	&:global(.w-md-editor-show-live) {
+		:global(.w-md-editor-area) {
+			width: 50%;
+		}
 	}
+
+	&:global(.w-md-editor-show-preview) {
+		:global(.w-md-editor-preview) {
+			position: static;
+		}
+	}
+
+	:global(.w-md-editor-toolbar) {
+		background-color: $component-background !important;
+		border-bottom-color: $border-color !important;
+	}
+
+	:global(.w-md-editor-content) {
+		background-color: $background !important;
+	}
+
+
+}
+
+// Dark theme support
+:global(.dark-theme) {
+    .languageSelector {
+        .emptyLangBox {
+            border-color: $dark-border-color;
+            background-color: $dark-background;
+        }
+    }
+    
+    .languageContent {
+        border-color: $dark-border-color;
+        background-color: $dark-background;
+    }
+    
+    .inputGroup {
+        
+        & > input, & > textarea {
+            border-color: $dark-border-color;
+            background-color: $dark-background;
+		}
+    }
+    
+    .contentMdEditor {
+        border-color: $dark-border-color;
+    }
+    
+    :global(.w-md-editor) {
+        &, * {
+            --color-canvas-default: $dark-background !important;
+            --color-border-default: $dark-border-color !important;
+        }
+        
+        :global(.w-md-editor-toolbar) {
+            background-color: $dark-component-background !important;
+            border-bottom-color: $dark-border-color !important;
+        }
+        
+        :global(.w-md-editor-content) {
+            background-color: $dark-background !important;
+        }
+    }
 }
