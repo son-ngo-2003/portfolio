@@ -8,7 +8,7 @@ import { Language } from '@src/types/languages';
 
 // services
 import {
-    getAllBlogs, getBlogById, getRandomBlogs,
+    getAllBlogs,
     addBlog, updateBlogById, deleteBlogById
 } from '@src/services/blogServices';
 
@@ -19,6 +19,7 @@ import { InfoLoginBar, ContentEditor, BlogTable } from "./components";
 // styles
 import styles from "./blogAdmin.module.scss";
 import { ButtonColor } from '@src/components/ui/button/button';
+import { getRandomBlogs } from '@src/utils/blogUtils';
 
 interface FormDataType {
     id: string;
@@ -217,12 +218,16 @@ const BlogAdmin: React.FC = () => {
 
                 setBlogs(prev => [...prev, _newBlog]);
                 resetForm();
+                alert('Blog added successfully!');
             } catch (error) {
                 alert('Failed to add blog. Error adding blog: ' + error);
             }
 
         } else {
-            alert('You must be logged in to add a blog');
+            newBlog.id = '-1';
+            setBlogs(prev => [...prev, newBlog]);
+            resetForm();
+            alert('Simulation: Blog added successfully!');
         }
     };
 
@@ -253,7 +258,15 @@ const BlogAdmin: React.FC = () => {
             }
             
         } else {
-            alert('You must be logged in to update a blog');
+            const existingBlog = blogs.find(blog => blog.id === updatedBlog.id);
+            if (existingBlog) {
+                const updatedBlogs = blogs.map(blog => 
+                    blog.id === updatedBlog.id ? { ...blog, ...updatedBlog } : blog
+                );
+                setBlogs(updatedBlogs);
+            }
+            resetForm();
+            alert('Simulation: Blog updated successfully!');
         }
     };
 
@@ -262,7 +275,9 @@ const BlogAdmin: React.FC = () => {
             await deleteBlogById(user, id);
             setBlogs(prev => prev.filter(blog => blog.id !== id));
         } else {
-            alert('You must be logged in to delete a blog');
+            // Simulate deletion in the UI
+            setBlogs(prev => prev.filter(blog => blog.id !== id));
+            alert('Simulation: Blog deleted successfully!');
         }
     };
 
@@ -274,15 +289,16 @@ const BlogAdmin: React.FC = () => {
                 .then((blogList) => {
                     setBlogs(blogList);
                 });
+            
+            if (!currentUser) {
+                alert('This is just a simulation. You can try functionalities like adding, updating, and deleting blogs without being logged in.');
+                const randomBlogs = getRandomBlogs(6);
+                setBlogs(randomBlogs);
+                console.log('Random blogs generated:', randomBlogs);
+            }
         });
 
-        // Load some blogs for testing
-        // (async () => {
-        //     const blogList = await getRandomBlogs(8);
-        //     setBlogs(blogList);
-        // })();
-
-        // return () => unsubscribe();
+        return () => unsubscribe();
     }, []);
 
     // Type dropdown items

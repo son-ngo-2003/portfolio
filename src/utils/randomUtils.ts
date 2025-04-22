@@ -53,9 +53,10 @@ const getRandomParagraph = (): string => {
  * @returns A string containing randomly generated text with paragraphs
  */
 const getRandomText = (numParagraph: number): string => {
-    let text = '';
+    let text = '# Random Title: ' + getRandomString(10) + '\n\n'; // Add a random title
     for (let i = 0; i < numParagraph; i++) {
-        text += getRandomParagraph();
+        text += '## Random Heading: ' + getRandomString(10) + '\n\n'; // Add a random subtitle
+        text += "Random Paragraph: " + getRandomParagraph();
         if (i < numParagraph - 1) {
             text += '\n\n'; // Add double newline between paragraphs except for the last one
         }

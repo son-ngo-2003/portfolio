@@ -155,44 +155,8 @@ const deleteBlogById = async (user: any, id: string): Promise<void> => {
     await setDoc(docRef, {...blog, deleted: true}, { merge: true });
 }
 
-/**
- * Generate random blog data for testing
- * @param count - Number of random blogs to generate
- * @returns Array of random blog data
- */
-const getRandomBlogs = (count: number): Blog[] => {
-    const blogs: Blog[] = [];
-    for (let i = 0; i < count; i++) {
-        const id = getRandomString(20);
-        const priority = i;
-        
-        const type = 'project';
-
-        const title = {
-            [Language.EN]: `Blog ${i + 1}`,
-            [Language.FR]: `Blog ${i + 1}`,
-            [Language.VN]: `Blog ${i + 1}`
-        }
-        const content = {
-            [Language.EN]: getRandomText(getRandomInt(3, 10)),
-            [Language.FR]: getRandomText(getRandomInt(3, 10)),
-            [Language.VN]: getRandomText(getRandomInt(3, 10))
-        }
-
-        const createdAt = new Date();
-        
-        blogs.push({
-            id, image : null, priority,
-            title, content,
-            createdAt, updatedAt: null,
-        } as Blog);
-    }
-    return blogs;
-}
-
 export {
     getAllBlogs,
-    getRandomBlogs,
     getBlogByName,
     getBlogById,
     getBlogsByType,

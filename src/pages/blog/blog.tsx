@@ -6,7 +6,9 @@ import styles from "./blog.module.scss";
 import { Language } from '@src/types/languages';
 import { Blog } from '@src/types/blog';
 import MDEditor from '@uiw/react-md-editor';
-import { LoadingSpinner } from '@src/components'; // Assuming you have this component
+import { Button, LoadingSpinner } from '@src/components'; // Assuming you have this component
+import { getRandomBlogs } from '@src/utils/blogUtils';
+import { ButtonColor } from '@src/components/ui/button/button';
 
 const BlogPage: React.FC = () => {
     const { t, i18n } = useTranslation("blog");
@@ -28,15 +30,21 @@ const BlogPage: React.FC = () => {
                     return;
                 }
 
+                if (Number.parseInt(blogId) < 0) {
+                    setBlog(getRandomBlogs(1)[0]); // Generate a random blog for testing
+                    setIsLoading(false);
+                    return;
+                }
+
                 const fetchedBlog = await getBlogById(blogId);
                 if (!fetchedBlog) {
-                    setError(t("blogNotFound")); // TODO: add error handling for translation
+                    setError(t("blog.notFound")); // TODO: add error handling for translation
                     return;
                 }
                 
                 setBlog(fetchedBlog);
             } catch (err) {
-                setError(t("errorLoading")); // TODO: add error handling for translation
+                setError(t("blog.errorLoading")); // TODO: add error handling for translation
                 console.error("Error fetching blog:", err);
             } finally {
                 setIsLoading(false);
@@ -53,7 +61,7 @@ const BlogPage: React.FC = () => {
         return (
             <div className={`row section ${styles.loadingContainer}`}>
                 <LoadingSpinner />
-                <h2>{t("loading")}</h2>
+                <h2 className='title'>{t("blog.loading")}</h2>
             </div>
         );
     }
@@ -61,10 +69,13 @@ const BlogPage: React.FC = () => {
     if (error) {
         return (
             <div className={`row section ${styles.errorContainer}`}>
-                <h1>{error}</h1>
-                <button onClick={() => navigate("/#projects")} className={styles.backButton}>
-                    {t("backToProjects")}
-                </button>
+                <h1 className='title'>{error}</h1>
+                <Button
+                    size="medium"
+                    text={t("blog.backToProjects")}
+                    onClick={() => navigate("/#projects")}
+                    color={ButtonColor.PRIMARY}
+                />
             </div>
         );
     }
@@ -79,8 +90,8 @@ const BlogPage: React.FC = () => {
                     />
                 ) : (
                     <div className={styles.notfound}>
-                        <h1>{t("contentNotAvailable")}</h1> {/* TODO: add error handling for translation */}
-                        <p>{t("contentNotAvailableMessage")}</p>
+                        <h1 className='title'>{t("blog.contentNotAvailable")}</h1> {/* TODO: add error handling for translation */}
+                        <p className='text'>{t("blog.contentNotAvailableMessage")}</p>
                     </div>
                 )}
             </div>

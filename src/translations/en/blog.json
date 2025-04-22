@@ -1,5 +1,10 @@
 {
     "blog" : {
-        "notFound" : "Blog not found!"
+        "notFound" : "Blog not found!",
+        "backToProjects" : "Back to projects",
+        "errorLoading" : "Error loading blog",
+        "contentNotAvailable": "Content not available",
+        "contentNotAvailableMessage": "The content you are trying to access is not available. Please check back later or contact support for assistance.",
+        "loading" : "Loading blog..."
     }
 }
