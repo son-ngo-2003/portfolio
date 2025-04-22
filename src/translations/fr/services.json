@@ -1,28 +1,28 @@
 {
     "services" : {
         "introduction" : {
-            "sub-title": "Ce que je peux faire",
+            "sub-title": "Ce que je peux faire pour vous",
             "title" : "Mes Services",
-            "text" : "Voici les services que je suis sûr de pouvoir exécuter au mieux lorsque vous engagez votre entreprise. Cependant, s'il y a d'autres exigences pour le recrutement, ne vous inquiétez pas, je ferai également de mon mieux pour assurer la meilleure réalisation des tâches."
+            "text" : "Voici les services que je maîtrise le mieux et que je peux vous offrir. Cependant, si vous avez des besoins différents en matière de recrutement, ne vous inquiétez pas, je ferai de mon mieux pour accomplir les tâches requises."
         },
 
         "services": [
             {
-                "title": "Front end",
-                "text": "Je me spécialise dans le développement front-end, en créant des interfaces utilisateur conviviales avec HTML, CSS et JavaScript. J'ai également une expertise dans la bibliothèque React.js."
+                "title": "Développement Web",
+                "text": "Création de sites web rapides, réactifs et maintenables — des **interfaces front-end** propres aux **architectures back-end** solides."
             },
             {
-                "title": "Back end",
-                "text": "Je brille dans le développement back-end, travaillant avec des frameworks comme Node.js pour construire des applications côté serveur robustes."
+                "title": "Développement Mobile",
+                "text": "Développement d'**applications multiplateformes** avec **Flutter** et **React Native**, garantissant une expérience utilisateur fluide sur Android et iOS."
             },
             {
-                "title": "Développement d'app",
-                "text": "Je possède des connaissances en développement d'applications pour les plates-formes Android, en utilisant des technologies telles que React Native et Flutter."
+                "title": "Analyse de Données & Machine Learning",
+                "text": "Transformation des données en insights grâce à **l'analyse**, **la visualisation** et **le machine learning** — du prétraitement à la prédiction."
             },
             {
                 "title": "Autres services",
-                "text": "Je suis adaptable et capable d'apprendre de nouvelles technologies et frameworks pour répondre aux besoins uniques de votre projet."
+                "text": "Je suis **adaptable** et **capable** d'apprendre de nouvelles technologies et frameworks pour répondre aux besoins spécifiques de votre projet."
             }
-        ]        
+        ]
     }
 }

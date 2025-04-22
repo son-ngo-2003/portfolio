@@ -14,6 +14,7 @@ import { MdMenuOpen } from "react-icons/md";
 // Images
 import { avatarImage } from "@src/assets/images";
 import { AppRoutesRef } from '@src/App';
+import { useNavigate } from 'react-router';
 
 interface SideBarProps {
 	appRoutesRef?: RefObject<AppRoutesRef>,
@@ -28,9 +29,16 @@ const SideBar: React.FC<SideBarProps> = ({
 
 	const [currentSection, setCurrentSection] = useState<string | null>('home');
 	const sectionsPos = useRef<{section: string, posY: number}[] | null>(null);
+	const navigate = useNavigate();
 
 	function scrollToSection(section: string | null, isImmediate: boolean = false): void {
 		if (!section) return;
+
+		if (window.location.pathname !== '/') {
+			console.log("Navigating to home");
+			navigate(`/#${section}`);
+			return;
+		}
 
 		const node = appRoutesRef?.current?.sectionsRef?.get(section);
 		if (node) {
@@ -100,7 +108,7 @@ const SideBar: React.FC<SideBarProps> = ({
 	const getNavItem = (section: string, insideText: string): JSX.Element => (
 		<li key={section}>
 			<button 
-				className={`text ${currentSection === section ? styles.underline : ''}`}
+				className={`text ${currentSection === section ? styles.underline : ''} ${styles.navButton}`}
 				onClick={() => { scrollToSection(section); }}
 			>
 				{insideText}

@@ -8,11 +8,11 @@ import styles from "./services.module.scss";
 import { Accordion } from "@src/components";
 
 //icons
-import { FaServer } from "react-icons/fa";
-import { RiReactjsLine } from "react-icons/ri";
-import { ImAndroid } from "react-icons/im";
 import { FaCode } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa6";
+import { FiGlobe } from "react-icons/fi";
+import { MdOutlinePhoneIphone } from "react-icons/md";
+import { FaChartSimple } from "react-icons/fa6";
 
 // Define interfaces
 interface ServiceItem {
@@ -32,9 +32,9 @@ const ServicesSection = forwardRef<HTMLDivElement>((props, ref) => {
     const [ openAccordion, setOpenAccordion ] = useState<number | null>(null);
 
     const iconList: ReactNode[] = [
-        <RiReactjsLine key="react" />, 
-        <FaServer key="server" />, 
-        <ImAndroid key="android" />, 
+        <FiGlobe key="globe" />, 
+        <MdOutlinePhoneIphone key="mobile" />, 
+        <FaChartSimple key="chart" />, 
         <FaCode key="code" />
     ];
     

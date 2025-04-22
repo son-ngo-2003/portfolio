@@ -1,38 +1,50 @@
 {
     "skills": {
         "introduction": {
-            "sub-title": "Kỹ năng kỹ thuật của tôi",
-            "title": "Kỹ năng của tôi",
-            "text": "Trong suốt quãng thời gian học tập tại INSA, tôi đã dành nhiều thời gian để nâng cao kiến thức và kỹ năng của mình về công nghệ thông tin. Dưới đây là danh sách các kỹ năng mà tôi đã đạt được."
+            "sub-title": "Các Kỹ Năng Của Tôi",
+            "title": "Kỹ Năng",
+            "text": "Qua quá trình học tập tại INSA Lyon và các dự án thực tế, tôi đã phát triển đa dạng kỹ năng về phát triển phần mềm và thiết kế. Dưới đây là những gì tôi có thể mang lại."
         },
         "skills": [
             {
-                "title": "Ngôn ngữ lập trình",
-                "text": "Sử dụng thành thạo các ngôn ngữ lập trình như **Python**, **JavaScript**, **C++**, và **Kotlin**."
+                "title": "Ngôn Ngữ Lập Trình",
+                "text": "Nền tảng vững chắc về **Python**, **JavaScript**, **TypeScript**, **C++**, **Dart**, **Java**, và **Kotlin**, ứng dụng vào phát triển web, mobile và phân tích dữ liệu."
             },
             {
-                "title": "Quản lý cơ sở dữ liệu",
-                "text": "Có nền tảng vững chắc trong **SQL** (Structured Query Language) với các hệ quản trị cơ sở dữ liệu như **MySQL**, **PostgreSQL**, và cũng có kinh nghiệm trong các cơ sở dữ liệu không quan hệ như **MongoDB**, và **Firebase**."
+                "title": "Phát Triển Web",
+                "text": "Thành thạo **HTML/CSS**, **React.js**, **TypeScript** cho front-end, cùng kinh nghiệm back-end với **Node.js**, **Spring Boot**, và thiết kế **API RESTful**."
             },
             {
-                "title": "Phát triển Web",
-                "text": "Thông thạo việc sử dụng **HTML**, **CSS**, và **JavaScript** với framework **Reactjs** cho phát triển giao diện người dùng (front-end), cũng như các công nghệ back-end như **Node.js**."
+                "title": "Phát Triển Mobile",
+                "text": "Kinh nghiệm với framework đa nền tảng như **Flutter** và **React Native**, xây dựng ứng dụng hiệu năng cao cho iOS và Android."
             },
             {
-                "title": "Phát triển ứng dụng Android",
-                "text": "Quen thuộc với **Kotlin** và nắm bắt kiến thức nền tảng của **Jetpack Compose** cho việc phát triển ứng dụng Android."
+                "title": "Quản Lý Cơ Sở Dữ Liệu",
+                "text": "Thành thạo **SQL (MySQL, PostgreSQL)** và NoSQL (**MongoDB, Firebase**), bao gồm thiết kế schema và tối ưu hóa."
+            },
+            {
+                "title": "Kiểm Soát Phiên Bản",
+                "text": "Nền tảng vững chắc về **Git**, thành thạo quản lý thay đổi mã nguồn và giải quyết xung đột. Thành thạo sử dụng **GitHub** và **GitLab** để kiểm soát phiên bản, hợp tác và tích hợp liên tục."
             },
             {
                 "title": "Docker",
-                "text": "Hiểu biết về **Docker** và **Docker Compose**, thành thạo trong việc đóng gói ứng dụng vào container và triển khai đa-container."
+                "text": "Hiểu biết về **Docker** và **Docker Compose**, thành thạo đóng gói ứng dụng và triển khai hệ thống đa container."
             },
             {
-                "title": "Cấu trúc dữ liệu, thuật toán",
-                "text": "Kiến thức về các **cấu trúc dữ liệu** (mảng, danh sách liên kết, cây, đồ thị, v.v.) và thuật toán để giải quyết vấn đề một cách hiệu quả."
+                "title": "Cấu Trúc Dữ Liệu & Giải Thuật",
+                "text": "Hiểu biết về các **cấu trúc dữ liệu** (mảng, danh sách liên kết, cây, đồ thị...) và **giải thuật** để giải quyết vấn đề hiệu quả."
             },
             {
-                "title": "Thiết kế",
-                "text": "Thạo việc sử dụng **Adobe Photoshop** cho thiết kế đồ họa, với khả năng tạo và chỉnh sửa hình ảnh kỹ thuật số. Cũng có kinh nghiệm trong **Figma** cho thiết kế UI**UX, có khả năng tạo ra giao diện trực quan và thân thiện với người dùng."
+                "title": "Machine Learning",
+                "text": "Hiểu biết về **học có giám sát/không giám sát**, tiền xử lý dữ liệu, và thư viện như **Scikit-learn**, cùng kinh nghiệm thực tập trong phát triển mô hình."
+            },
+            {
+                "title": "UI/UX & Thiết Kế",
+                "text": "Thành thạo **Figma** để tạo prototype và **Adobe Photoshop** cho đồ họa, tập trung vào giao diện trực quan."
+            },
+            {
+                "title": "Phương Pháp Luận",
+                "text": "Kinh nghiệm với **Agile/SCRUM**, **SOA**, và **USDP**, đảm bảo quy trình dự án có cấu trúc và lặp."
             }
         ]
     }

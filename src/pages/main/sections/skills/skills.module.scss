@@ -1,7 +1,7 @@
 @use "/src/styles/abstracts" as *;
 
 .skills {
-    margin-bottom: calc(3rem * 4);
+    margin-bottom: calc(3rem * 5);
     
     .skillsList {
         margin-top: 2em;
@@ -24,7 +24,7 @@
 
 @media (max-width: 1023px) {
     .skills {
-        margin-bottom: calc(3rem * 8);
+        margin-bottom: calc(3rem * 10);
         .welcome {
             text-align: center;
         }

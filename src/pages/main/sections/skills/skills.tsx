@@ -17,6 +17,9 @@ import { FaGitSquare } from "react-icons/fa";
 import { FaDocker } from "react-icons/fa";
 import { PiGraphDuotone } from "react-icons/pi";
 import { MdDraw } from "react-icons/md";
+import { RiRobot2Fill } from "react-icons/ri";
+import { VscSymbolMethod } from "react-icons/vsc";
+import { FaMobileAlt } from "react-icons/fa";
 
 // Define types for skill items
 interface SkillItem {
@@ -37,13 +40,16 @@ const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
 
     const iconList: ReactNode[] = [
         <FaCode key="code" />, 
-        <FaDatabase key="database" />, 
         <FiGlobe key="web" />, 
-        <DiAndroid key="mobile" />,
+        <FaMobileAlt key="mobile" />,
+        <FaDatabase key="database" />, 
         <FaGitSquare key="git" />, 
         <FaDocker key="docker" />, 
-        <PiGraphDuotone key="design" />, 
-        <MdDraw key="draw" />
+        <PiGraphDuotone key="data-structure" />, 
+        <RiRobot2Fill key="machine-learning"/>,
+        <MdDraw key="design" />,
+        <VscSymbolMethod key="method"/>
+
     ];
     
     const skillsList: SkillItem[] = (t('skills.skills', {returnObjects: true}) as SkillTranslation[])

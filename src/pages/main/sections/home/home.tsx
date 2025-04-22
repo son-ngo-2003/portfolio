@@ -23,7 +23,7 @@ import { Language } from "@src/types/languages";
 
 interface HomeProps {
     /** Reference to the projects section for scroll navigation */
-    projectsRef?: HTMLElement;
+    projectsRef?: RefObject<HTMLElement>;
 }
 
 const Home = forwardRef<HTMLDivElement, HomeProps>(({ projectsRef = {} }, ref) => {
@@ -70,8 +70,8 @@ const Home = forwardRef<HTMLDivElement, HomeProps>(({ projectsRef = {} }, ref) =
                             text={t("home.buttons.discover")}
                             icon={<MdOutlineWorkOutline />}
                             onClick={() => { 
-                                if ('scrollIntoView' in projectsRef && projectsRef.scrollIntoView) {
-                                    projectsRef.scrollIntoView({
+                                if (projectsRef?.current) {
+                                    projectsRef.current.scrollIntoView({
                                         behavior: 'smooth',
                                         block: 'start',
                                         inline: 'center'

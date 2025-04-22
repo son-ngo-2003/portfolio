@@ -9,6 +9,7 @@ import { Button } from "@src/components";
 
 //services
 import { getBlogsByType } from '@src/services/blogServices';
+import { BlogType } from "@src/types/blog";
 
 const Activities = forwardRef<HTMLDivElement>((props, ref) => {
     const { t } = useTranslation("activities");
@@ -17,16 +18,16 @@ const Activities = forwardRef<HTMLDivElement>((props, ref) => {
     const [artBlogId, setArtBlogId] = useState<string>();
 
     useEffect(() => {
-        const setBlog = async (type: string, set: (id: string) => void) => {
+        const setBlog = async (type: BlogType, set: (id: string) => void) => {
             const blogs = await getBlogsByType(type);
             if (blogs && blogs.length > 0) {
                 set(blogs[0].id);
             }
         };
 
-        setBlog('associations', setAssoBlogId);
-        setBlog('sports', setSportBlogId);
-        setBlog('arts', setArtBlogId);
+        setBlog(BlogType.Association, setAssoBlogId);
+        setBlog(BlogType.Sport, setSportBlogId);
+        setBlog(BlogType.Art, setArtBlogId);
 
     }, []);
 

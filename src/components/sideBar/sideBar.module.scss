@@ -8,7 +8,7 @@ $sizeButton: 3.7rem;
     height: 100vh;
     width: $sideBarWidth;
     position: fixed;
-    z-index: 20;
+    z-index: 999;
     padding: 0.5rem;
 
     img {
@@ -85,6 +85,10 @@ $sizeButton: 3.7rem;
 
     .openButton {
         display: none !important;
+    }
+
+    .navButton {
+        cursor: pointer;
     }
 }
 

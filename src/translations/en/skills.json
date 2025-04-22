@@ -3,24 +3,24 @@
         "introduction": {
             "sub-title": "My Technical Proficiencies",
             "title": "My Skills",
-            "text": "In my time at INSA, I've dedicated myself to enhancing my knowledge and skills in information technology. Here is a list of skills I have acquired."
+            "text": "Through my academic journey at INSA Lyon and hands-on projects, I've honed a diverse skill set in software development and design. Here's what I bring to the table."
         },
         "skills": [
             {
                 "title": "Programming Languages",
-                "text": "Strong foundation in programming languages such as **Python**, **JavaScript**, **C++**, **Java** and **Kotlin**."
-            },
-            {
-                "title": "Database Management",
-                "text": "Firm basis in **SQL** with database management systems like **MySQL**, **PostgreSQL** and  aussi experience in non relational database like **MongoDB**, **Firebase**."
+                "text": "Strong foundation in **Python**, **JavaScript**, **TypeScript**, **C++**, **Dart**, **Java**, and **Kotlin**, with practical applications in web, mobile, and data analysis."
             },
             {
                 "title": "Web Development",
-                "text": "Proficient in **HTML**, **CSS**, and **JavaScript** with **Reactjs** framework for front-end web development, as well as back-end technologies like **Node.js**"
+                "text": "Proficient in **HTML/CSS**, **React.js**, and **TypeScript** for front-end, plus back-end expertise in **Node.js**, **Spring Boot**, and **RESTful API** design."
             },
             {
-                "title": "Android Development",
-                "text": "Being familiar with **Kotlin** and knowing the basics of **Jetpack Compose** for Android App development."
+                "title": "Mobile Development",
+                "text": "Experienced in cross-platform frameworks like **Flutter** and **React Native**, building performant apps for iOS and Android."
+            },
+            {
+                "title": "Database Management",
+                "text": "Skilled in **SQL (MySQL, PostgreSQL)** and NoSQL (**MongoDB, Firebase**), including schema design and optimization."
             },
             {
                 "title": "Version Control",
@@ -31,12 +31,20 @@
                 "text": "Understanding of **Docker** and **Docker Compose**, skilled in containerizing applications and orchestrating multi-container deployments."
             },
             {
-                "title": "Data Structures, Algorithms",
+                "title": "Data Structures & Algorithms",
                 "text": "Knowledge of various **data structures** (arrays, linked lists, trees, graphs, etc.) and **algorithms** for efficient problem-solving."
             },
             {
-                "title": "Design",
-                "text": "Proficient in using **Adobe Photoshop** for graphic design, with the ability to create and edit digital images. Also experienced in **Figma** for UI**UX design, capable of creating intuitive and user-friendly interfaces."
+                "title": "Machine Learning",
+                "text": "Knowledge of **supervised/unsupervised learning**, data preprocessing, and libraries like **Scikit-learn**, with internship experience in model development."
+            },
+            {
+                "title": "UI/UX & Design",
+                "text": "Proficient in **Figma** for prototyping and **Adobe Photoshop** for graphics, with a focus on intuitive interfaces."
+            },
+            {
+                "title": "Methodologies",
+                "text": "Experience with **Agile/SCRUM**, **SOA**, and **USDP**, ensuring structured and iterative project execution."
             }
         ]
     }

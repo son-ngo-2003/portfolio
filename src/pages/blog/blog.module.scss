@@ -66,10 +66,10 @@
         blockquote {
             background-color: rgba($primary, 0.05);
             border-left: 4px solid $primary;
-            padding-left: 1rem;
+            padding: 0.8rem 1rem 0.8rem;
             margin: 1.5rem 0;
             font-style: italic;
-            white-space: pre-wrap;
+            // white-space: pre-wrap;
         }
 
         ul, ol {
@@ -78,6 +78,8 @@
             
             li {
                 margin: 0.5rem 0;
+                list-style-type: disc;
+                list-style-position: outside;
             }
         }
 

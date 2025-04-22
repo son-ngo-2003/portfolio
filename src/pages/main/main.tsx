@@ -17,6 +17,7 @@ interface SectionsRefMap extends Map<string, HTMLElement> {}
 const MainPage = forwardRef<{ sectionsRef: SectionsRefMap }, MainPageProps>(
     (props, ref) => {
         const sectionsRef = useRef<SectionsRefMap>(new Map());
+        const projectsRef = useRef<HTMLElement | null>(null);
 
         useImperativeHandle(ref, () => {
             return { sectionsRef: sectionsRef.current };
@@ -39,7 +40,7 @@ const MainPage = forwardRef<{ sectionsRef: SectionsRefMap }, MainPageProps>(
             <>
                 <Home
                     ref={(node) => { updateSectionRef('home', node); }}
-                    projectsRef={ sectionsRef.current.get('projects') }
+                    projectsRef={ projectsRef }
                 />
                 <About
                     ref={(node) => { updateSectionRef('about', node); }}
@@ -54,7 +55,7 @@ const MainPage = forwardRef<{ sectionsRef: SectionsRefMap }, MainPageProps>(
                     ref={(node) => { updateSectionRef('education', node); }}
                 />
                 <Projects
-                    ref={(node) => { updateSectionRef('projects', node); }}
+                    ref={(node) => { updateSectionRef('projects', node); projectsRef.current = node; }}
                 />
                 <Activities
                     ref={(node) => { updateSectionRef('activities', node); }}

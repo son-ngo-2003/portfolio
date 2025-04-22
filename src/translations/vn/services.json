@@ -1,29 +1,28 @@
 {
     "services" : {
         "introduction" : {
-            "sub-title": "Mình có thể làm gì",
-            "title" : "Dịch vụ",
-            "text" : "Đây là những dịch vụ mà mình tự tin rằng có thể thực hiện tốt khi được thuê bởi công ty của bạn. Tuy nhiên, nếu có yêu cầu khác cho việc tuyển sinh thì đừng lo, tôi cũng sẽ nỗ lực hết mình để đảm bảo hoàn thành công việc một cách tốt nhất."
+            "sub-title": "Những gì tôi có thể giúp bạn",
+            "title" : "Dịch Vụ Của Tôi",
+            "text" : "Đây là những dịch vụ mình tự tin có thể thực hiện tốt nhất khi được công ty bạn thuê. Tuy nhiên, nếu có yêu cầu khác về tuyển dụng, đừng lo, mình cũng sẽ cố gắng hoàn thành công việc một cách tốt nhất."
         },
 
         "services": [
             {
-                "title": "Front end",
-                "text": "Tôi có kinh nghiệm trong phát triển front-end, tạo ra giao diện thân thiện với người dùng bằng HTML, CSS và JavaScript. Tôi cũng có kiến thức tốt về thư viện React.js."
+                "title": "Phát Triển Web",
+                "text": "Xây dựng các website nhanh, responsive và dễ bảo trì — từ **giao diện front-end** sạch sẽ đến **kiến trúc back-end** vững chắc."
             },
             {
-                "title": "Back end",
-                "text": "Tôi có thể phát triển Back end, làm việc với các framework như Node.js để xây dựng các ứng dụng phía máy chủ (server-side application)"
+                "title": "Phát Triển Di Động",
+                "text": "Phát triển **ứng dụng di động đa nền tảng** bằng **Flutter** và **React Native**, đảm bảo trải nghiệm người dùng mượt mà trên cả Android và iOS."
             },
             {
-                "title": "App development",
-                "text": "Tôi có kiến thức về phát triển ứng dụng cho nền tảng Android, sử dụng các công nghệ như React Native và Flutter."
+                "title": "Phân Tích Dữ Liệu & Machine Learning",
+                "text": "Biến dữ liệu thành thông tin hữu ích thông qua **phân tích**, **trực quan hóa** và **machine learning** — từ tiền xử lý đến dự đoán."
             },
             {
                 "title": "Dịch vụ khác",
-                "text": "Tôi linh hoạt và có khả năng học các công nghệ và framework mới để đáp ứng nhu cầu đặc biệt của dự án của bạn."
+                "text": "Mình có khả năng **thích ứng** và **học hỏi** các công nghệ và framework mới để đáp ứng nhu cầu riêng của dự án bạn."
             }
         ]
-        
     }
 }
