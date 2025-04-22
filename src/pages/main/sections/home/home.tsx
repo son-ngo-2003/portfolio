@@ -20,6 +20,7 @@ import { homeImage } from "@src/assets/images";
 //context
 import { ThemeContext } from "@src/contexts/themeContext";
 import { Language } from "@src/types/languages";
+import { useWindowDimensions } from "@src/hooks";
 
 interface HomeProps {
     /** Reference to the projects section for scroll navigation */
@@ -27,6 +28,7 @@ interface HomeProps {
 }
 
 const Home = forwardRef<HTMLDivElement, HomeProps>(({ projectsRef = {} }, ref) => {
+    const { width, height } = useWindowDimensions();
     const { t, i18n } = useTranslation("global");
     const { theme } = useContext(ThemeContext);
     const [linkCV, setLinkCV] = useState<string | undefined>();
@@ -54,19 +56,20 @@ const Home = forwardRef<HTMLDivElement, HomeProps>(({ projectsRef = {} }, ref) =
                 </div>
                 <div className={`${styles.buttonsContainer}`}>
 
-                    <div data-aos="zoom-in-right" data-aos-delay="400">
+                    <div data-aos="zoom-in-right" data-aos-delay="400" className={styles.button}>
                         <a href={linkCV} target="_blank" rel="noopener noreferrer">
                             <Button
-                                divClassName={styles.button}
+                                // divClassName={styles.button}
                                 text={t("home.buttons.download-CV")}
                                 icon={<IoDownloadOutline />}
+                                size={width > 768 ? "medium" : "flexible"}
                             />
                         </a>
                     </div>
 
-                    <div data-aos="zoom-in-right" data-aos-delay="500">
+                    <div data-aos="zoom-in-right" data-aos-delay="500" className={styles.button}>
                         <Button
-                            divClassName={styles.button}
+                            // divClassName={styles.button}
                             text={t("home.buttons.discover")}
                             icon={<MdOutlineWorkOutline />}
                             onClick={() => { 
@@ -78,6 +81,7 @@ const Home = forwardRef<HTMLDivElement, HomeProps>(({ projectsRef = {} }, ref) =
                                     });
                                 }
                             }}
+                            size={width > 768 ? "medium" : "flexible"}
                         />
                     </div>
                 </div>

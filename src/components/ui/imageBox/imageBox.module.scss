@@ -2,6 +2,7 @@
 
 .box {
     width: 100%;
+    max-width: 25em;
     height: 21.5em;
     box-shadow: $shadow-2;
     position: relative;
@@ -43,3 +44,23 @@
     }
 }
 
+@media (max-width: $mobile-L) {
+    .box {
+        max-width: 20em;
+        height: 16.5em;
+
+
+        .nameplate {
+            padding: 0.8em;
+
+            .title {
+                font-size: 1.4em;
+                line-height: 1.2;
+            }
+
+            .subTitle, .text {
+                font-size: 0.9em;
+            }
+        }
+    }
+}

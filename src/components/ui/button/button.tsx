@@ -1,7 +1,7 @@
 import { ReactNode, ButtonHTMLAttributes } from 'react';
 import styles from './button.module.scss';
 
-type ButtonSize = 'small' | 'medium' | 'large';
+type ButtonSize = 'small' | 'medium' | 'large' | 'flexible';
 
 export enum ButtonColor {
 	PRIMARY = 'primary',

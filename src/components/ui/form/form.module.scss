@@ -127,3 +127,64 @@ $enor-textareaNumlines: 20;
         }
     } 
 }
+
+@media (max-width: $mobile-L) {
+    
+    $fontSize: 0.9rem;
+
+    .form {
+        .formRow{
+            margin: calc($fontSize * 2) 0;
+
+            //inputs
+            .inputData{
+                height: calc(1.3 * $fontSize);
+            }
+
+            .textarea {
+                height: calc($textareaNumlines * ($fontSize * 1.3) + 0.5rem);
+
+                &.big {
+                    height: calc($big-textareaNumlines * ($fontSize * 1.3) + 0.5rem);
+                }
+                &.enor {
+                    height: calc($enor-textareaNumlines * ($fontSize * 1.3) + 0.5rem);
+                }
+            }
+
+            .inputData input,
+            .textarea textarea{
+                font-size: $fontSize;
+            }
+
+            // labels
+            .inputData input:focus ~ label, .textarea textarea:focus ~ label,
+            .inputData input:not(:placeholder-shown) ~ label, 
+            .textarea textarea:not(:placeholder-shown) ~ label,
+            .inputData input.date ~ label {
+                @include prefix(transform, translateY( calc(-0.1rem - $fontSize ) ));
+                font-size: calc($fontSize - 0.2rem);
+            }
+
+            .textarea textarea:focus ~ label,
+            .textarea textarea:not(:placeholder-shown) ~ label {
+                @include prefix(transform, translateY( calc(-1.5rem - ($textareaNumlines - 1) * ($fontSize * 1.3)) ));
+            }
+
+            .textarea.big textarea:focus ~ label,
+            .textarea.big textarea:not(:placeholder-shown) ~ label {
+                @include prefix(transform, translateY( calc(-1.5rem - ($big-textareaNumlines - 1) * ($fontSize * 1.3)) ));
+            }
+
+            .textarea.enor textarea:focus ~ label,
+            .textarea.enor textarea:not(:placeholder-shown) ~ label {
+                @include prefix(transform, translateY( calc(-1.5rem - ($enor-textareaNumlines - 1) * ($fontSize * 1.3)) ));
+            }
+
+            .inputData label,
+            .textarea label{
+                font-size: $fontSize;
+            }
+        } 
+    }
+}

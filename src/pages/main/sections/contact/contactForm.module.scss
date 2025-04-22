@@ -119,7 +119,30 @@ $offset-right: calc(100% - $overlay-width);
 @media (max-width: 764px) {
     .overlay {
         .info {
-            padding: 1.2em; 
+            padding: 1.5em;
+    
+            .title {
+                font-size: 1.5em;
+            }
+    
+            .subTitle {
+                margin-top: 0.8em;
+                font-size: 1.2em;
+            }
+    
+            .detail {
+                font-size: 1em;
+            }
+    
+            .divLine {
+                height: 0.08em;
+                margin: 1.2em auto 1em auto;
+            }
+    
+            .socialMedia {
+                width: 80%;
+                font-size: 2.5em;
+            }
         }
     }
 }

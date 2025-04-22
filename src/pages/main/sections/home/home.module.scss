@@ -99,7 +99,7 @@
     }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: $PC-low) {
     .home {
         .leftPart {
             margin-top: 0;
@@ -117,9 +117,13 @@
     }
 }
 
-@media (max-width: 764px) {
+@media (max-width: $tablet) {
     .home {
         .leftPart {
+            h3 {
+                font-size: 2.0em;
+            }
+
             h1 {
                 font-size: 4em;
             }
@@ -133,6 +137,41 @@
     
                 p {
                     font-size: 1.6em;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-L) {
+    .home {
+        .leftPart {
+            h3 {
+                font-size: 1.8em;
+            }
+
+            h1 {
+                font-size: 3.0em;
+            }
+
+            p {
+                font-size: 0.95em;
+            }
+
+            .button {
+                width: 100%;
+                margin-top: 1em;
+            }
+        }
+
+        .rightPart {
+            .nameplate {    
+                h3 {
+                    font-size: 1.6em;
+                }
+    
+                p {
+                    font-size: 1.2em;
                 }
             }
         }

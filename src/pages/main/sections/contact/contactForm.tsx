@@ -19,6 +19,7 @@ import { FaInstagram } from "react-icons/fa";
 
 //emailjs
 import { emailjsConfig } from "@src/config/emailjs";
+import { useWindowDimensions } from '@src/hooks';
 
 export interface ContactContent {
     info: {
@@ -60,6 +61,7 @@ const ContactForm : React.FC<ContactFormProps> = ({
     divClassName = '', 
     contactContent 
 }) => {
+    const { width, height } = useWindowDimensions();
     const formRef = useRef<HTMLFormElement>(null);
     const [infoContact, setInfoContact] = useState<ContactInfo>({});
     const info = contactContent.info;
@@ -139,7 +141,7 @@ const ContactForm : React.FC<ContactFormProps> = ({
                         submitButton={(
                             <Button
                                 divClassName={styles.btnInside}
-                                size="medium"
+                                size={width > 425 ? 'medium' : 'flexible'}
                                 text={form.button}
                                 isUsedSubmit={true}
                             />

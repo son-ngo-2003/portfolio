@@ -56,7 +56,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $PC-low) {
     .fbutton {
         .desktop {
             display: none;
@@ -101,5 +101,12 @@
                 bottom: 0;
             }
         }
+    }
+}
+
+@media (max-width: $mobile-L) {
+    .fbutton {
+        bottom: 1em;
+        right: 1em;
     }
 }

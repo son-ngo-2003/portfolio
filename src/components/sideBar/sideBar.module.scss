@@ -1,8 +1,10 @@
 @use "/src/styles/abstracts" as *;
 
 $sideBarWidth: 18.75rem;
+$minSideBarWidth: 16rem;
 $imageSize: 12.5em;
-$sizeButton: 3.7rem;
+$minImageSize: 10em;
+$sizeButton: 3.5rem;
 
 .sideBar {
     height: 100vh;
@@ -119,9 +121,11 @@ $sizeButton: 3.7rem;
     }
 }
 
-@media (max-width: 1240px) {
+@media (max-width: $PC-low) {
     .sideBar {
         width: $sideBarWidth;
+        top: 0;
+        bottom: 0;
         left: -$sideBarWidth;
         @include transition(left box-shadow);
         box-shadow: $shadow-1;
@@ -131,7 +135,7 @@ $sizeButton: 3.7rem;
 
             &+.overlay {
                 @include overlay;
-                z-index: 19;
+                z-index: 998;
                 background-color: rgba(49, 49, 49, 0.12);
                 @include prefix( backdrop-filter, blur(2.8px) );
             }
@@ -160,6 +164,21 @@ $sizeButton: 3.7rem;
             i.hide {
                 display: none;
             }
+        }
+    }
+}
+
+@media(max-width: $mobile-S) {
+    .sideBar {
+        width: $minSideBarWidth;
+        left: -$minSideBarWidth;
+
+        img {
+            @include circle($minImageSize);
+        }
+
+        h2 {
+            font-size: 1.5em;
         }
     }
 }

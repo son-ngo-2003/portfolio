@@ -10,12 +10,14 @@ import { Button } from "@src/components";
 //services
 import { getBlogsByType } from '@src/services/blogServices';
 import { BlogType } from "@src/types/blog";
+import { useWindowDimensions } from "@src/hooks";
 
 const Activities = forwardRef<HTMLDivElement>((props, ref) => {
     const { t } = useTranslation("activities");
     const [assoBlogId, setAssoBlogId] = useState<string>();
     const [sportBlogId, setSportBlogId] = useState<string>();
     const [artBlogId, setArtBlogId] = useState<string>();
+    const { width, height } = useWindowDimensions();
 
     useEffect(() => {
         const setBlog = async (type: BlogType, set: (id: string) => void) => {
@@ -44,7 +46,7 @@ const Activities = forwardRef<HTMLDivElement>((props, ref) => {
                     data-aos="zoom-in-right" data-aos-delay="150">
                     <Button
                         text={t("activities.activities.associations")}
-                        size='large'
+                        size={width > 425 ? 'large' : 'flexible'}
                         divClassName={styles.btnInside}
                     />
                 </a>
@@ -53,7 +55,7 @@ const Activities = forwardRef<HTMLDivElement>((props, ref) => {
                     data-aos="zoom-in-right" data-aos-delay="250">
                     <Button
                         text={t("activities.activities.sports")}
-                        size='large'
+                        size={width > 425 ? 'large' : 'flexible'}
                         divClassName={styles.btnInside}
                     />
                 </a>
@@ -62,7 +64,7 @@ const Activities = forwardRef<HTMLDivElement>((props, ref) => {
                     data-aos="zoom-in-right" data-aos-delay="350">
                     <Button
                         text={t("activities.activities.arts")}
-                        size='large'
+                        size={width > 425 ? 'large' : 'flexible'}
                         divClassName={styles.btnInside}
                     />
                 </a>

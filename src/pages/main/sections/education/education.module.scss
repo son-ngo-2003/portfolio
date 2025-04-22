@@ -117,7 +117,7 @@ $small-lineWidth: 0.3rem;
 $small-pointRadius: 2.5rem;
 $small-marginLeft: 1rem;
 
-@media (max-width: 739px) {
+@media (max-width: $tablet) {
     .education {
         .educationList {
             @include setSizeOfElement($small-lineWidth, $small-pointRadius, $small-marginLeft);
@@ -126,5 +126,28 @@ $small-marginLeft: 1rem;
                 top: 17%;
             }
         }   
+    }
+}
+
+@media (max-width: $mobile-M) {
+    .education {
+        .educationList {
+
+            .line {
+                display: none;
+            }
+
+            .linePoint {
+                display: none;
+            }
+
+            .finalPoint {
+                display: none;
+            }
+
+            .educationBox {
+                width: 100%;
+            }
+        }
     }
 }

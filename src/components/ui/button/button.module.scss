@@ -108,10 +108,10 @@ $height: 4.5em;
 
     .overlay {        
         p {  
-            font-size: 1.5em !important;
+            font-size: 1.4em !important;
         }
         .icon {
-            font-size: 1.7em;
+            font-size: 1.6em;
         }
 
         &::before {
@@ -144,6 +144,20 @@ $height: 4.5em;
         }
         .icon {
             font-size: 2em;
+        }
+    }
+}
+
+.flexible {
+    width: 100%;
+    height: $height * 0.8;
+
+    .overlay {        
+        p {  
+            font-size: 1.3em !important;
+        }
+        .icon {
+            font-size: 1.5em;
         }
     }
 }

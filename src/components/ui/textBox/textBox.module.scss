@@ -45,7 +45,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $PC-low) {
     .box {
         .overlay {
             .header {
@@ -55,6 +55,24 @@
                 .subTitle {
                     padding-left: 0;
                     margin-bottom: 0.5em;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-L) {
+    .box {
+
+        .overlay {
+            .header {
+    
+                .title {
+                    font-size: 1.0em;
+                }
+    
+                .subTitle {
+                    font-size: 0.8em;
                 }
             }
         }

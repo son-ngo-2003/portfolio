@@ -93,10 +93,11 @@ $plusSize: 1.25em;
 
 }
 
-@media (max-width: 724px) {
+@media (max-width: $tablet) {
     .box {
     
         .overlay {
+            height: 2.6rem;
     
             .iconCover {
                 font-size: 2em !important;
@@ -106,6 +107,12 @@ $plusSize: 1.25em;
                 font-size: 1em;
                 line-height: 2.5em;
                 padding-left: 0.5em;
+            }
+        }
+
+        &.open {
+            .expandArea{
+                height: 6.5em;
             }
         }
     }
