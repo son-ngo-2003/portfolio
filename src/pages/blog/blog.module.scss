@@ -63,6 +63,10 @@
             line-height: 1.6;
         }
 
+        strong {
+            color: $secondary !important;
+        }
+
         blockquote {
             background-color: rgba($primary, 0.05);
             border-left: 4px solid $primary;
@@ -116,6 +120,15 @@
 
         img {
             max-width: 90%;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto 1rem auto;
+            display: block;
+        }
+
+        video {
+            max-width: 90%;
+            max-height: 60vh;
             border-radius: 5px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             margin: 2rem auto 1rem auto;

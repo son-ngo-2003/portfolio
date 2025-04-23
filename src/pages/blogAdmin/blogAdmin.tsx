@@ -59,8 +59,6 @@ const BlogAdmin: React.FC = () => {
             blog.type === BlogType.Project || 
             blog.type === BlogType.Association;
 
-        console.log( blog );
-
         const startDate = isProjectOrAssoc && (blog as ProjectBlog | AssociationBlog).startDate 
             ? new Date((blog as ProjectBlog | AssociationBlog).startDate).toISOString().split('T')[0] 
             : '';
@@ -252,6 +250,7 @@ const BlogAdmin: React.FC = () => {
                 ));
 
                 resetForm();
+                alert('Blog updated successfully!');
 
             } catch (error) {
                 alert('Failed to update blog. Error updating blog: ' + error);
@@ -294,7 +293,6 @@ const BlogAdmin: React.FC = () => {
                 alert('This is just a simulation. You can try functionalities like adding, updating, and deleting blogs without being logged in.');
                 const randomBlogs = getRandomBlogs(6);
                 setBlogs(randomBlogs);
-                console.log('Random blogs generated:', randomBlogs);
             }
         });
 

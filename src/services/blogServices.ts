@@ -44,7 +44,6 @@ const getBlogByName = async (name: string): Promise<Blog | null> => {
     if (!querySnapshot.empty) {
         return {...querySnapshot.docs[0].data() as Blog};
     }
-    console.log("No such blog!");
     return null;
 }
 

@@ -121,7 +121,7 @@ $sizeButton: 3.5rem;
     }
 }
 
-@media (max-width: $PC-low) {
+@media (max-width: $PC-high) {
     .sideBar {
         width: $sideBarWidth;
         top: 0;

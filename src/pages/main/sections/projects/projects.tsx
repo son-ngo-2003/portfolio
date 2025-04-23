@@ -88,7 +88,7 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                 data-aos-delay={100 + index * 100}
             >
                 <ImageBox
-                    subTitle={`${tagName.date}: ${toLocalString(project.startDate, i18n.language)} - ${toLocalString(project.endDate, i18n.language, t("projects.projects.now"))}`} // TODO: make translation current
+                    subTitle={`${tagName.date}: ${toLocalString(project.startDate, i18n.language)} - ${toLocalString(project.endDate, i18n.language, t("projects.projects.now"))}`}
                     title={`${project.title[i18n.language as Language]}`}
                     text={`${tagName.role}: ${project.role}`}
                     image={project.image}
