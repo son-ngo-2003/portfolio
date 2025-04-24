@@ -12,6 +12,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+/.pnp
+.pnp.js
 dist
 dist-ssr
 *.local
@@ -45,6 +47,7 @@ lerna-debug.log*
 
 node_modules
 dist
+build
 dist-ssr
 *.local
 
@@ -58,3 +61,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Firebase
+.firebase/
+serviceAccountKey.json
+*-debug.log
+firebase-debug.log
+
+# Cache and local files
+.DS_Store
+.cache
+.eslintcache
+coverage/
+
+# GitHub Workflows
+.github/
